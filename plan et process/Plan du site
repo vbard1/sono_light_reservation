@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-12-21T20:31:51.120Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="5XNC_49EK1H6mhg00ADB" version="20.6.2" type="github">
+<mxfile host="app.diagrams.net" modified="2022-12-21T20:35:33.432Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="pZeOIhsuQ6D0e5nntlhq" version="20.6.2" type="github">
   <diagram name="Page-1" id="c7558073-3199-34d8-9f00-42111426c3f3">
     <mxGraphModel dx="684" dy="516" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1654" background="#00753B" math="0" shadow="0">
       <root>
@@ -33,12 +33,12 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="bKTjdk6-nocMWIwMKZq2-93" value="vérification du matériel disponible aux dates demandees" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" parent="1" vertex="1">
-          <mxGeometry x="310" y="797.5" width="90" height="75" as="geometry" />
+          <mxGeometry x="300" y="877.5" width="90" height="75" as="geometry" />
         </mxCell>
         <mxCell id="bKTjdk6-nocMWIwMKZq2-94" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="bKTjdk6-nocMWIwMKZq2-116" target="f_kQZWwWiCs56iZRxsJQ-116" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="350" y="540" as="sourcePoint" />
-            <mxPoint x="255" y="560" as="targetPoint" />
+            <mxPoint x="350" y="570" as="sourcePoint" />
+            <mxPoint x="255" y="590" as="targetPoint" />
             <Array as="points" />
           </mxGeometry>
         </mxCell>
@@ -52,7 +52,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="bKTjdk6-nocMWIwMKZq2-104" value="DONNEES : materiel&lt;br&gt;son / lumiere /cable&lt;br&gt;+indisponibilités a quelle date" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" parent="1" vertex="1">
-          <mxGeometry x="160" y="790" width="90" height="90" as="geometry" />
+          <mxGeometry x="170" y="870" width="90" height="90" as="geometry" />
         </mxCell>
         <mxCell id="bKTjdk6-nocMWIwMKZq2-106" value="BACK END" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" parent="1" vertex="1">
           <mxGeometry x="960" y="240" width="90" height="60" as="geometry" />
@@ -73,7 +73,7 @@
           <mxGeometry x="555" y="200" width="90" height="70" as="geometry" />
         </mxCell>
         <mxCell id="bKTjdk6-nocMWIwMKZq2-116" value="Créer une demande de location (bouton)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" parent="1" vertex="1">
-          <mxGeometry x="310" y="410" width="90" height="60" as="geometry" />
+          <mxGeometry x="310" y="440" width="90" height="60" as="geometry" />
         </mxCell>
         <mxCell id="bKTjdk6-nocMWIwMKZq2-117" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" parent="1" source="bKTjdk6-nocMWIwMKZq2-115" target="f_kQZWwWiCs56iZRxsJQ-92" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -97,22 +97,22 @@
           <mxGeometry x="975" y="30" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="bKTjdk6-nocMWIwMKZq2-123" value="Affichage du matériel disponible" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" parent="1" vertex="1">
-          <mxGeometry x="310" y="902.5" width="90" height="60" as="geometry" />
+          <mxGeometry x="300" y="1000" width="90" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="bKTjdk6-nocMWIwMKZq2-124" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="bKTjdk6-nocMWIwMKZq2-93" target="bKTjdk6-nocMWIwMKZq2-123" edge="1">
+        <mxCell id="bKTjdk6-nocMWIwMKZq2-124" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="bKTjdk6-nocMWIwMKZq2-93" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="320" y="892.5" as="sourcePoint" />
-            <mxPoint x="220" y="912.5" as="targetPoint" />
+            <mxPoint x="310" y="972.5" as="sourcePoint" />
+            <mxPoint x="345" y="982.5" as="targetPoint" />
             <Array as="points" />
           </mxGeometry>
         </mxCell>
         <mxCell id="bKTjdk6-nocMWIwMKZq2-127" value="Demande des dates de locations (début et fin inclus dans l&#39;indisponibilité)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" parent="1" vertex="1">
-          <mxGeometry x="310" y="670" width="90" height="90" as="geometry" />
+          <mxGeometry x="310" y="685" width="90" height="90" as="geometry" />
         </mxCell>
         <mxCell id="bKTjdk6-nocMWIwMKZq2-128" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="bKTjdk6-nocMWIwMKZq2-127" target="bKTjdk6-nocMWIwMKZq2-93" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="410.5" y="700" as="sourcePoint" />
-            <mxPoint x="345.5" y="740" as="targetPoint" />
+            <mxPoint x="400.5" y="780" as="sourcePoint" />
+            <mxPoint x="335.5" y="820" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="bKTjdk6-nocMWIwMKZq2-130" value="&lt;font color=&quot;#0d0d0d&quot;&gt;note&lt;/font&gt;" style="text;html=1;strokeColor=#36393d;fillColor=#eeeeee;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
@@ -226,7 +226,24 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="f_kQZWwWiCs56iZRxsJQ-116" value="Créer une demande de location (bouton)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="1">
-          <mxGeometry x="310" y="480" width="90" height="60" as="geometry" />
+          <mxGeometry x="310" y="520" width="90" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="f_kQZWwWiCs56iZRxsJQ-118" value="Entrée des infos de locations lieu, etes vous une asso ou un particulier? nom de l&#39;événement (form?)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="1">
+          <mxGeometry x="210" y="585" width="90" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="f_kQZWwWiCs56iZRxsJQ-119" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="f_kQZWwWiCs56iZRxsJQ-116" target="f_kQZWwWiCs56iZRxsJQ-118">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="365" y="510.0000000000001" as="sourcePoint" />
+            <mxPoint x="365" y="530" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f_kQZWwWiCs56iZRxsJQ-120" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="f_kQZWwWiCs56iZRxsJQ-118" target="bKTjdk6-nocMWIwMKZq2-127">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="320" y="560" as="sourcePoint" />
+            <mxPoint x="265" y="580" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
