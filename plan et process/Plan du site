@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-12-21T20:37:07.045Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="ny7zcGRB8oLFYGfvWAj3" version="20.6.2" type="github">
+<mxfile host="app.diagrams.net" modified="2022-12-21T20:40:06.757Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="mMbUgpWm2U7-86sQobDn" version="20.6.2" type="github">
   <diagram name="Page-1" id="c7558073-3199-34d8-9f00-42111426c3f3">
     <mxGraphModel dx="684" dy="516" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1654" background="#00753B" math="0" shadow="0">
       <root>
@@ -258,6 +258,46 @@
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="365" y="919.5" as="sourcePoint" />
             <mxPoint x="365" y="950" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f_kQZWwWiCs56iZRxsJQ-125" value="DONNEES : materiel&lt;br&gt;son / lumiere /cable&lt;br&gt;+indisponibilités a quelle date" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="1">
+          <mxGeometry x="170" y="1117.5" width="90" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="f_kQZWwWiCs56iZRxsJQ-126" value="Envoi de la demande de location et verrouillage (!= location) du matériel)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" vertex="1" parent="1">
+          <mxGeometry x="310" y="1125" width="90" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="f_kQZWwWiCs56iZRxsJQ-127" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="f_kQZWwWiCs56iZRxsJQ-122" target="f_kQZWwWiCs56iZRxsJQ-126">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="365" y="1010" as="sourcePoint" />
+            <mxPoint x="365" y="1050" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f_kQZWwWiCs56iZRxsJQ-128" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="f_kQZWwWiCs56iZRxsJQ-126" target="f_kQZWwWiCs56iZRxsJQ-125">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="365" y="1110" as="sourcePoint" />
+            <mxPoint x="365" y="1135" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f_kQZWwWiCs56iZRxsJQ-129" value="Affichage espace client de l&#39;état de sa commande (en cours/ validée)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="1">
+          <mxGeometry x="310" y="1240" width="90" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="f_kQZWwWiCs56iZRxsJQ-130" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="f_kQZWwWiCs56iZRxsJQ-126" target="f_kQZWwWiCs56iZRxsJQ-129">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="365" y="1010" as="sourcePoint" />
+            <mxPoint x="365" y="1050" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f_kQZWwWiCs56iZRxsJQ-132" value="mail a l&#39;utilisateur de confirmation : formalisme a voir (mailto: html?)&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" vertex="1" parent="1">
+          <mxGeometry x="680" y="790" width="100" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="f_kQZWwWiCs56iZRxsJQ-133" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="f_kQZWwWiCs56iZRxsJQ-109" target="f_kQZWwWiCs56iZRxsJQ-132">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="780.0000000000002" y="730" as="sourcePoint" />
+            <mxPoint x="819.9999999999998" y="730" as="targetPoint" />
             <Array as="points" />
           </mxGeometry>
         </mxCell>
