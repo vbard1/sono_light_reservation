@@ -13,12 +13,12 @@ angular.js + bootstrap // (karima + victor intéressé)
 
 +html +js +css
 
-FIGMA pour le brouillon du site
+FIGMA pour le brouillon du site // Angular
 
 
 ENVIES
 => victor = front (+sql)
 => felix  = bd + back (interactions bd : modèle)
 => Vincent = front
-=> karima = 
-=> laurent = 
+=> karima = ?_? (+front)
+=> laurent = back
