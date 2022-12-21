@@ -1,0 +1,24 @@
+==> compétences
+
+=> backend
+java (frmwrk Spring) // Karima
+php // Felix Laurent
+C# //
+java // Victor Laurent Karima
+
+=> frontend
+vue.js (à éviter) // laurent
+angular.js + bootstrap // (karima + victor intéressé)
+
+
++html +js +css
+
+FIGMA pour le brouillon du site
+
+
+ENVIES
+=> victor = front (+sql)
+=> felix  = bd + back (interactions bd : modèle)
+=> Vincent = front
+=> karima = 
+=> laurent = 
