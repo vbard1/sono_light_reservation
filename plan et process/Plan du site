@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-01-01T20:26:22.079Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="USeOAvuttadXhTXrPrCW" version="20.7.4" type="github">
+<mxfile host="app.diagrams.net" modified="2023-01-01T20:38:16.744Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="C5bEuC8YyBYEQ0siHa6m" version="20.7.4" type="github">
   <diagram name="Page-1" id="c7558073-3199-34d8-9f00-42111426c3f3">
     <mxGraphModel dx="2526" dy="1154" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1654" background="#00753B" math="0" shadow="0">
       <root>
@@ -269,7 +269,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="f_kQZWwWiCs56iZRxsJQ-132" value="mail a l&#39;utilisateur de confirmation : formalisme a voir (mailto: html?)&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" parent="1" vertex="1">
-          <mxGeometry x="680" y="790" width="100" height="90" as="geometry" />
+          <mxGeometry x="675" y="810" width="100" height="90" as="geometry" />
         </mxCell>
         <mxCell id="f_kQZWwWiCs56iZRxsJQ-133" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="f_kQZWwWiCs56iZRxsJQ-109" target="f_kQZWwWiCs56iZRxsJQ-132" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
