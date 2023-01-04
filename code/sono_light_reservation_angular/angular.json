@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angularcliproject": {
+    "sono_light_reservation_angular": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angularcliproject",
+            "outputPath": "dist/sono_light_reservation_angular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angularcliproject:build:production"
+              "browserTarget": "sono_light_reservation_angular:build:production"
             },
             "development": {
-              "browserTarget": "angularcliproject:build:development"
+              "browserTarget": "sono_light_reservation_angular:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angularcliproject:build"
+            "browserTarget": "sono_light_reservation_angular:build"
           }
         },
         "test": {
