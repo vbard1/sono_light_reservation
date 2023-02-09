@@ -1,3 +1,23 @@
 <body>
-    <p>admin-accueil works!jbh</p>
+    <div class="container-fluid">
+        <div class="ods-box" >
+            <nav>
+                <button class="tab"  (click)="tabselector = 'firstTab'">Réservations </button>
+                <button class="tab"  (click)="tabselector = 'secondTab'"> Matériel </button>
+                <button class="tab"  (click)="tabselector = 'thirdTab'"> Comptes </button>
+            </nav>
+            <div class="composant">
+                <!--router outlet ici-->
+                <div *ngIf="tabselector == 'firstTab'">
+                    <app-admin-reservation></app-admin-reservation>
+                </div>
+                <div *ngIf="tabselector == 'secondTab'">
+                    <app-admin-materiel ></app-admin-materiel>
+                </div>
+                <div *ngIf="tabselector == 'thirdTab'">
+                    <app-admin-comptes></app-admin-comptes>
+                </div>
+            </div>
+        </div>
+      </div>
 </body>

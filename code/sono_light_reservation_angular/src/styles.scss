@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --fond: rgb(13, 13, 13);
+    --surlignage: rgba(155, 155, 155, 0.614);
+    --texte: rgb(229, 229, 229);
+}
+
+::selection {
+    background-color:  var(--surlignage);
+}
+* {
+    color:var(--texte);
+    background-color: var(--fond);
+    transition: 1s;
+}

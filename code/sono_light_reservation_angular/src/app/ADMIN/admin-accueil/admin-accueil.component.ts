@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./admin-accueil.component.scss']
 })
 export class ADMINAccueilComponent {
-
+    tabselector!: string;
 }
