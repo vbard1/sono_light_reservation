@@ -1,1 +1,19 @@
-<p>admin-comptes works!</p>
+<table>
+    <thead>
+        <tr>
+            <th id="num">#</th>
+            <th>Prénom Nom</th>
+            <th>E-mail</th>
+            <th>Téléphone</th>
+            <th>Adresse</th>
+            <th id="Actions">Actions</th>
+        </tr>
+    </thead>
+</table>
+<table>
+    <tbody>
+        <ng-container *ngFor="let ligne of lignes">
+            <app-ligne-compte [ligne]="ligne" class="ligne"></app-ligne-compte>
+        </ng-container>
+    </tbody>
+</table>

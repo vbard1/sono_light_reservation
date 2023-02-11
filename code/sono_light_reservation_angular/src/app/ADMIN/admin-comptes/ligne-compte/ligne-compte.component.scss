@@ -1,18 +1,24 @@
-th{
-    display: inline-block;
+.conteneur {
+    width: 100%;
+    border: solid green;
+}
+
+td,
+tr,
+th {
     padding: 0.75rem;
     border-top: 1px solid #434343;
     white-space: nowrap;
+    overflow: hidden;
     width: 250px;
     min-width: 250px;
-    max-width: 250px;
-    overflow: hidden;
 }
-#num{
+
+th {
     min-width: 20px;
     width: 20px;
 }
 
-#Actions{
-    min-width: 200px;
+button {
+    width: 100px;
 }

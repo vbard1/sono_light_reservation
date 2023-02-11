@@ -1,17 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { AdminComptesComponent } from './admin-comptes.component';
 
-describe('AdminComptesComponent', () => {
-  let component: AdminComptesComponent;
-  let fixture: ComponentFixture<AdminComptesComponent>;
+import { LigneCompteComponent } from './ligne-compte.component';
+
+
+
+describe('LigneCompteComponent', () => {
+  let component: LigneCompteComponent;
+  let fixture: ComponentFixture<LigneCompteComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AdminComptesComponent ]
+      declarations: [ LigneCompteComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AdminComptesComponent);
+    fixture = TestBed.createComponent(LigneCompteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -19,4 +22,5 @@ describe('AdminComptesComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  
 });

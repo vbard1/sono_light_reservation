@@ -16,5 +16,8 @@ body{
     display: block;
     padding: 20px;
  }
- .composant{
-}
+ .tab:hover,
+ .tab:focus {
+   box-shadow: 0 0.5em 0.5em -0.4em var(--hover-color);
+   transform: translateY(-0.25em);
+ }

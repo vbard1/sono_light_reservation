@@ -11,6 +11,9 @@ import { PageNotFoundComponent } from './GENERAL/page-not-found/page-not-found.c
 import { ADMINMaterielComponent } from './ADMIN/admin-materiel/admin-materiel.component';
 import { AdminComptesComponent } from './ADMIN/admin-comptes/admin-comptes.component';
 import { AdminReservationComponent } from './ADMIN/admin-reservation/admin-reservation.component';
+import { LigneCompteComponent } from './ADMIN/admin-comptes/ligne-compte/ligne-compte.component';
+import { FicheCompteComponent } from './ADMIN/admin-comptes/fiche-compte/fiche-compte.component';
+
 
 
 @NgModule({
@@ -22,6 +25,9 @@ import { AdminReservationComponent } from './ADMIN/admin-reservation/admin-reser
     ADMINMaterielComponent,
     AdminComptesComponent,
     AdminReservationComponent,
+    LigneCompteComponent,
+    FicheCompteComponent,
+
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,7 @@
     --fond: rgb(13, 13, 13);
     --surlignage: rgba(155, 155, 155, 0.614);
     --texte: rgb(229, 229, 229);
+    --hover-color: rgb(0, 251, 255);
 }
 
 ::selection {
@@ -11,5 +12,5 @@
 * {
     color:var(--texte);
     background-color: var(--fond);
-    transition: 1s;
+    transition: 0.3s;
 }
