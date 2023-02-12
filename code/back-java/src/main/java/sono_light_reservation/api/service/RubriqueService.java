@@ -1,12 +1,17 @@
 package sono_light_reservation.api.service;
 
+import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import sono_light_reservation.api.model.Rubrique;
 import sono_light_reservation.api.repository.RubriqueRepository;
 
 import java.util.Optional;
 
-public class RubriqueService {
+@Data
+@Service
+public
+class RubriqueService {
     @Autowired
     private RubriqueRepository rubriqueRepository;
 

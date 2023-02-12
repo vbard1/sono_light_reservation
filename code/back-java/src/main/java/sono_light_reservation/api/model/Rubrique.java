@@ -1,8 +1,7 @@
 package sono_light_reservation.api.model;
 
+import jakarta.persistence.*;
 import lombok.*;
-
-import javax.persistence.*;
 
 @Data
 @Entity
@@ -15,8 +14,6 @@ public class Rubrique {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name="libelllé")
+    @Column(name = "libelle")
     private String libelle;
-
 }
-
