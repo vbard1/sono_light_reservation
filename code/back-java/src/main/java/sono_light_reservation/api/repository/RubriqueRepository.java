@@ -13,9 +13,13 @@ import java.util.List;
 
 @Repository
 public interface RubriqueRepository extends CrudRepository<Rubrique, Long> {
+<<<<<<< HEAD
 }
 =======
 @Repository
 public interface RubriqueRepository extends CrudRepository<Rubrique, Long> {
 }
 >>>>>>> 2541d90 (feature in progress)
+=======
+}
+>>>>>>> 8284867 (tests with H2 db)

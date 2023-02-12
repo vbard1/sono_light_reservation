@@ -42,6 +42,7 @@
 			<scope>test</scope>
 		</dependency>
 <<<<<<< HEAD
+<<<<<<< HEAD
 	</dependencies>
 =======
         <dependency>
@@ -51,6 +52,9 @@
         </dependency>
     </dependencies>
 >>>>>>> 2541d90 (feature in progress)
+=======
+	</dependencies>
+>>>>>>> 8284867 (tests with H2 db)
 
 	<build>
 		<plugins>
