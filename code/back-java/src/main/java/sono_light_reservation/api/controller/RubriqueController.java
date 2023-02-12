@@ -13,10 +13,8 @@ public class RubriqueController {
     private RubriqueService rubriqueService;
 
     @GetMapping("/rubriques")
-    public String getRubrique() {
-    /*public Iterable<Rubrique> getRubrique() {
-        return rubriqueService.getRubriques();*/
-        return "un max de rubriques!!";
+    public Iterable<Rubrique> getRubrique() {
+        return rubriqueService.getRubriques();
     }
 
     @GetMapping("/")
