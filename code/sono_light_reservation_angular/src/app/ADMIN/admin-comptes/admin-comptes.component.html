@@ -1,19 +1,23 @@
-<table>
+<table class="table table-dark table-striped">
     <thead>
         <tr>
-            <th id="num">#</th>
+            <th>#</th>
             <th>Prénom Nom</th>
             <th>E-mail</th>
             <th>Téléphone</th>
-            <th>Adresse</th>
-            <th id="Actions">Actions</th>
+            <th  >Adresse</th>
+            <th colspan="2" class="actions">Actions</th>
         </tr>
     </thead>
-</table>
-<table>
     <tbody>
-        <ng-container *ngFor="let ligne of lignes">
-            <app-ligne-compte [ligne]="ligne" class="ligne"></app-ligne-compte>
-        </ng-container>
-    </tbody>
+        <tr *ngFor="let ligne of lignes;  let i = index;">
+            <td>{{i+1}}</td>
+            <td>{{ ligne.nom}}</td>
+            <td>{{ ligne.email }}</td>
+            <td>{{ ligne.telephone}}</td>
+            <td>{{ligne.adresse}}</td>
+            <td class="actions"><button class="btn btn-info btn-sm">voir la fiche</button></td>
+            <td class="actions"><button class="btn btn-danger btn-sm">supprimer</button></td>
+    </tr>
+  </tbody>
 </table>

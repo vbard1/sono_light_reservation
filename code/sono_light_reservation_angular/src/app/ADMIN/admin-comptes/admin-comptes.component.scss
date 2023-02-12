@@ -1,18 +1,17 @@
-th{
-    display: inline-block;
-    padding: 0.75rem;
-    border-top: 1px solid #434343;
+.btn-info{
+    background-color:var(--evidence);
+}
+.btn-danger{
+    background-color:var(--danger);
+}
+.btn{
+    border-radius: var(--arrondi);
+}
+.actions{
+    text-align: center;
+    width: 8%;
+}
+td{
     white-space: nowrap;
-    width: 250px;
-    min-width: 250px;
-    max-width: 250px;
-    overflow: hidden;
-}
-#num{
-    min-width: 20px;
-    width: 20px;
-}
-
-#Actions{
-    min-width: 200px;
+    overflow:hidden;
 }

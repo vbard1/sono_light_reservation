@@ -3,14 +3,18 @@
     --fond: rgb(13, 13, 13);
     --surlignage: rgba(155, 155, 155, 0.614);
     --texte: rgb(229, 229, 229);
-    --hover-color: rgb(0, 251, 255);
+    --evidence: rgb(0, 255, 242); //pour les hover, les actions de moindre impact
+    --danger: rgb(255, 0, 0); //pour les danger, comme supprimer un compte
+    --tps-transition: 0.3s;
+    --arrondi: 15px;
 }
 
 ::selection {
-    background-color:  var(--surlignage);
+    background-color: var(--surlignage);
 }
+
 * {
-    color:var(--texte);
+    color: var(--texte);
     background-color: var(--fond);
-    transition: 0.3s;
+    transition: var(--tps-transition);
 }
