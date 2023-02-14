@@ -24,7 +24,7 @@ export class ADMINAccueilComponent {
         this.tabselector=tabId;
       } else {
         tab.classList.remove('selected');
-      }
+      } 
     }
   }
 }
