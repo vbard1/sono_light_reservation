@@ -1,9 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
     --fond: rgb(13, 13, 13);
-    --surlignage: rgba(155, 155, 155, 0.614);
+    --surlignage: rgba(155, 155, 155, 0.614); //pour les hover
     --texte: rgb(229, 229, 229);
-    --evidence: rgb(0, 255, 242); //pour les hover, les actions de moindre impact
+    --evidence: rgb(0, 238, 255); // les actions de moindre impact
     --danger: rgb(255, 0, 0); //pour les danger, comme supprimer un compte
     --tps-transition: 0.3s;
     --arrondi: 15px;
