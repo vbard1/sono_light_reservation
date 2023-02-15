@@ -25,7 +25,6 @@ import { FicheCompteComponent } from './ADMIN/admin-comptes/fiche-compte/fiche-c
     AdminComptesComponent,
     AdminReservationComponent,
     FicheCompteComponent,
-
   ],
   imports: [
     BrowserModule,
