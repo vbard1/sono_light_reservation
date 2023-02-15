@@ -1,0 +1,17 @@
+.btn-info{
+    background-color:var(--evidence);
+}
+.btn-danger{
+    background-color:var(--danger);
+}
+.btn{
+    border-radius: var(--arrondi);
+}
+.actions{
+    text-align: center;
+    width: 8%;
+}
+td{
+    white-space: nowrap;
+    overflow:hidden;
+}
