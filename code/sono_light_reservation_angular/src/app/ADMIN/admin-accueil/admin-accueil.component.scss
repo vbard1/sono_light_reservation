@@ -18,7 +18,8 @@ body{
     padding: 20px;
  }
  .tab:hover,
- .tab:focus {
+ .tab:focus,
+ .selected {
    box-shadow: 0 0.5em 0.5em -0.4em var(--evidence);
    transform: translateY(-0.25em);
  }
