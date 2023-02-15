@@ -9,6 +9,7 @@ import sono_light_reservation.api.model.Rubrique;
 import sono_light_reservation.api.repository.RubriqueRepository;
 
 import java.util.List;
+<<<<<<< HEAD
 import java.util.Optional;
 
 @Data
@@ -24,6 +25,8 @@ import org.springframework.stereotype.Service;
 import sono_light_reservation.api.model.Rubrique;
 import sono_light_reservation.api.repository.RubriqueRepository;
 
+=======
+>>>>>>> ac567f8 (update get+post)
 import java.util.Optional;
 
 <<<<<<< HEAD
@@ -43,12 +46,17 @@ class RubriqueService {
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     public List<Rubrique> getRubriques() {
         return (List<Rubrique>) rubriqueRepository.findAll();
 =======
     public Iterable<Rubrique> getRubriques() {
         return rubriqueRepository.findAll();
 >>>>>>> 2541d90 (feature in progress)
+=======
+    public List<Rubrique> getRubriques() {
+        return (List<Rubrique>) rubriqueRepository.findAll();
+>>>>>>> ac567f8 (update get+post)
     }
 
     public void deleteRubrique(final Long id) {
