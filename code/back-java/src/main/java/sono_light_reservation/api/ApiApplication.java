@@ -1,13 +1,13 @@
-package backjava.backjava;
+package sono_light_reservation.api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BackJavaApplication {
+public class ApiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BackJavaApplication.class, args);
+		SpringApplication.run(ApiApplication.class, args);
 	}
 
 }
