@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import sono_light_reservation.api.model.Rubrique;
 import sono_light_reservation.api.repository.RubriqueRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Data
@@ -19,8 +20,8 @@ class RubriqueService {
         return rubriqueRepository.findById(id);
     }
 
-    public Iterable<Rubrique> getRubriques() {
-        return rubriqueRepository.findAll();
+    public List<Rubrique> getRubriques() {
+        return (List<Rubrique>) rubriqueRepository.findAll();
     }
 
     public void deleteRubrique(final Long id) {
