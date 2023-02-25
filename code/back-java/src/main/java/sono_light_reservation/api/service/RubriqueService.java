@@ -11,8 +11,7 @@ import java.util.Optional;
 
 @Data
 @Service
-public
-class RubriqueService {
+public class RubriqueService {
     @Autowired
     private RubriqueRepository rubriqueRepository;
 
