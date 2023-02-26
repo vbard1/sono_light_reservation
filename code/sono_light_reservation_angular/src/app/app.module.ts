@@ -12,6 +12,7 @@ import { ADMINMaterielComponent } from './ADMIN/admin-materiel/admin-materiel.co
 import { AdminComptesComponent } from './ADMIN/admin-comptes/admin-comptes.component';
 import { AdminReservationComponent } from './ADMIN/admin-reservation/admin-reservation.component';
 import { FicheCompteComponent } from './ADMIN/admin-comptes/fiche-compte/fiche-compte.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -29,7 +30,8 @@ import { FicheCompteComponent } from './ADMIN/admin-comptes/fiche-compte/fiche-c
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

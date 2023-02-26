@@ -9,10 +9,10 @@ import { Router } from '@angular/router';
 })
 export class  AdminComptesComponent {
   lignes: Compte[] = [
-    { id: 1, nom: 'Prénom Nom', email: 'email@example.com', telephone: '555-555-5555', adresse: '123 Main St' },
-    { id: 2, nom: 'Autre Prénom Nom', email: 'a@example.com', telephone: '555-555-55', adresse: '456 Main St' },
-    { id: 2, nom: 'Autre Prénom Nom', email: 'aa@example.com', telephone: '555-555-555', adresse: ' TEST 456 Main St' },
-    { id: 2, nom: 'j4AI UN  NOM   terriblement long', email: 'et surtout un email a la con @example.com', telephone: '000112233445566778899', adresse: 'Une adresse à faire vomir le facteur, 69903 nulle part -sur - rien' }
+    { id: 1, nom: 'Nom', prenom:'Prenom', email: 'email@example.com', telephone: '555-555-5555', adresseNum: 123, adresseRue:"Rue éverlor",adresseCp:69003,adresseVille:"Lyon" },
+    { id: 2, nom: 'Nom', prenom:'Prenom', email: 'email@example.com', telephone: '555-555-5555', adresseNum: 123, adresseRue:"Rue éverlor",adresseCp:69003,adresseVille:"Lyon" },
+    { id: 3, nom: 'Nom', prenom:'Prenom', email: 'email@example.com', telephone: '555-555-5555', adresseNum: 123, adresseRue:"Rue éverlor",adresseCp:69003,adresseVille:"Lyon" },
+    { id: 4, nom: 'Nom terriblement long', prenom:'Prenom terrible pour voir comment réagit le tableau', email: 'emailimprobabble@domaine trop chiant.com', telephone: '000 00 00 00 00 ', adresseNum: 123, adresseRue:"Rue éverlor",adresseCp:69003,adresseVille:"Lyon" },
   ];
 
   /**
@@ -20,7 +20,7 @@ export class  AdminComptesComponent {
    * @param router 
    */
   constructor(private router: Router) { }
-  voirFicheCompte() {
+  voirFicheCompte() { 
     this.router.navigate(['/ADMIN/fiche-compte']);
   }
 }
