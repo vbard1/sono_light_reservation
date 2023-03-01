@@ -15,26 +15,26 @@ public class Utilisateur {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "prenom")
-    private String firstname;
+    @Column(name = "prenom", nullable=false)
+    private String prenom;
 
-    @Column(name = "nom")
-    private String lastname;
+    @Column(name = "nom", nullable=false)
+    private String nom;
 
-    @Column
+    @Column(nullable=false, unique=true)
     private String email;
 
-    @Column(name = "telephone")
-    private String phone;
+    @Column(name = "telephone", unique=true, nullable=false)
+    private String telephone;
 
     @Column(name = "email_verification")
-    private Boolean email_check;
+    private Boolean mail_verification;
 
     @Column(name = "motdepasse")
-    private String password;
+    private String motdepasse;
 
-    @Column(name = "niveau")
-    private Integer level;
+    @Column(name = "niveau", nullable=false)
+    private Integer niveau;
 
 
 }
