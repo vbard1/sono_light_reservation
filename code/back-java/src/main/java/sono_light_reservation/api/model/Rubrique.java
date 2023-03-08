@@ -10,7 +10,8 @@ import lombok.*;
 @Setter
 @ToString
 @RequiredArgsConstructor
-public class Rubrique {
+public
+class Rubrique {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
