@@ -1,0 +1,24 @@
+.socialLinks {
+  background: #303134 !important;
+ color:#303134 !important;
+  width: 100%;
+  padding: 10px;
+  margin-top: 40px;
+}
+
+a{
+  text-decoration: none;
+  // color : white;
+
+
+  &:hover{
+    text-decoration: underline;
+    color: #e9b44b;
+  }
+}
+img{
+  background-color:transparent !important;
+}
+footer{
+  background-color: #303134;
+}

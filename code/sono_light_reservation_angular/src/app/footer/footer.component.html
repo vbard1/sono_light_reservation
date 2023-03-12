@@ -1,0 +1,15 @@
+<footer>
+  <div class="row mb-3">
+    <p class="copyright text-center">©{{ date }} Tous droits réservés</p>
+  </div>
+  <div class="socialLinks">
+    <ng-container *ngFor="let socialLink of socialLinks">
+      <a href="{{ socialLink.link }}" target="_blank" rel="noopener noreferrer">
+        <img
+          src="assets/icon/{{ socialLink.image }}"
+          alt="{{ socialLink.alt }}"
+          class="mx-2"
+      /></a>
+    </ng-container>
+  </div>
+</footer>
