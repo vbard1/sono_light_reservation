@@ -31,7 +31,12 @@ import { HeaderComponent } from './header/header.component';
 
     FooterComponent,
   ],
-  imports: [RouterModule],
+  imports: [
+    RouterModule,
+    AppRoutingModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+  ],
 
   providers: [],
   bootstrap: [AppComponent],
