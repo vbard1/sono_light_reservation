@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SocialLinks } from '../shared/UTILS/socialLinks';
+import { SocialLinks } from '../shared/models/UTILS/socialLinks';
 
 @Component({
   selector: 'app-footer',

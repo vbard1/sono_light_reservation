@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Compte } from 'src/app/shared/UTILS/comptes';
+import { Compte } from 'src/app/shared/models/UTILS/comptes';
 
 @Component({
   selector: 'app-admin-comptes',

@@ -12,8 +12,10 @@ import { ADMINMaterielComponent } from './ADMIN/admin-materiel/admin-materiel.co
 import { AdminComptesComponent } from './ADMIN/admin-comptes/admin-comptes.component';
 import { AdminReservationComponent } from './ADMIN/admin-reservation/admin-reservation.component';
 import { FicheCompteComponent } from './ADMIN/admin-comptes/fiche-compte/fiche-compte.component';
-import { HeaderComponent } from './header/header.component';
+
 import { FooterComponent } from './footer/footer.component';
+import { RouterModule } from '@angular/router';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -28,11 +30,9 @@ import { FooterComponent } from './footer/footer.component';
     HeaderComponent,
 
     FooterComponent,
-
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
   ],
+  imports: [RouterModule],
+
   providers: [],
   bootstrap: [AppComponent],
 })

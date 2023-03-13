@@ -7,9 +7,10 @@ import { PageNotFoundComponent } from './GENERAL/page-not-found/page-not-found.c
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
-  { path: 'AppComponent', component: AppComponent },
+
   { path: 'ADMIN/admin-accueil', component: ADMINAccueilComponent },
   { path: 'CLIENT/client-accueil', component: CLIENTAccueilComponent },
+
   { path: '**', component: PageNotFoundComponent },
 ];
 
