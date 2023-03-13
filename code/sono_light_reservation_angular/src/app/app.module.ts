@@ -13,8 +13,7 @@ import { AdminComptesComponent } from './ADMIN/admin-comptes/admin-comptes.compo
 import { AdminReservationComponent } from './ADMIN/admin-reservation/admin-reservation.component';
 import { FicheCompteComponent } from './ADMIN/admin-comptes/fiche-compte/fiche-compte.component';
 import { HeaderComponent } from './header/header.component';
-
-
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -28,13 +27,13 @@ import { HeaderComponent } from './header/header.component';
     FicheCompteComponent,
     HeaderComponent,
 
-  ],
-  imports: [
+    FooterComponent,
+
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
