@@ -14,6 +14,7 @@ import { AdminReservationComponent } from './ADMIN/admin-reservation/admin-reser
 import { FicheCompteComponent } from './ADMIN/admin-comptes/fiche-compte/fiche-compte.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { LocalisationComponent } from './localisation/localisation.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,9 @@ import { FooterComponent } from './footer/footer.component';
     AdminReservationComponent,
     FicheCompteComponent,
     HeaderComponent,
+    FooterComponent,
+    LocalisationComponent,
+
     FooterComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
