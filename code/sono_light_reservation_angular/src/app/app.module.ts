@@ -31,11 +31,9 @@ import { LocalisationComponent } from './localisation/localisation.component';
 
     FooterComponent,
 
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
     LocalisationComponent,
   ],
+  imports: [BrowserAnimationsModule, BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })
