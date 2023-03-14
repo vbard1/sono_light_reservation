@@ -14,12 +14,9 @@ import { AdminReservationComponent } from './ADMIN/admin-reservation/admin-reser
 import { FicheCompteComponent } from './ADMIN/admin-comptes/fiche-compte/fiche-compte.component';
 
 import { FooterComponent } from './footer/footer.component';
-<<<<<<< HEAD
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
-=======
 import { LocalisationComponent } from './localisation/localisation.component';
->>>>>>> developpement
 
 @NgModule({
   declarations: [
@@ -35,7 +32,6 @@ import { LocalisationComponent } from './localisation/localisation.component';
     LocalisationComponent,
 
     FooterComponent,
-<<<<<<< HEAD
   ],
   imports: [
     RouterModule,
@@ -44,12 +40,6 @@ import { LocalisationComponent } from './localisation/localisation.component';
     BrowserAnimationsModule,
   ],
 
-=======
-
-    LocalisationComponent,
-  ],
-  imports: [BrowserAnimationsModule, BrowserModule, AppRoutingModule],
->>>>>>> developpement
   providers: [],
   bootstrap: [AppComponent],
 })
