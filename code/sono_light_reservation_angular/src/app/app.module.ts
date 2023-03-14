@@ -29,6 +29,7 @@ import { LocalisationComponent } from './localisation/localisation.component';
     AdminReservationComponent,
     FicheCompteComponent,
     HeaderComponent,
+    FooterComponent,
     LocalisationComponent,
 
     FooterComponent,
