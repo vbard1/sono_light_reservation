@@ -8,6 +8,7 @@ import sono_light_reservation.api.service.RubriqueService;
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin
 @RestController
 public class RubriqueController {
 
