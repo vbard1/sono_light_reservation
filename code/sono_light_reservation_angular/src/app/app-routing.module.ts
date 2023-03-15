@@ -6,7 +6,6 @@ import { CLIENTAccueilComponent } from './CLIENT/client-accueil/client-accueil.c
 import { PageNotFoundComponent } from './GENERAL/page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'AppComponent', component: AppComponent },
   { path: 'ADMIN/admin-accueil', component: ADMINAccueilComponent },
   { path: 'CLIENT/client-accueil', component: CLIENTAccueilComponent },
@@ -15,6 +14,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

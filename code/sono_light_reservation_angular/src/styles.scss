@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
-    --fond: rgb(37, 35, 35);
+    --fond: rgb(13, 13, 13);
     --surlignage: rgba(155, 155, 155, 0.614); //pour les hover
     --texte: rgb(229, 229, 229);
     --evidence: rgb(0, 238, 255); // les actions de moindre impact
@@ -18,8 +18,3 @@
     background-color: var(--fond);
     transition: var(--tps-transition);
 }
-footer {
-   background-color: #303134; ;
-    padding: 40px 0;
-    text-align: center;
-  }
