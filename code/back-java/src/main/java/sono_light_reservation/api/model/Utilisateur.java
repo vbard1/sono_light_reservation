@@ -5,7 +5,7 @@ import lombok.*;
 
 @Data
 @Entity
-@Table(name= "rubrique")
+@Table(name= "utilisateur")
 @Getter
 @Setter
 @ToString
@@ -28,7 +28,7 @@ public class Utilisateur {
     private String telephone;
 
     @Column(name = "email_verification")
-    private Boolean mail_verification;
+    private Boolean mailVerification;
 
     @Column(name = "motdepasse")
     private String motdepasse;
