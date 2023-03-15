@@ -15,6 +15,7 @@ import { FicheCompteComponent } from './ADMIN/admin-comptes/fiche-compte/fiche-c
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LocalisationComponent } from './localisation/localisation.component';
+import { HeaderBisComponent } from './header-bis/header-bis.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { LocalisationComponent } from './localisation/localisation.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     LocalisationComponent,
+    HeaderBisComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

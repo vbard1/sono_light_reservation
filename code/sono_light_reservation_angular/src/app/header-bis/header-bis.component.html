@@ -1,0 +1,100 @@
+<nav class="navbar d-flex justify-content-end align-items-center w-100">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/home"
+      ><img src="assets/img/images.png" alt="logo"
+    /></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav nav-menu">
+        <!-- BUTTON ADMIN PANEL LIE PAR LE MATMENUTRIGGERFOR "adminPanel"
+          <button
+            mat-button
+            [matMenuTriggerFor]="adminPanel"
+            class="dropdown-toggle nestedAdminNav"
+            id="dashDropdown"
+            [ngStyle]="{display: isLogged ? 'block' : 'none'}"
+          >
+            Dashboard
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+             <--ADMIN PANEL -->
+        <!-- <mat-menu #adminPanel="matMenu">
+              <button
+                mat-menu-item
+                class="nestedAdminNav"
+                routerLink="admin/dashboard"
+                data-bs-toggle="collapse"
+                data-bs-target=".navbar-collapse.show"
+              >
+                Gestion de contenu
+              </button>
+              <mat-divider></mat-divider>
+              <button
+                [ngStyle]="{display: isSuperAdmin ? 'block' : 'none'}"
+                mat-menu-item
+                class="nestedAdminNav"
+                routerLink="admin/analytics"
+                data-bs-toggle="collapse"
+                data-bs-target=".navbar-collapse.show"
+              >
+                Analytics <mat-icon>trending_up</mat-icon>
+              </button>
+              <mat-divider></mat-divider>
+              <button
+                data-bs-toggle="collapse"
+                data-bs-target=".navbar-collapse.show"
+                mat-menu-item
+                (click)="openPasswordForm()"
+                class="nestedAdminNav"
+              >
+                Modifier mon mot de passe
+              </button>
+              <mat-divider></mat-divider>
+              <button
+                data-bs-toggle="collapse"
+                data-bs-target=".navbar-collapse.show"
+                mat-menu-item
+                (click)="disconnect()"
+                class="nestedAdminNav"
+              >
+                Déconnexion
+              </button>
+            </mat-menu>
+          </ul> -->
+        <!-- <-- FIN DU NESTED DROPDOWN LIE PAR LES MATMENUTRIGGERFOR -->
+        <li
+          class="nav-item"
+          *ngFor="let link of links"
+          data-bs-toggle="collapse"
+          data-bs-target=".navbar-collapse.show"
+        >
+          <a
+            class="nav-link"
+            aria-current="page"
+            routerLink="{{ link.link }}"
+            >{{ link.name }}</a
+          >
+        </li>
+        <li
+          class="nav-item"
+          data-bs-toggle="collapse"
+          data-bs-target=".navbar-collapse.show"
+        >
+          <a class="nav-link" aria-current="page" routerLink="contact"
+            >Contact</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
