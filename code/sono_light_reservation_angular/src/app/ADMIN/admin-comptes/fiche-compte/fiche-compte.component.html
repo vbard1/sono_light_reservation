@@ -1,1 +1,42 @@
-<p>fiche-compte works!</p>
+<h2> Détails du compte </h2>
+<form>
+    <div [formGroup]="compteForm" class="form-row">
+        <div class="form-row">
+            <label for="prenom"> Prénom </label>
+            <input type="text" id="prenom" formControlName="prenom">
+            <label for="nom"> Nom </label>
+            <input type="text" id="nom" formControlName="nom" >
+        </div>
+        <div class="form-row">
+            <label for="email"> E-mail </label>
+            <input type="email" id="email" formControlName="email" placeholder="insa.kleson@gmail.com">
+            <label for="telephone"> Téléphone </label>
+            <input type="tel" id="telephone" formControlName="telephone"  placeholder="0102030405">
+        </div>
+        <div class="form-row">
+            <label for="adresseNum"> N°</label>
+            <input type="number" id="adresseNum" formControlName="adresseNum" placeholder="20">
+            <label for="adresseRue"> Rue </label>
+            <input type="text" id="adresseRue" formControlName="adresseRue" placeholder="Avenue Albert Einstein">
+        </div>
+        <div class="form-row">
+            <label for="adresseCp"> Code postal </label>
+            <input type="number" id="adresseCp" formControlName="adresseCp" placeholder="69621">
+            <label for="adresseVille"> Ville </label>
+            <input type="text" id="adresseVille" formControlName="adresseVille" placeholder="Villeurbanne">
+        </div>
+        <div class="form-row">
+            <div class="col">
+                <button type="submit" (click)="onSubmitForm()" class="btn btn-info btn-sm" [disabled]="compteForm.invalid">Enregistrer</button>
+                <button type="reset" (click)="doNothing()" class="btn btn-danger btn-sm">Annuler</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<!-- debug -->
+<div *ngIf="comptePreview$ | async as compte">
+    <div>
+        debug => afficher le resultat du formulaire ici en attribuant les bonnes variables
+    </div>
+</div>
