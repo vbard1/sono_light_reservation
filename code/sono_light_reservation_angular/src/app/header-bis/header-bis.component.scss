@@ -1,0 +1,65 @@
+
+  /*******************************************************************/
+  .navbar {
+    background: #303134!important;
+    width: 100%;
+    font-family: "lemonMilk";
+    top: 0;
+    z-index: 2;
+    position: sticky;
+  }
+  .mat-button{
+    text-align:start;
+    padding-left: 0;
+    font-size: 16px;
+  }
+  
+  #dashDropdown{
+    color:white;
+    padding-top: 3px;
+  }
+  
+  .nestedAdminNav{
+    font-family: "lemonMilk";
+  }
+  
+  .navbar-brand > img {
+    width: 50px;
+  }
+  
+  @media screen and (min-width: 995px) {
+    .navbar {
+      height: 60px;
+    }
+    .nav-link {
+      padding-top: 20px;
+    }
+    
+      .nav-link {
+        color: #f1f2f2;
+      }
+    }
+  
+  
+  .dropdown-item {
+    cursor: pointer !important;
+  }
+  .container-fluide{
+      background: #303134;
+  }
+  a {
+      color:#f1f2f2 !important;
+  }
+   .nav-item {
+          margin-left: 2.5rem;
+    }
+        
+       .nav-link:hover,
+        .nav-link:focus {
+           color: #e9b44b;
+         }
+  
+         .nav-logo {
+               min-width: 30px !important;
+               max-width: 50px !important;
+            }
