@@ -18,27 +18,31 @@ public class UtilisateurService {
 
     public Optional<Utilisateur> getUtilisateur(final Long id) {return utilisateurRepository.findById(id);}
 
-    public LinkedList<Utilisateur> getUtilisateurs() {return (LinkedList<Utilisateur>) utilisateurRepository.findAll();}
+    public List<Utilisateur> getUtilisateurs() {return (List<Utilisateur>) utilisateurRepository.findAll();}
 
     public Utilisateur saveUtilisateur(Utilisateur utilisateur) {
         Utilisateur savedUtilisateur = utilisateurRepository.save(utilisateur);
         return savedUtilisateur;
     }
 
-   /* public Utilisateur updateUtilisateur(Long id, Utilisateur askedUpdatesUtlisateur) {
-        Optional<Utilisateur> optionalUtilisateur = getUtilisateur(id);
-        if (optionalUtilisateur.isPresent()) {
-            Utilisateur utilisateur = optionalUtilisateur.get()
-            utilisateur.get().setPrenom(askedUpdatesUtlisateur.getPrenom());
-            utilisateur.get().setNom(askedUpdatesUtlisateur.getNom());
-            utilisateur.get().setEmail(askedUpdatesUtlisateur.getEmail());
-            utilisateur.get().setTelephone(askedUpdatesUtlisateur.getTelephone());
-            utilisateur.get().setNiveau(askedUpdatesUtlisateur.getNiveau());
-            if (utilisateur != null) {Optional.fromNullable(utilisateurRepository.save(utilisateur))}
-        }
-        if(utilisateur.isPresent())
-
-        return Optional.utilisateurRepository.save(utilisateur);
-        }
-    }*/
+   public Utilisateur updateUtilisateur(Long id, Utilisateur updatedUtilisateur) {
+       Utilisateur utilisateur = utilisateurRepository.findById(id)
+               .orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
+       if (updatedUtilisateur.getPrenom() != null) {
+           utilisateur.setPrenom(updatedUtilisateur.getPrenom());
+       }
+       if (updatedUtilisateur.getNom() != null ) {
+           utilisateur.setNom(updatedUtilisateur.getNom());
+       }
+       if (updatedUtilisateur.getEmail() != null ) {
+           utilisateur.setEmail(updatedUtilisateur.getEmail());
+       }
+       if (updatedUtilisateur.getTelephone() != null ) {
+           utilisateur.setTelephone(updatedUtilisateur.getTelephone());
+       }
+       if (updatedUtilisateur.getNiveau() != null ) {
+           utilisateur.setNiveau(updatedUtilisateur.getNiveau());
+       }
+       return utilisateurRepository.save(utilisateur);
+    }
 }

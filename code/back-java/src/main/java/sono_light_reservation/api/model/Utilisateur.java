@@ -36,5 +36,4 @@ public class Utilisateur {
     @Column(name = "niveau", nullable=false)
     private Integer niveau;
 
-
 }
