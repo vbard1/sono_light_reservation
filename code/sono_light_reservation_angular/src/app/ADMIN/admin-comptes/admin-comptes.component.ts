@@ -14,10 +14,10 @@ export class  AdminComptesComponent {
   
   /**au démarrage, on récupère la liste des comtpes */
   ngOnInit():void{
-    this.lignes = this.comptesService.getComptes();
-    /*this.comptesService.getComptes().subscribe(comptes => {
+    //this.lignes = this.comptesService.getComptes();
+    this.comptesService.getComptes().subscribe(comptes => {
       this.lignes = comptes;
-    });*/
+    });
   }
 
   /**
