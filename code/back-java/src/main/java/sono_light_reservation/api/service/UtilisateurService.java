@@ -3,10 +3,9 @@ package sono_light_reservation.api.service;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import sono_light_reservation.api.model.Utilisateur;
+import sono_light_reservation.api.entity.Utilisateur;
 import sono_light_reservation.api.repository.UtilisateurRepository;
 
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 

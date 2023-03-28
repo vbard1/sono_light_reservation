@@ -2,7 +2,7 @@ package sono_light_reservation.api.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import sono_light_reservation.api.model.Utilisateur;
+import sono_light_reservation.api.entity.Utilisateur;
 import sono_light_reservation.api.repository.UtilisateurRepository;
 import sono_light_reservation.api.service.UtilisateurService;
 
