@@ -15,8 +15,17 @@ public class UtilisateurService {
     @Autowired
     private UtilisateurRepository utilisateurRepository;
 
+    /**
+     * Lire les details d'un utilisateur par son id
+     * @param id
+     * @return utilisateur
+     */
     public Optional<Utilisateur> getUtilisateur(final Long id) {return utilisateurRepository.findById(id);}
 
+    /**
+     * Liste de tous les utilisateurs
+     * @return La liste de tous les utilisateurs
+     */
     public List<Utilisateur> getUtilisateurs() {return (List<Utilisateur>) utilisateurRepository.findAll();}
 
     public Utilisateur saveUtilisateur(Utilisateur utilisateur) {
@@ -24,7 +33,23 @@ public class UtilisateurService {
         return savedUtilisateur;
     }
 
-   public Utilisateur updateUtilisateur(Long id, Utilisateur updatedUtilisateur) {
+    /**
+     * Supprimer un utilisateur existant
+     * @param id
+     * @return String: confirmation de suppression
+     */
+    public String deleteUtilisateur(final Long id){
+        utilisateurRepository.deleteById(id);
+        return "Utilisateur supprimé";
+    }
+
+    /**
+     * Modifier les details d'un utilisateur par son id
+     * @param id
+     * @param updatedUtilisateur
+     * @return utilisateur avec les modifications
+     */
+    public Utilisateur updateUtilisateur(Long id, Utilisateur updatedUtilisateur) {
        Utilisateur utilisateur = utilisateurRepository.findById(id)
                .orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
        if (updatedUtilisateur.getPrenom() != null) {
