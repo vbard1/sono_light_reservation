@@ -29,6 +29,9 @@ public class UtilisateurService {
     public List<Utilisateur> getUtilisateurs() {return (List<Utilisateur>) utilisateurRepository.findAll();}
 
     public Utilisateur saveUtilisateur(Utilisateur utilisateur) {
+        if (utilisateur.getNiveau() == null){
+            utilisateur.setNiveau(3);
+        }
         Utilisateur savedUtilisateur = utilisateurRepository.save(utilisateur);
         return savedUtilisateur;
     }
