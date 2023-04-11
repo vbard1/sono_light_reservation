@@ -52,6 +52,7 @@ public class UtilisateurController {
         return utilisateurService.getUtilisateurs();
     }
 
+<<<<<<< HEAD
     /**
      * Créer un nouvel utilisateur
      * @param newUtilisateur
@@ -60,6 +61,13 @@ public class UtilisateurController {
     @PostMapping("/utilisateur")
     public Utilisateur createUtilisateur(@RequestBody Utilisateur newUtilisateur) {
         Utilisateur utilisateur = utilisateurService.saveUtilisateur(newUtilisateur);
+=======
+    @GetMapping("/utilisateur/{id}")
+    public Optional<Utilisateur> getOneUtilisateur(@PathVariable Long id) {return utilisateurService.getUtilisateur(id);}
+
+    @PostMapping("/utilisateur") public Utilisateur createUtilisateur(@RequestBody Utilisateur newUtlisateur) {
+        Utilisateur utilisateur = utilisateurService.saveUtilisateur(newUtlisateur);
+>>>>>>> developpement
         return utilisateurService.saveUtilisateur(utilisateur);
     }
 }

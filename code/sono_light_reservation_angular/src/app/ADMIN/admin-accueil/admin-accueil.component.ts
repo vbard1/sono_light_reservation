@@ -8,11 +8,7 @@ import { Component } from '@angular/core';
 export class ADMINAccueilComponent {
   tabselector!: string;
   selected !: string;
-<<<<<<< HEAD
 
-=======
-      
->>>>>>> 08c21cb (Màj boot projet et bases ecran compte (#32))
   ngOnInit(){
     this.tabselector='thirdTab'; //onglet par défaut, à l'ouverture
   }
@@ -29,10 +25,7 @@ export class ADMINAccueilComponent {
       } else {
         tab.classList.remove('selected');
       }
-<<<<<<< HEAD
-=======
-      
->>>>>>> 08c21cb (Màj boot projet et bases ecran compte (#32))
+
     }
   }
 }
