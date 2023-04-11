@@ -3,9 +3,6 @@ package sono_light_reservation.api.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-import jakarta.persistence.*;
-import lombok.*;
-
 @Data
 @Entity
 @Table(name= "rubrique")
@@ -20,5 +17,3 @@ public class Rubrique {
     @Column(name = "libelle")
     private String libelle;
 }
-    @Column(name="libelllé")
-    private String libelle;

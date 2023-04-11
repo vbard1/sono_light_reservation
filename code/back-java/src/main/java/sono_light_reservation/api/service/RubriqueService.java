@@ -13,19 +13,6 @@ import java.util.Optional;
 @Service
 public
 class RubriqueService {
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import sono_light_reservation.api.model.Rubrique;
-import sono_light_reservation.api.repository.RubriqueRepository;
-
-import java.util.Optional;
-
-public class RubriqueService {
-@Data
-@Service
-public
-class RubriqueService {
-
     @Autowired
     private RubriqueRepository rubriqueRepository;
 
@@ -35,6 +22,7 @@ class RubriqueService {
 
     public List<Rubrique> getRubriques() {
         return (List<Rubrique>) rubriqueRepository.findAll();
+    }
 
     public void deleteRubrique(final Long id) {
         rubriqueRepository.deleteById(id);
@@ -44,5 +32,4 @@ class RubriqueService {
         Rubrique savedRubrique = rubriqueRepository.save(rubrique);
         return savedRubrique;
     }
-}
 }
