@@ -1,7 +1,5 @@
 package sono_light_reservation.api.controller;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import sono_light_reservation.api.model.Rubrique;
@@ -41,12 +39,7 @@ public class RubriqueController {
     }
 
 }
-=======
-public class RubriqueController {
 
-}
->>>>>>> 2541d90 (feature in progress)
-=======
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import sono_light_reservation.api.model.Rubrique;
@@ -86,4 +79,3 @@ public class RubriqueController {
     }
 
 }
->>>>>>> 8284867 (tests with H2 db)

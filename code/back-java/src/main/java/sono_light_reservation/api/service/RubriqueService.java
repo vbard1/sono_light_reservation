@@ -1,7 +1,5 @@
 package sono_light_reservation.api.service;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,35 +7,25 @@ import sono_light_reservation.api.model.Rubrique;
 import sono_light_reservation.api.repository.RubriqueRepository;
 
 import java.util.List;
-<<<<<<< HEAD
 import java.util.Optional;
 
 @Data
 @Service
 public
 class RubriqueService {
-=======
-=======
-import lombok.Data;
->>>>>>> 8284867 (tests with H2 db)
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sono_light_reservation.api.model.Rubrique;
 import sono_light_reservation.api.repository.RubriqueRepository;
 
-=======
->>>>>>> ac567f8 (update get+post)
 import java.util.Optional;
 
-<<<<<<< HEAD
 public class RubriqueService {
->>>>>>> 2541d90 (feature in progress)
-=======
 @Data
 @Service
 public
 class RubriqueService {
->>>>>>> 8284867 (tests with H2 db)
+
     @Autowired
     private RubriqueRepository rubriqueRepository;
 
@@ -45,19 +33,8 @@ class RubriqueService {
         return rubriqueRepository.findById(id);
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     public List<Rubrique> getRubriques() {
         return (List<Rubrique>) rubriqueRepository.findAll();
-=======
-    public Iterable<Rubrique> getRubriques() {
-        return rubriqueRepository.findAll();
->>>>>>> 2541d90 (feature in progress)
-=======
-    public List<Rubrique> getRubriques() {
-        return (List<Rubrique>) rubriqueRepository.findAll();
->>>>>>> ac567f8 (update get+post)
-    }
 
     public void deleteRubrique(final Long id) {
         rubriqueRepository.deleteById(id);
@@ -67,12 +44,5 @@ class RubriqueService {
         Rubrique savedRubrique = rubriqueRepository.save(rubrique);
         return savedRubrique;
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
 }
-=======
 }
->>>>>>> 2541d90 (feature in progress)
-=======
-}
->>>>>>> 8284867 (tests with H2 db)

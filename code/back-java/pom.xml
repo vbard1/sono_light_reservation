@@ -41,20 +41,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-<<<<<<< HEAD
-<<<<<<< HEAD
 	</dependencies>
-=======
-        <dependency>
-            <groupId>jakarta.persistence</groupId>
-            <artifactId>jakarta.persistence-api</artifactId>
-            <version>2.2.3</version>
-        </dependency>
-    </dependencies>
->>>>>>> 2541d90 (feature in progress)
-=======
-	</dependencies>
->>>>>>> 8284867 (tests with H2 db)
 
 	<build>
 		<plugins>
