@@ -3,7 +3,6 @@ package sono_light_reservation.api.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import sono_light_reservation.api.entity.Utilisateur;
-import sono_light_reservation.api.repository.UtilisateurRepository;
 import sono_light_reservation.api.service.UtilisateurService;
 
 import java.util.List;
@@ -12,11 +11,8 @@ import java.util.Optional;
 @RestController
 public class UtilisateurController {
 
-    private Utilisateur utilisateur;
     @Autowired
     private UtilisateurService utilisateurService;
-    @Autowired
-    private UtilisateurRepository utilisateurRepository;
 
     /**
      * Lire les details d'un utilisateur par son id

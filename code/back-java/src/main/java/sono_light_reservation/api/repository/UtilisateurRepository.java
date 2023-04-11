@@ -7,8 +7,4 @@ import sono_light_reservation.api.entity.Utilisateur;
 @Repository
 public interface UtilisateurRepository extends CrudRepository<Utilisateur, Long> {
 
-    /*@Transactional
-    @Modifying(clearAutomatically = true, flushAutomatically = true)
-    @Query("update Utilisateur u set u where u.id == ")
-    void update */
 }
