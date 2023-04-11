@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { map, Observable } from 'rxjs';
+import { map, Observable, of } from 'rxjs';
 import { ComptesService } from 'src/app/SERVICES/comptes.service';
 import { Compte } from 'src/app/UTILS/comptes';
 
@@ -48,9 +48,24 @@ export class FicheCompteComponent {
   }
 
   onSubmitForm(): void {
-    //TODO ne pas naviguer si le post ne marche pas/si le form n'est pas valide
-    //this.comptesService.updateOrCreateCompte(id:number);
-    this.router.navigateByUrl("/ADMIN/admin-accueil");
+    if (this.compteForm.invalid) {
+      console.log("Le formulaire n'est pas valide");
+      return;
+    }
+  
+    const formData = this.compteForm.value;
+    this.comptesService.updateCompte(formData).subscribe({
+      next: () => {
+        console.log("Le compte a été mis à jour avec succès");
+        this.router.navigateByUrl("/ADMIN/admin-accueil");
+      },
+      error: (err) => {
+        console.log("Une erreur est survenue lors de la mise à jour du compte : ", err);
+      },
+      complete: () => {
+        console.log("Mise à jour du compte terminée");
+      }
+    });
   }
   
   doNothing():void{

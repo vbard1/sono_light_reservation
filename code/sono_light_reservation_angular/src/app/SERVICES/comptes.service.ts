@@ -30,12 +30,34 @@ export class ComptesService {
     constructor(private http: HttpClient) {}
 
     getComptes(): Observable<Compte[]> {
-        const url = `${this.baseUrl}/comptes`;
+        const url = `${this.baseUrl}/utilisateur`;
         return this.http.get<Compte[]>(url);
     }
 
-    updateCompte(id: number){
-        //TODO
-    }
+    
+    updateCompte(formData: any): Observable<any> {
+        const url = `${this.baseUrl}/utilisateur`;
+      
+        // Concaténer les éléments d'adresse
+        const adresse = [
+          formData.adresseNum,
+          formData.adresseRue,
+          formData.adresseCp,
+          formData.adresseVille
+        ].filter(Boolean).join(', ');
+      
+        // Créer un objet avec les données à envoyer dans la requête HTTP POST
+        const data = {
+          id: formData.id,
+          nom: formData.nom,
+          prenom: formData.prenom,
+          email: formData.email,
+          telephone: formData.telephone,
+          adresse: adresse
+        };
+      
+        // Envoyer la requête HTTP POST
+        return this.http.post(url, data);
+      }
 
 }
