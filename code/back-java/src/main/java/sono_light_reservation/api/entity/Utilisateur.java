@@ -31,7 +31,7 @@ public class Utilisateur {
     private Boolean mailVerification;
 
     @Column(name = "motdepasse")
-    private String motdepasse;
+    private String motDePasse;
 
     @Column(name = "niveau", nullable=false)
     private Integer niveau;
