@@ -6,7 +6,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import sono_light_reservation.api.entity.Rubrique;
+import sono_light_reservation.api.model.Rubrique;
 import sono_light_reservation.api.repository.RubriqueRepository;
 import sono_light_reservation.api.service.RubriqueService;
 

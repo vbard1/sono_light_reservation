@@ -1,4 +1,4 @@
-package sono_light_reservation.api.entity;
+package sono_light_reservation.api.model;
 
 import jakarta.persistence.*;
 import lombok.*;
