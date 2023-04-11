@@ -43,7 +43,11 @@ public class UtilisateurService {
      */
     public String deleteUtilisateur(final Long id){
         utilisateurRepository.deleteById(id);
-        return "Utilisateur supprimé";
+        if (utilisateurRepository.findById(id).isEmpty()) {
+            return "Utilisateur supprimé";
+        } else {
+            return "Erreur dans la suppression";
+        }
     }
 
     /**
