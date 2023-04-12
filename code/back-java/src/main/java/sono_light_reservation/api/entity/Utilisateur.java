@@ -33,6 +33,7 @@ public class Utilisateur {
     @Column(name = "motdepasse")
     private String motDePasse;
 
+    //niveau : 1=superAdmin, 2=admin, 3=user
     @Column(name = "niveau", nullable=false)
     private Integer niveau;
 

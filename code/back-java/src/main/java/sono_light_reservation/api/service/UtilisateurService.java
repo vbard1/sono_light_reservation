@@ -30,7 +30,7 @@ public class UtilisateurService {
 
     public Utilisateur saveUtilisateur(Utilisateur utilisateur) {
         if (utilisateur.getNiveau() == null){
-            utilisateur.setNiveau(3);
+            utilisateur.setNiveau(3);  //1=superAdmin, 2=admin, 3=user
         }
         Utilisateur savedUtilisateur = utilisateurRepository.save(utilisateur);
         return savedUtilisateur;
