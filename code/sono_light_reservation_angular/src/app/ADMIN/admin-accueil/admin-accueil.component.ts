@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class ADMINAccueilComponent {
   tabselector!: string;
   selected !: string;
-      
+
   ngOnInit(){
     this.tabselector='thirdTab'; //onglet par défaut, à l'ouverture
   }
