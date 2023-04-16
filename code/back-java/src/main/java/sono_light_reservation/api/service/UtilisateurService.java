@@ -27,8 +27,8 @@ public class UtilisateurService {
      * @return utilisateur
      */
     public Optional<UtilisateurDto> getUtilisateur(final Long id) {
-        Optional<Utilisateur> utilisateurUpdated = utilisateurRepository.findById(id);
-        UtilisateurDto utilisateurDto = utilisateurMapper.convertToDto(utilisateurUpdated);
+        Optional<Utilisateur> utilisateur = utilisateurRepository.findById(id);
+        UtilisateurDto utilisateurDto = utilisateurMapper.convertToDto(utilisateur);
         return Optional.of(utilisateurDto);
     }
 
@@ -40,12 +40,13 @@ public class UtilisateurService {
         return ((List<Utilisateur>) utilisateurRepository.findAll()).stream().map(utilisateur -> utilisateurMapper.convertToDto(Optional.ofNullable(utilisateur))).collect(Collectors.toList());
     }
 
-    public Utilisateur saveUtilisateur(Utilisateur utilisateur) {
-        if (utilisateur.getNiveau() == null){
-            utilisateur.setNiveau(3);  //1=superAdmin, 2=admin, 3=user
+    public UtilisateurDto saveUtilisateur(UtilisateurDto utilisateurDto) {
+        if (utilisateurDto.getNiveau() == null){
+            utilisateurDto.setNiveau(3);  //1=superAdmin, 2=admin, 3=user
         }
-        Utilisateur savedUtilisateur = utilisateurRepository.save(utilisateur);
-        return savedUtilisateur;
+        Utilisateur utilisateur = utilisateurMapper.convertToEntity(utilisateurDto);
+        utilisateurRepository.save(utilisateur);
+        return utilisateurMapper.convertToDto(Optional.of(utilisateur));
     }
 
     /**
@@ -68,9 +69,10 @@ public class UtilisateurService {
      * @param updatedUtilisateur
      * @return utilisateur avec les modifications
      */
-    public Utilisateur updateUtilisateur(Long id, Utilisateur updatedUtilisateur) {
-       Utilisateur utilisateur = utilisateurRepository.findById(id)
-               .orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
+    public UtilisateurDto updateUtilisateur(Long id, UtilisateurDto updatedUtilisateur) {
+
+        Utilisateur utilisateur = utilisateurRepository.findById(id)
+               .orElseThrow(() -> new IllegalArgumentException("Id utilisateur invalide:" + id));
 
        if (updatedUtilisateur.getPrenom() != null) {
            utilisateur.setPrenom(updatedUtilisateur.getPrenom());
@@ -90,6 +92,6 @@ public class UtilisateurService {
        if (updatedUtilisateur.getNiveau() != null ) {
            utilisateur.setNiveau(updatedUtilisateur.getNiveau());
        }
-       return utilisateurRepository.save(utilisateur);
+       return utilisateurMapper.convertToDto(Optional.of(utilisateurRepository.save(utilisateur)));
     }
 }

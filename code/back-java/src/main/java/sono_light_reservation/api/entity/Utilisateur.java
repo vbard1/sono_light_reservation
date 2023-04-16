@@ -9,7 +9,6 @@ import lombok.*;
 @Getter
 @Setter
 @ToString
-@RequiredArgsConstructor
 public class Utilisateur {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -40,4 +39,10 @@ public class Utilisateur {
     @Column(name = "niveau", nullable=false)
     private Integer niveau;
 
+    public Utilisateur(Long id, String prenom, String nom, String email, String telephone, String adresse, Integer niveau) {
+    }
+
+    public Utilisateur() {
+
+    }
 }

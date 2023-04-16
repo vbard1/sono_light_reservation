@@ -20,9 +20,16 @@ public class UtilisateurMapper {
         return new UtilisateurDto(utilisateur.get().getId(), utilisateur.get().getPrenom(), utilisateur.get().getNom(), utilisateur.get().getEmail(), utilisateur.get().getTelephone(), utilisateur.get().getAdresse(), utilisateur.get().getNiveau());
     }
 
-    /*public Utilisateur convertToEntity(UtilisateurDto utilisateurDto) {
-        return new Utilisateur(utilisateurDto.get().getId(), utilisateurDto.get().getPrenom(), utilisateurDto.get().getNom(), utilisateurDto.get().getEmail(), utilisateurDto.get().getTelephone(), utilisateurDto.get().getAdresse(), utilisateurDto.get().getNiveau());
-    }*/
+    public Utilisateur convertToEntity(UtilisateurDto utilisateurDto) {
+        Utilisateur utilisateur = new Utilisateur();
+        utilisateur.setPrenom(utilisateurDto.getPrenom());
+        utilisateur.setNom(utilisateurDto.getNom());
+        utilisateur.setEmail(utilisateurDto.getEmail());
+        utilisateur.setTelephone(utilisateurDto.getTelephone());
+        utilisateur.setAdresse(utilisateurDto.getAdresse());
+        utilisateur.setNiveau(utilisateurDto.getNiveau());
+        return utilisateur;
+    }
 
 
 }
