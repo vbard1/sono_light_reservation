@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { map, Observable, of } from 'rxjs';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { ComptesService } from 'src/app/SERVICES/comptes.service';
 import { Compte } from 'src/app/UTILS/comptes';
 
@@ -10,49 +11,74 @@ import { Compte } from 'src/app/UTILS/comptes';
   templateUrl: './fiche-compte.component.html',
   styleUrls: ['./fiche-compte.component.scss']
 })
-export class FicheCompteComponent {
+export class FicheCompteComponent implements OnInit {
 
   compteForm!: FormGroup;
   comptePreview$!: Observable<Compte>;
   telephoneRegEx!: RegExp;
   emailRegEx!: RegExp;
-  cpRegEx!: RegExp
+  cpRegEx!: RegExp;
+  id!: string;
 
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private comptesService : ComptesService) { }
-
-  ngOnInit() {
+    private route: ActivatedRoute,
+    private comptesService: ComptesService
+  ) {
     this.telephoneRegEx = /^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/;
-    this.emailRegEx =/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    this.emailRegEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    this.cpRegEx = /^\d{5}$/;
+  }
 
-    //objet form TS, relié au form HTML
+  ngOnInit(): void {
+    // Initialisation du formulaire
     this.compteForm = this.formBuilder.group({
-      id: [Number],//TODO doit vérifier unchanged -> valeur par défaut préremplies par null(idée-> stocker l'id qui arrive de la base et vérifier avant de renvoyer le formulaire)
+      id: [null],
       nom: [null, Validators.required],
       prenom: [null, Validators.required],
       email: [null, [Validators.required, Validators.pattern(this.emailRegEx)]],
       telephone: [null, [Validators.required, Validators.pattern(this.telephoneRegEx)]],
-      adresseNum: [null],
-      adresseRue: [null],
-      adresseCp: [null], /*code postal*/
-      adresseVille: [null]
+      adresse:[null]
     });
-    //déclenche les événements
-    this.comptePreview$ = this.compteForm.valueChanges.pipe(
-      map((formValue) => ({
-        ...formValue
-      }))
-    );
-  }
 
+    // Récupération de l'ID à partir de l'URL
+    this.route.paramMap.pipe(
+      map(params => {
+        this.id = params.get('id')!;
+        return this.id;
+      })
+    ).subscribe();
+
+    // Récupération des informations du compte à partir du service
+    this.comptesService.getCompteById(Number(this.id)).subscribe({
+      next: (compte: Compte) => {
+        // Populate the form with the retrieved account data
+        this.compteForm.patchValue({
+          id: compte.id,
+          nom: compte.nom,
+          prenom: compte.prenom,
+          email: compte.email,
+          telephone: compte.telephone,
+          adresse: compte.adresse 
+        });
+      },
+        error: (err) => {
+          console.log("Une erreur est survenue lors de la récupération du compte : ", err);
+        },
+        complete: () => {
+          console.log("Récupération du compte terminée");
+        }
+      });
+      
+    }
+    
   onSubmitForm(): void {
     if (this.compteForm.invalid) {
       console.log("Le formulaire n'est pas valide");
       return;
     }
-  
+
     const formData = this.compteForm.value;
     this.comptesService.updateCompte(formData).subscribe({
       next: () => {
@@ -67,8 +93,8 @@ export class FicheCompteComponent {
       }
     });
   }
-  
-  doNothing():void{
+
+  doNothing(): void {
     console.log("OPERATION ANNULEE"); //TODO debug
     this.router.navigateByUrl("/ADMIN/admin-accueil");
   }

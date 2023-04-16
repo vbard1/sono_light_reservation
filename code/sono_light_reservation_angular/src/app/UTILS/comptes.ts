@@ -4,8 +4,5 @@ export class Compte {
   prenom!:string;
   email!: string;
   telephone!: string;
-  adresseNum!:number;
-  adresseRue!:string;
-  adresseCp!:number;
-  adresseVille!:string;
+  adresse!:string;
 } 

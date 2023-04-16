@@ -7,24 +7,10 @@ import { Compte } from '../UTILS/comptes';
   providedIn: 'root'
 })
 export class ComptesService {
-
-    /*liste : Compte[] = [
-        { id: 1, nom: 'Simpson', prenom: 'Bart', email: 'email@example.com', telephone: '555-555-5555', adresseNum: 123, adresseRue:"Rue éverlor",adresseCp:69003,adresseVille:"Lyon" },
-        { id: 2, nom: 'Simpson', prenom:'Maggie', email: 'email@example.com', telephone: '555-555-5555', adresseNum: 123, adresseRue:"Rue éverlor",adresseCp:69003,adresseVille:"Lyon" },
-        { id: 3, nom: 'Simpson', prenom:'Homer', email: 'email@example.com', telephone: '555-555-5555', adresseNum: 123, adresseRue:"Rue éverlor",adresseCp:69003,adresseVille:"Lyon" },
-        { id: 4, nom: 'Simpson', prenom:'Marge', email: 'point.email@demaiil.com', telephone: '000 00 00 00 00 ', adresseNum: 123, adresseRue:"Rue éverlor",adresseCp:69003,adresseVille:"Lyon" },
-    ];*/
-    /**
-     * récupère tous les comptes du serveur
-     */
-    /*getComptes():Compte[]{
-    //temporaire : exemple de comptes en brut
-    return this.liste;
+    getCompteById(id: number) : Observable<Compte> {
+      const url = `${this.baseUrl}/utilisateur/${id}`;
+      return this.http.get<Compte>(url);
     }
-
-    updateCompte(id: number){
-    //TODO
-    }*/
     
     private baseUrl = 'http://localhost:9000';
     constructor(private http: HttpClient) {}
@@ -36,15 +22,7 @@ export class ComptesService {
 
     
     updateCompte(formData: any): Observable<any> {
-        const url = `${this.baseUrl}/utilisateur`;
-      
-        // Concaténer les éléments d'adresse
-        const adresse = [
-          formData.adresseNum,
-          formData.adresseRue,
-          formData.adresseCp,
-          formData.adresseVille
-        ].filter(Boolean).join(', ');
+        const url = `${this.baseUrl}/utilisateur`;       
       
         // Créer un objet avec les données à envoyer dans la requête HTTP POST
         const data = {
@@ -53,7 +31,7 @@ export class ComptesService {
           prenom: formData.prenom,
           email: formData.email,
           telephone: formData.telephone,
-          adresse: adresse
+          adresse: formData.adresse
         };
       
         // Envoyer la requête HTTP POST

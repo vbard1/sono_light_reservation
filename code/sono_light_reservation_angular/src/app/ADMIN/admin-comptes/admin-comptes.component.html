@@ -5,8 +5,8 @@
             <th>Prénom Nom</th>
             <th>E-mail</th>
             <th>Téléphone</th>
-            <th  >Adresse</th>
-            <th colspan="2" class="actions"><button class="btn btn-success btn-sm" (click)="voirFicheCompte()">Ajouter un compte</button></th>
+            <th >Adresse</th>
+            <th colspan="2"></th>
         </tr>
     </thead>
     <tbody>
@@ -15,8 +15,8 @@
             <td>{{ ligne.prenom +" "+ ligne.nom}}</td>
             <td>{{ ligne.email }}</td>
             <td>{{ ligne.telephone}}</td>
-            <td>{{ligne.adresseNum + " " + " " + ligne.adresseRue+" "+ ligne.adresseCp+" "+ligne.adresseVille}}</td>
-            <td class="actions"><button class="btn btn-info btn-sm" (click)="voirFicheCompte()">voir la fiche</button></td>
+            <td>{{ ligne.adresse}}</td>
+            <td class="actions"><button class="btn btn-info btn-sm" (click)="voirFicheCompte( ligne.id )">voir la fiche</button></td>
             <td class="actions"><button class="btn btn-danger btn-sm">supprimer</button></td>
     </tr>
   </tbody>

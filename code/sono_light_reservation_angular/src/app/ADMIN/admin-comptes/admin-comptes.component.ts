@@ -8,13 +8,13 @@ import { ComptesService } from 'src/app/SERVICES/comptes.service';
   templateUrl: './admin-comptes.component.html',
   styleUrls: ['./admin-comptes.component.scss']
 })
+
 export class  AdminComptesComponent {
   lignes!: Compte[]; //une ligne = un compte
   constructor(private router: Router, private comptesService : ComptesService) { }
   
   /**au démarrage, on récupère la liste des comtpes */
   ngOnInit():void{
-    //this.lignes = this.comptesService.getComptes();
     this.comptesService.getComptes().subscribe(comptes => {
       this.lignes = comptes;
     });
@@ -23,7 +23,7 @@ export class  AdminComptesComponent {
   /**
    * On redirige vers la fiche compte en cas de clic
    */
-  voirFicheCompte() { 
-    this.router.navigate(['/ADMIN/fiche-compte']);
+  voirFicheCompte(id: number) {
+    this.router.navigate(['/ADMIN/fiche-compte', id]);
   }
 }
