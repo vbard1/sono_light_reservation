@@ -59,6 +59,7 @@ public class UtilisateurService {
     public Utilisateur updateUtilisateur(Long id, Utilisateur updatedUtilisateur) {
        Utilisateur utilisateur = utilisateurRepository.findById(id)
                .orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
+
        if (updatedUtilisateur.getPrenom() != null) {
            utilisateur.setPrenom(updatedUtilisateur.getPrenom());
        }
@@ -71,6 +72,9 @@ public class UtilisateurService {
        if (updatedUtilisateur.getTelephone() != null ) {
            utilisateur.setTelephone(updatedUtilisateur.getTelephone());
        }
+        if (updatedUtilisateur.getAdresse() != null ) {
+            utilisateur.setTelephone(updatedUtilisateur.getAdresse());
+        }
        if (updatedUtilisateur.getNiveau() != null ) {
            utilisateur.setNiveau(updatedUtilisateur.getNiveau());
        }

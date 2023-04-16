@@ -12,7 +12,7 @@ import lombok.*;
 @RequiredArgsConstructor
 public class Utilisateur {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
     @Column(name = "prenom", nullable=false)
@@ -26,6 +26,9 @@ public class Utilisateur {
 
     @Column(name = "telephone", unique=true, nullable=false)
     private String telephone;
+
+    @Column(name = "adresse")
+    private String adresse;
 
     @Column(name = "email_verification")
     private Boolean mailVerification;
