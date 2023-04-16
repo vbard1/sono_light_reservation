@@ -6,8 +6,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+import sono_light_reservation.api.dto.UtilisateurDto;
 import sono_light_reservation.api.entity.Utilisateur;
 import sono_light_reservation.api.service.UtilisateurService;
+import sono_light_reservation.api.service.mapper.UtilisateurMapper;
 
 import java.net.URI;
 import java.util.List;
@@ -25,7 +27,9 @@ public class UtilisateurController {
      * @return utilisateur
      */
     @GetMapping("/utilisateur/{id}")
-    public Optional<Utilisateur> getOneUtilisateur(@PathVariable Long id) {return utilisateurService.getUtilisateur(id);}
+    public Optional<UtilisateurDto> getOneUtilisateur(@PathVariable Long id) {
+        return utilisateurService.getUtilisateur(id);
+    }
 
     /**
      * Modifier les details d'un utilisateur par son id
@@ -53,7 +57,7 @@ public class UtilisateurController {
      * @return La liste de tous les utilisateurs
      */
     @GetMapping("/utilisateur")
-    public List<Utilisateur> getUtilisateurs() {
+    public List<UtilisateurDto> getUtilisateurs() {
         return utilisateurService.getUtilisateurs();
     }
 

@@ -3,11 +3,14 @@ package sono_light_reservation.api.service;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import sono_light_reservation.api.dto.UtilisateurDto;
 import sono_light_reservation.api.entity.Utilisateur;
 import sono_light_reservation.api.repository.UtilisateurRepository;
+import sono_light_reservation.api.service.mapper.UtilisateurMapper;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Data
 @Service
@@ -15,18 +18,27 @@ public class UtilisateurService {
     @Autowired
     private UtilisateurRepository utilisateurRepository;
 
+    @Autowired
+    private UtilisateurMapper utilisateurMapper;
+
     /**
      * Lire les details d'un utilisateur par son id
      * @param id
      * @return utilisateur
      */
-    public Optional<Utilisateur> getUtilisateur(final Long id) {return utilisateurRepository.findById(id);}
+    public Optional<UtilisateurDto> getUtilisateur(final Long id) {
+        Optional<Utilisateur> utilisateurUpdated = utilisateurRepository.findById(id);
+        UtilisateurDto utilisateurDto = utilisateurMapper.convertToDto(utilisateurUpdated);
+        return Optional.of(utilisateurDto);
+    }
 
     /**
      * Liste de tous les utilisateurs
      * @return La liste de tous les utilisateurs
      */
-    public List<Utilisateur> getUtilisateurs() {return (List<Utilisateur>) utilisateurRepository.findAll();}
+    public List<UtilisateurDto> getUtilisateurs() {
+        return ((List<Utilisateur>) utilisateurRepository.findAll()).stream().map(utilisateur -> utilisateurMapper.convertToDto(Optional.ofNullable(utilisateur))).collect(Collectors.toList());
+    }
 
     public Utilisateur saveUtilisateur(Utilisateur utilisateur) {
         if (utilisateur.getNiveau() == null){

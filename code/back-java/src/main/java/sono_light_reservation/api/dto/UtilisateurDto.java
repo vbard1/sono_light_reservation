@@ -17,16 +17,17 @@ public class UtilisateurDto {
 
     private String telephone;
 
-    private Boolean mailVerification;
+    private String adresse;
+
     private Integer niveau;
 
-    public UtilisateurDto(Long id, String prenom, String nom, String email, String telephone, Boolean mailVerification, Integer niveau) {
+    public UtilisateurDto(Long id, String prenom, String nom, String email, String telephone, String adresse,Integer niveau) {
         this.id = id;
         this.prenom = prenom;
         this.nom = nom;
         this.email = email;
         this.telephone = telephone;
-        this.mailVerification = mailVerification;
+        this.adresse = adresse;
         this.niveau = niveau;
     }
 
