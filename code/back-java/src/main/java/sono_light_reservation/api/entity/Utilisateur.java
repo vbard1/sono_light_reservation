@@ -9,10 +9,9 @@ import lombok.*;
 @Getter
 @Setter
 @ToString
-@RequiredArgsConstructor
 public class Utilisateur {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
     @Column(name = "prenom", nullable=false)
@@ -27,6 +26,9 @@ public class Utilisateur {
     @Column(name = "telephone", unique=true, nullable=false)
     private String telephone;
 
+    @Column(name = "adresse")
+    private String adresse;
+
     @Column(name = "email_verification")
     private Boolean mailVerification;
 
@@ -37,4 +39,10 @@ public class Utilisateur {
     @Column(name = "niveau", nullable=false)
     private Integer niveau;
 
+    public Utilisateur(Long id, String prenom, String nom, String email, String telephone, String adresse, Integer niveau) {
+    }
+
+    public Utilisateur() {
+
+    }
 }

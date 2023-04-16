@@ -2,7 +2,7 @@ package sono_light_reservation.api.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import sono_light_reservation.api.entity.Utilisateur;
+import sono_light_reservation.api.dto.UtilisateurDto;
 import sono_light_reservation.api.service.UtilisateurService;
 
 import java.util.List;
@@ -20,7 +20,9 @@ public class UtilisateurController {
      * @return utilisateur
      */
     @GetMapping("/utilisateur/{id}")
-    public Optional<Utilisateur> getOneUtilisateur(@PathVariable Long id) {return utilisateurService.getUtilisateur(id);}
+    public Optional<UtilisateurDto> getOneUtilisateur(@PathVariable Long id) {
+        return utilisateurService.getUtilisateur(id);
+    }
 
     /**
      * Modifier les details d'un utilisateur par son id
@@ -29,7 +31,7 @@ public class UtilisateurController {
      * @return utilisateur avec les modifications
      */
     @PutMapping("/utilisateur/{id}")
-    public Utilisateur updateUtilisateur(@PathVariable Long id, @RequestBody Utilisateur updatedUtilisateur) {
+    public UtilisateurDto updateUtilisateur(@PathVariable Long id, @RequestBody UtilisateurDto updatedUtilisateur) {
         return utilisateurService.updateUtilisateur(id, updatedUtilisateur);
     }
 
@@ -48,18 +50,18 @@ public class UtilisateurController {
      * @return La liste de tous les utilisateurs
      */
     @GetMapping("/utilisateur")
-    public List<Utilisateur> getUtilisateurs() {
+    public List<UtilisateurDto> getUtilisateurs() {
         return utilisateurService.getUtilisateurs();
     }
 
     /**
      * Créer un nouvel utilisateur
-     * @param newUtilisateur
+     *
+     * @param newUtilisateurDto
      * @return le detail du nouvel utilisateur
      */
     @PostMapping("/utilisateur")
-    public Utilisateur createUtilisateur(@RequestBody Utilisateur newUtilisateur) {
-        Utilisateur utilisateur = utilisateurService.saveUtilisateur(newUtilisateur);
-        return utilisateurService.saveUtilisateur(utilisateur);
+    public UtilisateurDto createUtilisateur(@RequestBody UtilisateurDto newUtilisateurDto) {
+        return utilisateurService.saveUtilisateur(newUtilisateurDto);
     }
 }

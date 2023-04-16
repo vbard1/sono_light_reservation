@@ -1,5 +1,6 @@
 package sono_light_reservation.api.dto;
 
+import jakarta.persistence.Entity;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -17,24 +18,22 @@ public class UtilisateurDto {
 
     private String telephone;
 
-    private Boolean mailVerification;
+    private String adresse;
+
     private Integer niveau;
 
-    public UtilisateurDto(Long id, String prenom, String nom, String email, String telephone, Boolean mailVerification, Integer niveau) {
+    // TODO : liste des reservations a intégrer quand class créées
+
+    public UtilisateurDto(Long id, String prenom, String nom, String email, String telephone, String adresse,Integer niveau) {
         this.id = id;
         this.prenom = prenom;
         this.nom = nom;
         this.email = email;
         this.telephone = telephone;
-        this.mailVerification = mailVerification;
+        this.adresse = adresse;
         this.niveau = niveau;
     }
 
-    public UtilisateurDto(Long id, String prenom, String nom, String email, String telephone) {
-        this.id = id;
-        this.prenom = prenom;
-        this.nom = nom;
-        this.email = email;
-        this.telephone = telephone;
+    public UtilisateurDto() {
     }
 }
