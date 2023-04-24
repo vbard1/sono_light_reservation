@@ -11,7 +11,7 @@ docker build -t mysql .
 docker run --name=sonolightreservation \
    -v type=bind,src=/Path-link-directory/my.cnf,dst=/etc/my.cnf \
    -v type=bind,src=/Path-link-directory/datadir,dst=/var/lib/mysql \
-   -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -d mysql
+   -p 3308:3306 -e MYSQL_ROOT_PASSWORD=root -d mysql
 ```
 ### utiliser le container Docker :
 ```sh
