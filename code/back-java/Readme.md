@@ -1,18 +1,37 @@
 # Back-end : Java
 
-## Lancer Mysql sur votre pc
-### OU avec une app Mysql
+## Lancer Mysql sur votre pc, au choix :
+### - Avec une app Mysql
 >documentation d'installation de votre app
-### OU avec Docker :
-```sh
-cd ./main/src/resources/db_mysql
-docker build -t mysql .
+### - Avec Docker :
 
-docker run --name=sonolightreservation \
-   -v type=bind,src=/Path-link-directory/my.cnf,dst=/etc/my.cnf \
-   -v type=bind,src=/Path-link-directory/datadir,dst=/var/lib/mysql \
+**Note : la commande RUN s'utilise quand le container est inexistant, DB inexistante ou deja présente.**  
+Renommer le nom du --volume (dossier-hote) avec le chemin du dossier qui accueillera la db, à l'extérieur du dossier back-end
+```sh
+docker run --name=sonoLightReservation \
+   --volume=/dossier-hote:/var/lib/mysql \
+   -p 3308:3306 -e MYSQL_ROOT_PASSWORD=root -d mysql
+   
+#Exemple:
+docker run --name=sonoLightReservation \
+   --volume=/home/laurent/Documents/sono_light_reservation_DATABASE/db:/var/lib/mysql \
    -p 3308:3306 -e MYSQL_ROOT_PASSWORD=root -d mysql
 ```
+### Premier lancement, database inexistante: creation de la database :
+```sh
+#Entrer dans le container en fonctionnement
+docker exec -it sonoLightReservation /bin/bash
+#Ouvrir le shell mysql
+mysql -h 172.17.0.2 -uroot -p --port 3306
+#Creation de la base de données
+create database sonoLightReservation;
+#Sortir de la database + du container
+exit
+exit
+```
+### Creation des tables :
+Via une app comme DBeaver avec le script /resources/db_mysql/db_init.sql  
+ou avec un script
 ### utiliser le container Docker :
 ```sh
 docker start id-du-container
@@ -33,5 +52,3 @@ mvn spring-boot:run
 ```
 ## Tests dans le navigateur depuis
 http://localhost:9000/
-
-# Front-end : Java
