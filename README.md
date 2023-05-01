@@ -31,7 +31,7 @@ mvn spring-boot:run
 ## Tests dans le navigateur depuis
 http://localhost:9000/
 
-# Front-end : Java
+# Front-end : Angular
 
 ## Prérequis
 - Node.js doit être installé sur votre machine. Vous pouvez le télécharger depuis le site officiel : https://nodejs.org/en/download/.
