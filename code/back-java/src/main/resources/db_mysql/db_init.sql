@@ -6,6 +6,7 @@ CREATE TABLE rubrique (
 );
 
 INSERT INTO rubrique (libelle) VALUES
-    ('son'),
-    ('light'),
-    ('other');
+    ('Son'),
+    ('Lumière'),
+    ('Règles DJ'),
+    ('Equipement divers');
