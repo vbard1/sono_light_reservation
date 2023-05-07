@@ -14,6 +14,6 @@ public class Rubrique {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "libelle")
+    @Column(name = "libelle", nullable=false, unique=true)
     private String libelle;
 }
