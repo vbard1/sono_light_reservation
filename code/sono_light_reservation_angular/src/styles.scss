@@ -13,8 +13,30 @@
     background-color: var(--surlignage);
 }
 
-* {
-    color: var(--texte);
-    background-color: var(--fond);
+html, body {
+     color: var(--texte) !important;
+     background-color: var(--fond) !important;
     transition: var(--tps-transition);
 }
+
+.mat-mdc-snack-bar-container {
+    //bouton
+    --mat-mdc-snack-bar-button-color: #ffffff;
+    //texte
+    --mdc-snackbar-supporting-text-color: #ffffff;
+  
+    &.fail-snackbar {
+        //background
+      --mdc-snackbar-container-color: #f23a2f;
+    }
+  
+    &.success-snackbar {
+      --mdc-snackbar-container-color: #43a446;
+    }
+  }
+
+  .mat-expansion-panel-header-description, 
+.mat-expansion-indicator::after {
+    color: white;
+}
+  

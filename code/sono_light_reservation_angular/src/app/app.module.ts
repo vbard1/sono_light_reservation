@@ -14,7 +14,13 @@ import { AdminReservationComponent } from './ADMIN/admin-reservation/admin-reser
 import { FicheCompteComponent } from './ADMIN/admin-comptes/fiche-compte/fiche-compte.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
+import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatInputModule} from '@angular/material/input';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { FicheReservationComponent } from './GENERAL/fiche-reservation/fiche-reservation.component';
 
 
 @NgModule({
@@ -27,15 +33,22 @@ import { HttpClientModule } from '@angular/common/http';
     AdminComptesComponent,
     AdminReservationComponent,
     FicheCompteComponent,
+    FicheReservationComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSnackBarModule,
+    MatIconModule,
+    MatExpansionModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule, 
   ],
-  providers: [],
+  providers: [{provide: MAT_DATE_LOCALE, useValue: 'fr-FR'},],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,6 +4,7 @@ import { ADMINAccueilComponent } from './ADMIN/admin-accueil/admin-accueil.compo
 import { FicheCompteComponent } from './ADMIN/admin-comptes/fiche-compte/fiche-compte.component';
 import { AppComponent } from './app.component';
 import { CLIENTAccueilComponent } from './CLIENT/client-accueil/client-accueil.component';
+import { FicheReservationComponent } from './GENERAL/fiche-reservation/fiche-reservation.component';
 import { PageNotFoundComponent } from './GENERAL/page-not-found/page-not-found.component';
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'ADMIN/admin-accueil', component: ADMINAccueilComponent },
   { path: 'ADMIN/fiche-compte', component: FicheCompteComponent }, // Ajoutez ce chemin de route
   { path: 'CLIENT/client-accueil', component: CLIENTAccueilComponent },
+  { path: 'reservation', component: FicheReservationComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
 

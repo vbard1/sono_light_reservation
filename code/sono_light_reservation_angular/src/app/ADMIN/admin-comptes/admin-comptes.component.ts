@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Compte } from 'src/app/UTILS/comptes';
+import { Compte } from 'src/app/models/compte.model';
 import { Router } from '@angular/router';
 import { ComptesService } from 'src/app/SERVICES/comptes.service';
 
