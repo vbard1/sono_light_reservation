@@ -1,78 +1,79 @@
--- sonoLightReservation.rubrique definition
+-- sonoLightReservation.`section` definition
 
-CREATE TABLE `rubrique` (
-  `rubrique_id` int NOT NULL AUTO_INCREMENT,
-  `libelle` varchar(250) NOT NULL,
-  PRIMARY KEY (`rubrique_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `section` (
+  `section_id` int NOT NULL AUTO_INCREMENT,
+  `label` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  PRIMARY KEY (`section_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
--- sonoLightReservation.utilisateur definition
+-- sonoLightReservation.`user` definition
 
-CREATE TABLE `utilisateur` (
-  `utilisateur_id` int NOT NULL AUTO_INCREMENT COMMENT 'auto increment',
-  `prenom` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `nom` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+CREATE TABLE `user` (
+  `user_id` int NOT NULL AUTO_INCREMENT COMMENT 'auto increment',
+  `firstname` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `mail` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `telephone` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `adresse` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `validation_email` varchar(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT '0' COMMENT 'O validé, N non',
+  `phone` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `adress` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `email_validation` varchar(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT '0' COMMENT 'O validé, N non',
   `password` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT 'hash uniquement',
-  `niveau` int NOT NULL DEFAULT '3' COMMENT '1=superAdmin, 2=admin, 3=user',
-  PRIMARY KEY (`utilisateur_id`)
+  `level` int NOT NULL DEFAULT '3' COMMENT '1=superAdmin, 2=admin, 3=user',
+  PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
--- sonoLightReservation.categorie definition
+-- sonoLightReservation.category definition
 
-CREATE TABLE `categorie` (
-  `categorie_id` int NOT NULL AUTO_INCREMENT,
-  `libelle` varchar(1000) DEFAULT NULL,
+CREATE TABLE `category` (
+  `category_id` int NOT NULL AUTO_INCREMENT,
+  `label` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `description` varchar(1000) DEFAULT NULL,
-  `lien_images` varchar(1000) DEFAULT NULL,
-  `rubrique_id` int DEFAULT NULL,
-  PRIMARY KEY (`categorie_id`),
-  KEY `categorie_FK` (`rubrique_id`),
-  CONSTRAINT `categorie_FK` FOREIGN KEY (`rubrique_id`) REFERENCES `rubrique` (`rubrique_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+  `image_link` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `section_id` int DEFAULT NULL,
+  PRIMARY KEY (`category_id`),
+  KEY `categorie_FK` (`section_id`),
+  CONSTRAINT `category_FK` FOREIGN KEY (`section_id`) REFERENCES `section` (`section_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
--- sonoLightReservation.evenement definition
+-- sonoLightReservation.equipment definition
 
-CREATE TABLE `evenement` (
-  `evenement_id` int NOT NULL AUTO_INCREMENT,
-  `titre` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `lieu` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `type` int NOT NULL COMMENT '1 = assos insa / 2 = interne KLS / 3 = particulier/autre',
-  `commentaire_user` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `commentaire_admin` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `date_debut` datetime DEFAULT NULL,
-  `date_fin` datetime DEFAULT NULL,
-  `technicien_demande` varchar(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT 'O / N',
-  `user_id` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  PRIMARY KEY (`evenement_id`),
-  CONSTRAINT `evenement_FK` FOREIGN KEY (`evenement_id`) REFERENCES `utilisateur` (`utilisateur_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
-
--- sonoLightReservation.materiel definition
-
-CREATE TABLE `materiel` (
-  `materiel_id` int NOT NULL AUTO_INCREMENT,
-  `libelle` varchar(255) DEFAULT NULL,
-  `modele` varchar(255) DEFAULT NULL,
+CREATE TABLE `equipment` (
+  `equipement_id` int NOT NULL AUTO_INCREMENT,
+  `label` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `model` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `reference` varchar(255) DEFAULT NULL,
-  `proprietaire` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT 'KLS/CVA',
-  `taille_cable` varchar(255) DEFAULT NULL,
-  `commentaires` text,
-  `etat_usure` int DEFAULT NULL,
-  `date_achat` date DEFAULT NULL,
-  `prix_jour` decimal(10,2) DEFAULT NULL,
-  `prix_caution` decimal(10,2) DEFAULT NULL,
-  `categorie_id` int NOT NULL,
-  PRIMARY KEY (`materiel_id`),
-  KEY `categorie_id` (`categorie_id`),
-  CONSTRAINT `materiel_ibfk_1` FOREIGN KEY (`categorie_id`) REFERENCES `categorie` (`categorie_id`)
+  `owner` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT 'KLS/CVA',
+  `cable_size` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `comment` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+  `decay_level` int DEFAULT NULL,
+  `buy_date` date DEFAULT NULL,
+  `dayly_price` decimal(10,2) DEFAULT NULL,
+  `replacement_price` decimal(10,2) DEFAULT NULL,
+  `category_id` int NOT NULL,
+  PRIMARY KEY (`equipement_id`),
+  KEY `categorie_id` (`category_id`),
+  CONSTRAINT `equipment_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+-- sonoLightReservation.event definition
+
+CREATE TABLE `event` (
+  `event_id` int NOT NULL AUTO_INCREMENT,
+  `title` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `location` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `type` int NOT NULL COMMENT '1 = assos insa / 2 = interne KLS / 3 = particulier/autre',
+  `user_comment` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `admin_comment` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `date_start` datetime DEFAULT NULL,
+  `date_end` datetime DEFAULT NULL,
+  `technician_asked` varchar(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT 'O / N',
+  `user_id` int NOT NULL,
+  PRIMARY KEY (`event_id`),
+  KEY `event_FK` (`user_id`),
+  CONSTRAINT `event_FK` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
@@ -80,21 +81,21 @@ CREATE TABLE `materiel` (
 
 CREATE TABLE `reservation` (
   `reservation_id` int NOT NULL AUTO_INCREMENT,
-  `reservation_libelle` varchar(1000) DEFAULT NULL,
-  `reservation_etat` int DEFAULT NULL COMMENT '(1=enAttente, 2=validée, 3=enCours, 4=terminée)',
-  `materiel_id` int DEFAULT NULL,
-  `categorie_id` int DEFAULT NULL,
-  `evenement_id` int DEFAULT NULL,
+  `reservation_label` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `reservation_state` int DEFAULT NULL COMMENT '(1=enAttente, 2=validée, 3=enCours, 4=terminée)',
+  `equipment_id` int DEFAULT NULL,
+  `category_id` int DEFAULT NULL,
+  `event_id` int DEFAULT NULL,
   PRIMARY KEY (`reservation_id`),
-  UNIQUE KEY `reservation_UN` (`evenement_id`),
-  KEY `reservation_FK_1` (`categorie_id`),
-  KEY `reservation_FK_2` (`materiel_id`),
-  CONSTRAINT `reservation_FK` FOREIGN KEY (`evenement_id`) REFERENCES `evenement` (`evenement_id`),
-  CONSTRAINT `reservation_FK_1` FOREIGN KEY (`categorie_id`) REFERENCES `categorie` (`categorie_id`),
-  CONSTRAINT `reservation_FK_2` FOREIGN KEY (`materiel_id`) REFERENCES `materiel` (`materiel_id`)
+  UNIQUE KEY `reservation_UN` (`event_id`),
+  KEY `reservation_FK_1` (`category_id`),
+  KEY `reservation_FK_2` (`equipment_id`),
+  CONSTRAINT `reservation_FK` FOREIGN KEY (`event_id`) REFERENCES `event` (`event_id`),
+  CONSTRAINT `reservation_FK_1` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`),
+  CONSTRAINT `reservation_FK_2` FOREIGN KEY (`equipment_id`) REFERENCES `equipment` (`equipement_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-INSERT INTO rubrique (libelle) VALUES
+INSERT INTO section (label) VALUES
     ('sono'),
     ('light'),
     ('other');
