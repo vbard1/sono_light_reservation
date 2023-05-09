@@ -4,7 +4,7 @@ CREATE TABLE `section` (
   `section_id` int NOT NULL AUTO_INCREMENT,
   `label` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   PRIMARY KEY (`section_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
 -- sonoLightReservation.`user` definition
@@ -27,7 +27,7 @@ CREATE TABLE `user` (
 
 CREATE TABLE `category` (
   `category_id` int NOT NULL AUTO_INCREMENT,
-  `label` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `label` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `description` varchar(1000) DEFAULT NULL,
   `image_link` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `section_id` int DEFAULT NULL,
@@ -41,7 +41,7 @@ CREATE TABLE `category` (
 
 CREATE TABLE `equipment` (
   `equipement_id` int NOT NULL AUTO_INCREMENT,
-  `label` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `label` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `model` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `reference` varchar(255) DEFAULT NULL,
   `owner` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT 'KLS/CVA',
@@ -62,7 +62,7 @@ CREATE TABLE `equipment` (
 
 CREATE TABLE `event` (
   `event_id` int NOT NULL AUTO_INCREMENT,
-  `title` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `title` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `location` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `type` int NOT NULL COMMENT '1 = assos insa / 2 = interne KLS / 3 = particulier/autre',
   `user_comment` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
@@ -81,7 +81,7 @@ CREATE TABLE `event` (
 
 CREATE TABLE `reservation` (
   `reservation_id` int NOT NULL AUTO_INCREMENT,
-  `reservation_label` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `reservation_label` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `reservation_state` int DEFAULT NULL COMMENT '(1=enAttente, 2=validée, 3=enCours, 4=terminée)',
   `equipment_id` int DEFAULT NULL,
   `category_id` int DEFAULT NULL,
