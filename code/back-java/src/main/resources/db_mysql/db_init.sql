@@ -1,11 +1,11 @@
-DROP TABLE IF EXISTS rubrique;
+DROP TABLE IF EXISTS section;
 
-CREATE TABLE rubrique (
-    id INT AUTO_INCREMENT  PRIMARY KEY,
-    libelle VARCHAR(250) NOT NULL
+CREATE TABLE section (
+    section_id INT AUTO_INCREMENT  PRIMARY KEY,
+    label VARCHAR(250) NOT NULL
 );
 
-INSERT INTO rubrique (libelle) VALUES
+INSERT INTO section (label) VALUES
     ('Son'),
     ('Lumière'),
     ('Règles DJ'),

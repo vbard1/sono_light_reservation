@@ -5,15 +5,15 @@ import lombok.*;
 
 @Data
 @Entity
-@Table(name= "rubrique")
+@Table(name= "section")
 @Getter
 @Setter
 @ToString
 @RequiredArgsConstructor
-public class Rubrique {
+public class Section {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    @Column(name = "libelle", nullable=false, unique=true)
-    private String libelle;
+    private int id;
+    @Column(name = "label", nullable=false, unique=true)
+    private String label;
 }

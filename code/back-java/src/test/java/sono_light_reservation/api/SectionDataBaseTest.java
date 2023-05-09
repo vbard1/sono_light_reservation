@@ -6,21 +6,20 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import sono_light_reservation.api.dto.RubriqueDto;
-import sono_light_reservation.api.entity.Rubrique;
-import sono_light_reservation.api.repository.RubriqueRepository;
-import sono_light_reservation.api.service.RubriqueService;
+import sono_light_reservation.api.dto.SectionDto;
+import sono_light_reservation.api.repository.SectionRepository;
+import sono_light_reservation.api.service.SectionService;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
 //@DataJpaTest
-public class RubriqueDataBaseTest {
+public class SectionDataBaseTest {
 
     @Autowired
-    private RubriqueRepository rubriqueRepository;
+    private SectionRepository sectionRepository;
 
     @Autowired
-    private RubriqueService rubriqueService;
+    private SectionService sectionService;
 
     @BeforeEach
     public void setup() {
@@ -30,15 +29,15 @@ public class RubriqueDataBaseTest {
     @Test
     public void shouldInsertOrderIntoDB() {
         // Given
-        RubriqueDto rubriqueDto = new RubriqueDto();
-        rubriqueDto.setId(4L);
-        rubriqueDto.setLibelle("Enceinte");
+        SectionDto sectionDto = new SectionDto();
+        sectionDto.setId(4);
+        sectionDto.setLabel("Enceinte");
 
         // When
-        rubriqueService.saveRubrique(rubriqueDto);
+        sectionService.saveSection(sectionDto);
 
         // Then
-        System.out.println("Rubrique sauvegardée : " + rubriqueService.saveRubrique(rubriqueDto));
+        System.out.println("Rubrique sauvegardée : " + sectionService.saveSection(sectionDto));
     }
 }
 
