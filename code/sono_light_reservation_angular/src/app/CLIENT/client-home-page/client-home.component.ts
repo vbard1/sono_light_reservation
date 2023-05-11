@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { EventDetails } from 'src/app/models/event.model';
 import { Reservation } from 'src/app/models/reservation.model';
 
 
@@ -77,9 +76,8 @@ export class ClientHomeComponent implements OnInit {
   test = 'validé'
   public stateEnum = State;
 
-  constructor(public snackBar: MatSnackBar) {
-  }
-  
+  constructor(public snackBar: MatSnackBar) {}
+
   ngOnInit(): void {
 
   }
