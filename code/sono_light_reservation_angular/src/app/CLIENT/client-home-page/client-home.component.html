@@ -5,21 +5,23 @@
 <table class="table table-dark table-striped">
     <thead>
         <tr>
-            <th>#</th>
-            <th>Date réservation</th>
-            <th>Montant</th>
+            <th>Intitulé de l'évènement</th>
+            <th>Date début</th>
+            <th>Date fin</th>
+            <th>Type</th>
             <th>Etat</th>
             <th colspan="2" class="actions">Actions</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let reservation of reservations">
-            <td>{{ reservation.id}}</td>
-            <td>{{ reservation.dateReservation | date:'dd-MM-yyyy' }}</td>
-            <td>{{ reservation.montant}} €</td>
+            <td>{{ reservation.eventDetails.title}}</td>
+            <td>{{ reservation.eventDetails.dateStart | date:'dd-MM-yyyy' }}</td>
+            <td>{{ reservation.eventDetails.dateEnd | date:'dd-MM-yyyy' }}</td>
+            <td>{{ reservation.eventDetails.type}}</td>
             <td [ngStyle]="{
-                'color': getColor(reservation.etat)
-            }">{{reservation.etat}}</td>
+                'color': getColor(reservation.reservationState)
+            }">{{reservation.reservationState}}</td>
             <td class="actions">
               <button class="btn btn-info btn-sm" routerLink="/reservation">voir la fiche</button>
             </td>
@@ -39,21 +41,22 @@
       <table class="table table-dark table-striped">
         <thead>
             <tr>
-                <th>#</th>
-                <th>Date réservation</th>
-                <th>Montant</th>
-                <th>Etat</th>
+              <th>Intitulé de l'évènement</th>
+              <th>Date début</th>
+              <th>Date fin</th>
+              <th>Type</th>
+              <th>Etat</th>
                 <th colspan="2" class="actions">Actions</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let reservation of reservations">
-                <td>{{ reservation.id}}</td>
-                <td>{{ reservation.dateReservation | date:'dd-MM-yyyy' }}</td>
-                <td>{{ reservation.montant}} €</td>
+              <td>{{ reservation.eventDetails.title}}</td>
+              <td>{{ reservation.eventDetails.dateStart | date:'dd-MM-yyyy' }}</td>
+              <td>{{ reservation.eventDetails.dateEnd | date:'dd-MM-yyyy' }}</td>
+              <td>{{ reservation.eventDetails.type}}</td>
                 <td>Terminée</td>
                 <td class="actions"><button class="btn btn-info btn-sm">voir la fiche</button></td>
-                <td class="actions"><button class="btn btn-danger btn-sm">supprimer</button></td>
         </tr>
       </tbody>
     </table>

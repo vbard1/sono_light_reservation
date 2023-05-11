@@ -3,15 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { ADMINAccueilComponent } from './ADMIN/admin-accueil/admin-accueil.component';
 import { FicheCompteComponent } from './ADMIN/admin-comptes/fiche-compte/fiche-compte.component';
 import { AppComponent } from './app.component';
-import { CLIENTAccueilComponent } from './CLIENT/client-accueil/client-accueil.component';
 import { FicheReservationComponent } from './GENERAL/fiche-reservation/fiche-reservation.component';
 import { PageNotFoundComponent } from './GENERAL/page-not-found/page-not-found.component';
+import { ClientHomeComponent } from './CLIENT/client-home-page/client-home.component';
 
 const routes: Routes = [
   { path: 'AppComponent', component: AppComponent },
   { path: 'ADMIN/admin-accueil', component: ADMINAccueilComponent },
   { path: 'ADMIN/fiche-compte', component: FicheCompteComponent }, // Ajoutez ce chemin de route
-  { path: 'CLIENT/client-accueil', component: CLIENTAccueilComponent },
+  { path: 'CLIENT/client-home', component: ClientHomeComponent },
   { path: 'reservation', component: FicheReservationComponent },
   { path: '**', component: PageNotFoundComponent },
 ];

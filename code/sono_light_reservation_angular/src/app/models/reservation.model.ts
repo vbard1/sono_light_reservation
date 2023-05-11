@@ -1,6 +1,10 @@
+import { EventDetails } from "./event.model";
+
 export interface Reservation {
-    id: number;
-    dateReservation: string;
-    montant: number;
-    etat: string;
+    reservationId: number;
+    reservationLabel: string;
+    reservationState: string;
+    //equipment: Equipment;
+    //category: Category;
+    eventDetails: EventDetails;
  } 

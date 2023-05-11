@@ -6,13 +6,13 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ADMINAccueilComponent } from './ADMIN/admin-accueil/admin-accueil.component';
-import { CLIENTAccueilComponent } from './CLIENT/client-accueil/client-accueil.component';
+import { ClientHomeComponent } from './CLIENT/client-home-page/client-home.component';
 import { PageNotFoundComponent } from './GENERAL/page-not-found/page-not-found.component';
 import { ADMINMaterielComponent } from './ADMIN/admin-materiel/admin-materiel.component';
 import { AdminComptesComponent } from './ADMIN/admin-comptes/admin-comptes.component';
 import { AdminReservationComponent } from './ADMIN/admin-reservation/admin-reservation.component';
 import { FicheCompteComponent } from './ADMIN/admin-comptes/fiche-compte/fiche-compte.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
@@ -27,7 +27,7 @@ import { FicheReservationComponent } from './GENERAL/fiche-reservation/fiche-res
   declarations: [
     AppComponent,
     ADMINAccueilComponent,
-    CLIENTAccueilComponent,
+    ClientHomeComponent,
     PageNotFoundComponent,
     ADMINMaterielComponent,
     AdminComptesComponent,
