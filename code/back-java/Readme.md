@@ -23,6 +23,8 @@ docker run --name=sonoLightReservation \
 docker exec -it sonoLightReservation /bin/bash
 #Ouvrir le shell mysql
 mysql -h 172.17.0.2 -uroot -p --port 3306
+#Reset le mot de passe root de la DB (sinon onetime_password par defaut)
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'root';
 #Creation de la base de données
 create database sonoLightReservation;
 #Sortir de la database + du container

@@ -6,7 +6,6 @@ CREATE TABLE `section` (
   PRIMARY KEY (`section_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-
 -- sonoLightReservation.`user` definition
 
 CREATE TABLE `user` (
@@ -97,6 +96,8 @@ CREATE TABLE `reservation` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 INSERT INTO section (label) VALUES
-    ('sono'),
-    ('light'),
-    ('other');
+    ('Son'),
+    ('Lumière'),
+    ('Règles DJ'),
+    ('Equipement divers');
+
