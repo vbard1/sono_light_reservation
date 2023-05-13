@@ -47,7 +47,7 @@ CREATE TABLE `equipment` (
   `owner` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT 'KLS/CVA',
   `cable_size` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `comment` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
-  `decay_level` int DEFAULT NULL,
+  `wear_rate_return` int DEFAULT NULL,
   `date_buy` date DEFAULT NULL,
   `dayly_price` decimal(10,2) DEFAULT NULL,
   `replacement_price` decimal(10,2) DEFAULT NULL,
