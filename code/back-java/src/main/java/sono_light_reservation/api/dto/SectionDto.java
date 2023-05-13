@@ -9,24 +9,24 @@ import lombok.ToString;
 @Getter
 @ToString
 public class SectionDto {
-    private int id;
+    private int section_id;
     @NotNull
     private String label;
 
-    public SectionDto(int id, String label) {
-        this.id = id;
+    public SectionDto(int section_id, String label) {
+        this.section_id = section_id;
         this.label = label;
     }
 
     public SectionDto() {
     }
 
-    public int getId() {
-        return id;
+    public int getSection_id() {
+        return section_id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setSection_id(int sectionid) {
+        this.section_id = sectionid;
     }
 
     public String getLabel() {

@@ -13,7 +13,7 @@ import lombok.*;
 public class Section {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int section_id;
     @Column(name = "label", nullable=false, unique=true)
     private String label;
 }

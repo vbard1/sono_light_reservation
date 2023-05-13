@@ -17,7 +17,7 @@ public class SectionController {
     /**
      * Read the details of the section get by id
      * @param id
-     * @return section
+     * @return sectionDto
      */
     @GetMapping("/section/{id}")
     public Optional<SectionDto> getOneSection(@PathVariable int id) {
@@ -27,18 +27,18 @@ public class SectionController {
     /**
      * Update the details of the section get by id
      * @param id
-     * @param updatedSection
+     * @param updatedSectionDto
      * @return section with modifications
      */
     @PutMapping("/section/{id}")
-    public SectionDto updateSection(@PathVariable int id, @RequestBody SectionDto updatedSection) {
-        return sectionService.updateSection(id, updatedSection);
+    public SectionDto updateSection(@PathVariable int id, @RequestBody SectionDto updatedSectionDto) {
+        return sectionService.updateSection(id, updatedSectionDto);
     }
 
     /**
      * Delete existant section
      * @param id
-     * @return String: confirm of the suppression
+     * @return String message : confirm of the suppression
      */
     @DeleteMapping("/section/{id}")
     public String deleteSection(@PathVariable int id) {
@@ -57,7 +57,7 @@ public class SectionController {
     /**
      * Create a new section
      * @param newSectionDto
-     * @return the details of the new sectino
+     * @return the details of the new sectionDto
      */
     @PostMapping("/section")
     public SectionDto createSection(@RequestBody SectionDto newSectionDto) {
