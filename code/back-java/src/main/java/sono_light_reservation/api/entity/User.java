@@ -12,7 +12,7 @@ import lombok.*;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private int user_id;
+    private Long user_id;
 
     @Column(name = "firstname", nullable=false)
     private String firstname;
@@ -39,7 +39,7 @@ public class User {
     @Column(name = "level", nullable=false)
     private Integer level;
 
-    public User(int user_id, String firstname, String name, String email, String phone, String address, Integer niveau) {
+    public User(Integer user_id, String firstname, String name, String email, String phone, String address, Integer niveau) {
     }
 
     public User() {

@@ -26,7 +26,7 @@ public class UserService {
      * @param id
      * @return userDto
      */
-    public Optional<UserDto> getUser(final int id) {
+    public Optional<UserDto> getUser(final Long id) {
         Optional<User> user = userRepository.findById(id);
         UserDto userDto = userMapper.convertToDto(user);
         return Optional.of(userDto);
@@ -41,10 +41,12 @@ public class UserService {
     }
 
     public UserDto saveUser(UserDto userDto) {
+        System.out.println("USER: " + userDto);
         if (userDto.getLevel() == null){
             userDto.setLevel(3);  //1=superAdmin, 2=admin, 3=user
         }
         User user = userMapper.convertToEntity(userDto);
+        System.out.println("USERsave: " + user);
         userRepository.save(user);
         return userMapper.convertToDto(Optional.of(user));
     }
@@ -52,14 +54,14 @@ public class UserService {
     /**
      * Delete existant user
      * @param id
-     * @return String messsage : confirm of the suppression
+     * @return String message : confirm of the suppression
      */
-    public String deleteUser(final int id){
+    public String deleteUser(final Long id){
         userRepository.deleteById(id);
         if (userRepository.findById(id).isEmpty()) {
             return "User deleted";
         } else {
-            return "Erreur dans la suppression";
+            return "Error in deletion";
         }
     }
 
@@ -70,7 +72,7 @@ public class UserService {
      * @param updatedUserDto
      * @return userDto with modifications
      */
-    public UserDto updateUser(int id, UserDto updatedUserDto) {
+    public UserDto updateUser(Long id, UserDto updatedUserDto) {
 
         User user = userRepository.findById(id)
                .orElseThrow(() -> new IllegalArgumentException("Id user invalide:" + id));

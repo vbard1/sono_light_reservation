@@ -10,7 +10,7 @@ import lombok.ToString;
 @Setter
 @ToString
 public class UserDto {
-    private int user_id;
+    private Long user_id;
     private String firstname;
     private String name;
     private String email;
@@ -23,7 +23,7 @@ public class UserDto {
 
     // TODO : liste des reservations a intégrer quand class créées
 
-    public UserDto(int user_id, String firstname, String name, String email, String phone, String address, Integer level) {
+    public UserDto(Long user_id, String firstname, String name, String email, String phone, String address, Integer level) {
         this.user_id = user_id;
         this.firstname = firstname;
         this.name = name;

@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 import sono_light_reservation.api.entity.User;
 
 @Repository
-public interface UserRepository extends CrudRepository<User, Integer> {
+public interface UserRepository extends CrudRepository<User, Long> {
 
 }
