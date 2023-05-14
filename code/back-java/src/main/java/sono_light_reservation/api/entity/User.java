@@ -14,20 +14,16 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int user_id;
 
-//    @Column(name = "firstname", nullable=false)
-    @Column(name = "firstname")
+    @Column(name = "firstname", nullable=false)
     private String firstname;
 
-//    @Column(name = "name", nullable=false)
-    @Column(name = "name")
+    @Column(name = "name", nullable=false)
     private String name;
 
-//    @Column(name = "email",nullable=false, unique=true)
-    @Column(name = "email")
+    @Column(name = "email", unique=true, nullable=false)
     private String email;
 
-//    @Column(name = "phone", unique=true, nullable=false)
-    @Column(name = "phone")
+    @Column(name = "phone", unique=true, nullable=false)
     private String phone;
 
     @Column(name = "address")
@@ -40,7 +36,6 @@ public class User {
     private String password;
 
     //level : 1=superAdmin, 2=admin, 3=user
-//    @Column(name = "level", nullable=false)
     @Column(name = "level")
     private Integer level;
 

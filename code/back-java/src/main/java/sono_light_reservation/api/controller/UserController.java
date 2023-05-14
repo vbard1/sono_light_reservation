@@ -3,10 +3,7 @@ package sono_light_reservation.api.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import sono_light_reservation.api.dto.UserDto;
-import sono_light_reservation.api.entity.User;
-import sono_light_reservation.api.repository.UserRepository;
 import sono_light_reservation.api.service.UserService;
-import sono_light_reservation.api.service.mapper.UserMapper;
 
 import java.util.List;
 import java.util.Optional;
@@ -16,11 +13,6 @@ public class UserController {
 
     @Autowired
     private UserService userService;
-    @Autowired
-    private UserRepository userRepository;
-
-    @Autowired
-    private UserMapper userMapper;
 
     /**
      * Read the details of the user get by id
@@ -70,8 +62,7 @@ public class UserController {
      * @return the details of the new userDto
      */
     @PostMapping("/user")
-    public User createUser(@RequestBody User newUserDto) {
-//        return userService.saveUser(newUserDto);
-        return userRepository.save(newUserDto);
+    public UserDto createUser(@RequestBody UserDto newUserDto) {
+        return userService.saveUser(newUserDto);
     }
 }
