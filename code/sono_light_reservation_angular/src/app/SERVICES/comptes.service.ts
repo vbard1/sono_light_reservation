@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Compte } from '../UTILS/comptes';
 
@@ -8,7 +8,7 @@ import { Compte } from '../UTILS/comptes';
 })
 export class ComptesService {
     getCompteById(id: number) : Observable<Compte> {
-      const url = `${this.baseUrl}/utilisateur/${id}`;
+      const url = `${this.baseUrl}/user/${id}`;
       return this.http.get<Compte>(url);
     }
     
@@ -16,13 +16,14 @@ export class ComptesService {
     constructor(private http: HttpClient) {}
 
     getComptes(): Observable<Compte[]> {
-        const url = `${this.baseUrl}/utilisateur`;
+
+        const url = `${this.baseUrl}/user`;
         return this.http.get<Compte[]>(url);
     }
 
     
     updateCompte(formData: any): Observable<any> {
-        const url = `${this.baseUrl}/utilisateur`;       
+        const url = `${this.baseUrl}/user`;       
       
         // Créer un objet avec les données à envoyer dans la requête HTTP POST
         const data = {
