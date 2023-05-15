@@ -14,11 +14,8 @@ public class UserDto {
     private String firstname;
     private String name;
     private String email;
-
     private String phone;
-
     private String address;
-
     private Integer level;
 
     // TODO : liste des reservations a intégrer quand class créées

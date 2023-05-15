@@ -11,7 +11,7 @@ import lombok.*;
 @ToString
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int user_id;
 
     @Column(name = "firstname", nullable=false)
@@ -20,7 +20,7 @@ public class User {
     @Column(name = "name", nullable=false)
     private String name;
 
-    @Column(name = "email",nullable=false, unique=true)
+    @Column(name = "email", unique=true, nullable=false)
     private String email;
 
     @Column(name = "phone", unique=true, nullable=false)
@@ -36,7 +36,7 @@ public class User {
     private String password;
 
     //level : 1=superAdmin, 2=admin, 3=user
-    @Column(name = "level", nullable=false)
+    @Column(name = "level")
     private Integer level;
 
     public User(int user_id, String firstname, String name, String email, String phone, String address, Integer niveau) {
