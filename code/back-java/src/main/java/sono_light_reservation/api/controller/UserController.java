@@ -19,7 +19,7 @@ public class UserController {
      * @param id
      * @return userDto
      */
-    @GetMapping("/User/{id}")
+    @GetMapping("/user/{id}")
     public Optional<UserDto> getOneUser(@PathVariable int id) {
         return userService.getUser(id);
     }
@@ -30,7 +30,7 @@ public class UserController {
      * @param updatedUserDto
      * @return userDto with modifications
      */
-    @PutMapping("/User/{id}")
+    @PutMapping("/user/{id}")
     public UserDto updateUser(@PathVariable int id, @RequestBody UserDto updatedUserDto) {
         return userService.updateUser(id, updatedUserDto);
     }
@@ -40,7 +40,7 @@ public class UserController {
      * @param id
      * @return String messsage : confirm of the suppression
      */
-    @DeleteMapping("/User/{id}")
+    @DeleteMapping("/user/{id}")
     public String deleteUser(@PathVariable int id) {
         return userService.deleteUser(id);
     }
@@ -50,7 +50,7 @@ public class UserController {
      * List of all the users
      * @return the list of the usersDto
      */
-    @GetMapping("/User")
+    @GetMapping("/user")
     public List<UserDto> getUsers() {
         return userService.getUsers();
     }
@@ -61,7 +61,7 @@ public class UserController {
      * @param newUserDto
      * @return the details of the new userDto
      */
-    @PostMapping("/User")
+    @PostMapping("/user")
     public UserDto createUser(@RequestBody UserDto newUserDto) {
         return userService.saveUser(newUserDto);
     }
