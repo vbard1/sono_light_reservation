@@ -1,42 +1,41 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Compte } from '../UTILS/comptes';
+import { User } from '../UTILS/User';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ComptesService {
-    getCompteById(id: number) : Observable<Compte> {
-      const url = `${this.baseUrl}/user/${id}`;
-      return this.http.get<Compte>(url);
-    }
-    
     private baseUrl = 'http://localhost:9000';
     constructor(private http: HttpClient) {}
-
-    getComptes(): Observable<Compte[]> {
-
+    
+    getCompteById(user_id: number) : Observable<User> {
+      const url = `${this.baseUrl}/user/${user_id}`;
+      return this.http.get<User>(url);
+    }
+    
+    getComptes(): Observable<User[]> {
         const url = `${this.baseUrl}/user`;
-        return this.http.get<Compte[]>(url);
+        return this.http.get<User[]>(url);
     }
 
     
     updateCompte(formData: any): Observable<any> {
         const url = `${this.baseUrl}/user`;       
-      
-        // Créer un objet avec les données à envoyer dans la requête HTTP POST
-        const data = {
-          id: formData.id,
-          nom: formData.nom,
-          prenom: formData.prenom,
-          email: formData.email,
-          telephone: formData.telephone,
-          adresse: formData.adresse
+
+        //parse the formData to POST-able object
+        const user = {
+          user_id: formData.user_id,
+          name: formData.name,
+          firstname: formData.firstname,
+          mail: formData.mail,
+          phone: formData.phone,
+          adress: formData.adress
         };
-      
-        // Envoyer la requête HTTP POST
-        return this.http.post(url, data);
+        
+        // post user object
+        return this.http.post(url, user);
       }
 
 }

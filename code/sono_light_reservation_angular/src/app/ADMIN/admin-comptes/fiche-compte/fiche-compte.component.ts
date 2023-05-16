@@ -4,7 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ComptesService } from 'src/app/SERVICES/comptes.service';
-import { Compte } from 'src/app/UTILS/comptes';
+import { User } from 'src/app/UTILS/User';
 
 @Component({
   selector: 'app-fiche-compte',
@@ -13,9 +13,9 @@ import { Compte } from 'src/app/UTILS/comptes';
 })
 export class FicheCompteComponent implements OnInit {
 
-  compteForm!: FormGroup;
-  comptePreview$!: Observable<Compte>;
-  telephoneRegEx!: RegExp;
+  userForm!: FormGroup;
+  comptePreview$!: Observable<User>;
+  phoneRegEx!: RegExp;
   emailRegEx!: RegExp;
   cpRegEx!: RegExp;
   id!: string;
@@ -26,41 +26,43 @@ export class FicheCompteComponent implements OnInit {
     private route: ActivatedRoute,
     private comptesService: ComptesService
   ) {
-    this.telephoneRegEx = /^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/;
+    this.phoneRegEx = /^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/;
     this.emailRegEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
     this.cpRegEx = /^\d{5}$/;
   }
 
   ngOnInit(): void {
     // Initialisation du formulaire
-    this.compteForm = this.formBuilder.group({
-      id: [null],
-      nom: [null, Validators.required],
-      prenom: [null, Validators.required],
+    this.userForm = this.formBuilder.group({
+      user_id: [null],
+      name: [null, Validators.required],
+      firstname: [null, Validators.required],
       email: [null, [Validators.required, Validators.pattern(this.emailRegEx)]],
-      telephone: [null, [Validators.required, Validators.pattern(this.telephoneRegEx)]],
-      adresse:[null]
+      phone: [null, [Validators.required, Validators.pattern(this.phoneRegEx)]],
+      address:[null]
     });
 
     // Récupération de l'ID à partir de l'URL
     this.route.paramMap.pipe(
       map(params => {
-        this.id = params.get('id')!;
+        this.id = params.get('user_id')!;
         return this.id;
       })
     ).subscribe();
+    console.log(this.id);
+
 
     // Récupération des informations du compte à partir du service
     this.comptesService.getCompteById(Number(this.id)).subscribe({
-      next: (compte: Compte) => {
+      next: (user: User) => {
         // Populate the form with the retrieved account data
-        this.compteForm.patchValue({
-          id: compte.id,
-          nom: compte.nom,
-          prenom: compte.prenom,
-          email: compte.email,
-          telephone: compte.telephone,
-          adresse: compte.adresse 
+        this.userForm.patchValue({
+          user_id: user.user_id,
+          name: user.name,
+          firstname: user.firstname,
+          email: user.email,
+          phone: user.phone,
+          address: user.address 
         });
       },
         error: (err) => {
@@ -74,12 +76,12 @@ export class FicheCompteComponent implements OnInit {
     }
     
   onSubmitForm(): void {
-    if (this.compteForm.invalid) {
+    if (this.userForm.invalid) {
       console.log("Le formulaire n'est pas valide");
       return;
     }
 
-    const formData = this.compteForm.value;
+    const formData = this.userForm.value;
     this.comptesService.updateCompte(formData).subscribe({
       next: () => {
         console.log("Le compte a été mis à jour avec succès");

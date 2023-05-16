@@ -11,7 +11,10 @@ const routes: Routes = [
   { path: 'AppComponent', component: AppComponent },
   { path: 'ADMIN/admin-accueil', component: ADMINAccueilComponent },
   { path: 'ADMIN/comptes', component: AdminComptesComponent },
-  { path: 'ADMIN/fiche-compte/:id', component: FicheCompteComponent }, // route "fiche-compte/:id"
+  {
+    path: 'ADMIN/fiche-compte/:user_id',
+    component: FicheCompteComponent
+  }, 
   { path: 'CLIENT/client-accueil', component: CLIENTAccueilComponent },
   { path: '', redirectTo: '/ADMIN/comptes', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
