@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-admin-home',
-  templateUrl: './adminHome.component.html',
-  styleUrls: ['./adminHome.component.scss']
+  templateUrl: './admin-home.component.html',
+  styleUrls: ['./admin-home.component.scss']
 })
 export class AdminHomeComponent {
   tabselector!: string;

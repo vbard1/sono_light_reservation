@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-admin-equipment',
-  templateUrl: './adminEquimpent.component.html',
-  styleUrls: ['./adminEquimpent.component.scss']
+  templateUrl: './admin-equipment.component.html',
+  styleUrls: ['./admin-equipment.component.scss']
 })
 export class AdminEquipmentComponent {
 

@@ -5,11 +5,11 @@ import { UserService } from 'src/app/SERVICES/User.service';
 
 @Component({
   selector: 'app-admin-comptes',
-  templateUrl: './adminUsers.component.html',
-  styleUrls: ['./adminUsers.component.scss']
+  templateUrl: './admin-user-list.component.html',
+  styleUrls: ['./admin-user-list.component.scss']
 })
 
-export class  AdminUsersComponent {
+export class  AdminUserListComponent {
   rows!: User[]; //une ligne = un compte
   constructor(private router: Router, private userService : UserService) { }
   

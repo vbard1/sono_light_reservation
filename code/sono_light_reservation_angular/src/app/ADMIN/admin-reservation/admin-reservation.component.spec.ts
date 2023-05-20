@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdminReservationComponent } from './adminReservation.component';
+import { AdminReservationComponent } from './admin-reservation.component';
 
 describe('AdminReservationComponent', () => {
   let component: AdminReservationComponent;

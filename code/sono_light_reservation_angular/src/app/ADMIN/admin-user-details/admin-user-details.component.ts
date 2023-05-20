@@ -9,11 +9,11 @@ import { User } from "src/app/UTILS/User";
 
 
 @Component({
-  selector: 'app-userDetails',
-  templateUrl: './userDetails.component.html',
-  styleUrls: ['./userDetails.component.scss']
+  selector: 'app-admin-user-details',
+  templateUrl: './admin-user-details.component.html',
+  styleUrls: ['./admin-user-details.component.scss']
 })
-export class UserDetailsComponent implements OnInit {
+export class AdminUserDetailsComponent implements OnInit {
 
   userForm!: FormGroup;
   comptePreview$!: Observable<User>;

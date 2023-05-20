@@ -8,11 +8,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PageNotFoundComponent } from './GENERAL/page-not-found/page-not-found.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import { AdminHomeComponent } from './ADMIN/adminHome/adminHome.component';
-import { AdminEquipmentComponent } from './ADMIN/adminEquipment/adminEquipment.component';
-import { AdminReservationComponent } from './ADMIN/adminReservation/adminReservation.component';
-import { AdminUsersComponent } from './ADMIN/adminUsers/adminUsers.component';
-import { UserDetailsComponent } from './ADMIN/adminUsers/userDetails/userDetails.component';
+import { AdminHomeComponent } from './ADMIN/admin-home/admin-home.component';
+import { AdminEquipmentComponent } from './ADMIN/admin-equipment/admin-equipment.component';
+import { AdminReservationComponent } from './ADMIN/admin-reservation/admin-reservation.component';
+import { AdminUserListComponent } from './ADMIN/admin-user-list/admin-user-list.component';
+import { AdminUserDetailsComponent } from './ADMIN/admin-user-details/admin-user-details.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 
@@ -22,9 +22,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     AdminHomeComponent,
     PageNotFoundComponent,
     AdminEquipmentComponent,
-    AdminUsersComponent,
+    AdminUserListComponent,
     AdminReservationComponent,
-    UserDetailsComponent,
+    AdminUserDetailsComponent,
   ],
   imports: [
     BrowserModule,
