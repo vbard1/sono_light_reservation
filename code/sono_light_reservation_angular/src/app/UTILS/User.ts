@@ -5,5 +5,5 @@ export class User {
   email!: string;
   phone!: string;
   address!:string;
-  level!:number;
+  level!: string | number;
 } 

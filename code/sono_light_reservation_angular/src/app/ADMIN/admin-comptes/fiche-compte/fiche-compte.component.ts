@@ -3,8 +3,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { ComptesService } from 'src/app/SERVICES/comptes.service';
+import { UserService } from 'src/app/SERVICES/User.service';
 import { User } from 'src/app/UTILS/User';
+
 
 @Component({
   selector: 'app-fiche-compte',
@@ -19,12 +20,17 @@ export class FicheCompteComponent implements OnInit {
   emailRegEx!: RegExp;
   cpRegEx!: RegExp;
   id!: string;
+  levels: { value:string, numero:number }[] = [
+    { value: "client", numero:3},
+    { value: "admin", numero:2},
+    { value: "superAdmin", numero:1}
+  ];
 
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
     private route: ActivatedRoute,
-    private comptesService: ComptesService
+    private comptesService: UserService
   ) {
     this.phoneRegEx = /^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/;
     this.emailRegEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
@@ -39,30 +45,31 @@ export class FicheCompteComponent implements OnInit {
       firstname: [null, Validators.required],
       email: [null, [Validators.required, Validators.pattern(this.emailRegEx)]],
       phone: [null, [Validators.required, Validators.pattern(this.phoneRegEx)]],
-      address:[null]
+      address:[null],
+      level: [null] 
     });
 
     // Récupération de l'ID à partir de l'URL
     this.route.paramMap.pipe(
       map(params => {
         this.id = params.get('user_id')!;
-        return this.id;
       })
     ).subscribe();
-    console.log(this.id);
 
 
     // Récupération des informations du compte à partir du service
     this.comptesService.getCompteById(Number(this.id)).subscribe({
       next: (user: User) => {
         // Populate the form with the retrieved account data
+        const levelLabel = this.levels.find(level => level.numero === user.level)?.value;
         this.userForm.patchValue({
           user_id: user.user_id,
           name: user.name,
           firstname: user.firstname,
           email: user.email,
           phone: user.phone,
-          address: user.address 
+          address: user.address,
+          level: levelLabel
         });
       },
         error: (err) => {
@@ -82,6 +89,13 @@ export class FicheCompteComponent implements OnInit {
     }
 
     const formData = this.userForm.value;
+    const selectedLevel = this.userForm.get('level')?.value;
+    const numero = this.levels.find(level => level.value === selectedLevel)?.numero;
+
+    if (numero !== undefined) {
+      formData.level = numero;
+    }
+
     this.comptesService.updateCompte(formData).subscribe({
       next: () => {
         console.log("Le compte a été mis à jour avec succès");
@@ -97,7 +111,7 @@ export class FicheCompteComponent implements OnInit {
   }
 
   doNothing(): void {
-    console.log("OPERATION ANNULEE"); //TODO debug
+    console.log("OPERATION ANNULEE");
     this.router.navigateByUrl("/ADMIN/admin-accueil");
   }
 }
