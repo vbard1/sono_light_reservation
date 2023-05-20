@@ -14,6 +14,11 @@ import { AdminReservationComponent } from './ADMIN/admin-reservation/admin-reser
 import { FicheCompteComponent } from './ADMIN/admin-comptes/fiche-compte/fiche-compte.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
+import { CarousselComponent } from './caroussel/caroussel.component';
+import { LocalisationComponent } from './localisation/localisation.component';
 
 
 
@@ -27,6 +32,11 @@ import { HttpClientModule } from '@angular/common/http';
     AdminComptesComponent,
     AdminReservationComponent,
     FicheCompteComponent,
+    HeaderComponent,
+    FooterComponent,
+    HomeComponent,
+    CarousselComponent,
+    LocalisationComponent,
   ],
   imports: [
     BrowserModule,

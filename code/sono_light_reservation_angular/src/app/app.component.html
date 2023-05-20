@@ -1,9 +1,29 @@
-
 <body>
-    <span><p>Je suis la page par defaut, qui redirige vers les autres pages en fonction</p></span>
-    <nav>
-        <li><a routerLink="./ADMIN/admin-accueil" routerLinkActive="active" ariaCurrentWhenActive="page">ADMIN</a></li>
-        <li><a routerLink="./CLIENT/client-accueil" routerLinkActive="active" ariaCurrentWhenActive="page">CLIENT</a></li>
-    </nav>
+  <app-header></app-header>
+  <span
+    ><p>
+      Je suis la page par defaut, qui redirige vers les autres pages en fonction
+    </p></span
+  >
+  <nav>
+    <li>
+      <a
+        routerLink="./ADMIN/admin-accueil"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        >ADMIN</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="./CLIENT/client-accueil"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        >CLIENT</a
+      >
+    </li>
+  </nav>
 </body>
-<router-outlet></router-outlet> <!--la sortie de la route-->
+<router-outlet></router-outlet>
+<!--la sortie de la route-->
+<app-footer></app-footer>
