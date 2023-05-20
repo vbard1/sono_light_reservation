@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { ADMINAccueilComponent } from './ADMIN/admin-accueil/admin-accueil.component';
 import { CLIENTAccueilComponent } from './CLIENT/client-accueil/client-accueil.component';
 import { PageNotFoundComponent } from './GENERAL/page-not-found/page-not-found.component';
@@ -19,8 +18,6 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { CarousselComponent } from './caroussel/caroussel.component';
 import { LocalisationComponent } from './localisation/localisation.component';
-
-
 
 @NgModule({
   declarations: [
@@ -43,9 +40,9 @@ import { LocalisationComponent } from './localisation/localisation.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
