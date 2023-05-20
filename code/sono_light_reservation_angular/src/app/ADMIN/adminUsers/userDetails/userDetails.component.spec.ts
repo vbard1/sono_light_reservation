@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ADMINMaterielComponent } from './admin-materiel.component';
+import { FicheCompteComponent } from './userDetails.component';
 
-describe('ADMINMaterielComponent', () => {
-  let component: ADMINMaterielComponent;
-  let fixture: ComponentFixture<ADMINMaterielComponent>;
+describe('FicheCompteComponent', () => {
+  let component: FicheCompteComponent;
+  let fixture: ComponentFixture<FicheCompteComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ADMINMaterielComponent ]
+      declarations: [ FicheCompteComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ADMINMaterielComponent);
+    fixture = TestBed.createComponent(FicheCompteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

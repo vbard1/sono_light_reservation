@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-admin-accueil',
-  templateUrl: './admin-accueil.component.html',
-  styleUrls: ['./admin-accueil.component.scss']
+  selector: 'app-admin-home',
+  templateUrl: './adminHome.component.html',
+  styleUrls: ['./adminHome.component.scss']
 })
-export class ADMINAccueilComponent {
+export class AdminHomeComponent {
   tabselector!: string;
   selected !: string;
 

@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { AdminComptesComponent } from './adminUsers.component';
 
-import { FicheCompteComponent } from './fiche-compte.component';
-
-describe('FicheCompteComponent', () => {
-  let component: FicheCompteComponent;
-  let fixture: ComponentFixture<FicheCompteComponent>;
+describe('AdminComptesComponent', () => {
+  let component: AdminComptesComponent;
+  let fixture: ComponentFixture<AdminComptesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FicheCompteComponent ]
+      declarations: [ AdminComptesComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(FicheCompteComponent);
+    fixture = TestBed.createComponent(AdminComptesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

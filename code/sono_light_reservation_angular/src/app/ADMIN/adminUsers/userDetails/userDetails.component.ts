@@ -1,18 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router, ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { UserService } from 'src/app/SERVICES/User.service';
-import { User } from 'src/app/UTILS/User';
+import { Component, OnInit } from "@angular/core";
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+
+import { Router, ActivatedRoute } from "@angular/router";
+import { Observable, map } from "rxjs";
+import { UserService } from "src/app/SERVICES/User.service";
+import { User } from "src/app/UTILS/User";
+
 
 
 @Component({
-  selector: 'app-fiche-compte',
-  templateUrl: './fiche-compte.component.html',
-  styleUrls: ['./fiche-compte.component.scss']
+  selector: 'app-userDetails',
+  templateUrl: './userDetails.component.html',
+  styleUrls: ['./userDetails.component.scss']
 })
-export class FicheCompteComponent implements OnInit {
+export class UserDetailsComponent implements OnInit {
 
   userForm!: FormGroup;
   comptePreview$!: Observable<User>;
