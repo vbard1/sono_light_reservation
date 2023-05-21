@@ -5,28 +5,26 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { ADMINAccueilComponent } from './ADMIN/admin-accueil/admin-accueil.component';
-import { CLIENTAccueilComponent } from './CLIENT/client-accueil/client-accueil.component';
 import { PageNotFoundComponent } from './GENERAL/page-not-found/page-not-found.component';
-import { ADMINMaterielComponent } from './ADMIN/admin-materiel/admin-materiel.component';
-import { AdminComptesComponent } from './ADMIN/admin-comptes/admin-comptes.component';
-import { AdminReservationComponent } from './ADMIN/admin-reservation/admin-reservation.component';
-import { FicheCompteComponent } from './ADMIN/admin-comptes/fiche-compte/fiche-compte.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 
+import { HttpClientModule } from '@angular/common/http';
+import { AdminHomeComponent } from './ADMIN/admin-home/admin-home.component';
+import { AdminEquipmentComponent } from './ADMIN/admin-equipment/admin-equipment.component';
+import { AdminReservationComponent } from './ADMIN/admin-reservation/admin-reservation.component';
+import { AdminUserListComponent } from './ADMIN/admin-user-list/admin-user-list.component';
+import { AdminUserDetailsComponent } from './ADMIN/admin-user-details/admin-user-details.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ADMINAccueilComponent,
-    CLIENTAccueilComponent,
+    AdminHomeComponent,
     PageNotFoundComponent,
-    ADMINMaterielComponent,
-    AdminComptesComponent,
+    AdminEquipmentComponent,
+    AdminUserListComponent,
     AdminReservationComponent,
-    FicheCompteComponent,
+    AdminUserDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,6 +34,6 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
