@@ -12,9 +12,9 @@ import java.util.Optional;
 public class EventMapper {
 
     /**
-     * Choisir les éléments de l'utilisateur qui seront GET dans le controller
+     * Convert event information to DTO , for  eventController
      * @param event
-     * @return
+     * @return eventDto
      */
     public EventDto convertToDto(Optional<Event> event) {
         return new EventDto(event.get().getEvent_id(), event.get().getTitle(), event.get().getDescription(), event.get().getLocation(),
@@ -22,6 +22,11 @@ public class EventMapper {
                 event.get().getDate_end(), event.get().getTechnician_asked(), event.get().getUser());
     }
 
+    /**
+     * Convert event information to entity , for eventRepository
+     * @param eventDto
+     * @return event
+     */
     public Event convertToEntity(EventDto eventDto) {
         Event event = new Event();
         event.setTitle(eventDto.getTitle());
