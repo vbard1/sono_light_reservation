@@ -18,7 +18,7 @@ public class EventController {
     private EventService eventService;
 
     /**
-     * Read the details of the user get by id
+     * Read the details of the event get by id
      * @param id
      * @return eventDto
      */
