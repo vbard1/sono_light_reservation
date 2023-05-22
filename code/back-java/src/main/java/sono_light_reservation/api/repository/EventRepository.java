@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 import sono_light_reservation.api.entity.Event;
 
 @Repository
-public interface EventRepository extends CrudRepository<Event, Long> {
+public interface EventRepository extends CrudRepository<Event, Integer> {
 }

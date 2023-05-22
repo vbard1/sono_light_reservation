@@ -23,7 +23,7 @@ public class EventController {
      * @return eventDto
      */
     @GetMapping("/event/{id}")
-    public Optional<EventDto> getOneEvent(@PathVariable Long id) {
+    public Optional<EventDto> getOneEvent(@PathVariable int id) {
         return Optional.ofNullable(eventService.getEvent(id));
     }
 

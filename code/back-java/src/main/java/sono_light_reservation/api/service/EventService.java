@@ -27,7 +27,7 @@ public class EventService {
      * @param id
      * @return eventDto
      */
-    public EventDto getEvent(Long id) {
+    public EventDto getEvent(int id) {
         Optional<Event> event = eventRepository.findById(id);
         EventDto eventDto = eventMapper.convertToDto(event);
         return eventDto;

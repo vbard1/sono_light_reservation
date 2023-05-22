@@ -17,7 +17,7 @@ import java.util.Date;
 public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long event_id;
+    private int event_id;
 
     @Column(name = "title")
     private String title;
@@ -53,7 +53,7 @@ public class Event {
     @JoinColumn(name = "user_id")
     private User user;
 
-    public Event(Long event_id, String title, String description, String location, Integer type, String user_comment, String admin_comment, Date date_start, Date date_end, Boolean technician_asked, User user) {
+    public Event(int event_id, String title, String description, String location, Integer type, String user_comment, String admin_comment, Date date_start, Date date_end, Boolean technician_asked, User user) {
         this.event_id = event_id;
         this.title = title;
         this.description = description;
