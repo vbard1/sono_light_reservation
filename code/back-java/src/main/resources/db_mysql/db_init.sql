@@ -113,3 +113,8 @@ VALUES
     (3, 'Bart', 'Simpson', 'bart@example.com', '555555555', '742 Evergreen Terrace', true, 'password789', 2),
     (4, 'Lisa', 'Simpson', 'lisa@example.com', '999999999', '742 Evergreen Terrace', true, 'passwordabc', 2),
     (5, 'Maggie', 'Simpson', 'maggie@example.com', '111111111', '742 Evergreen Terrace', true, 'passwordxyz', 3);
+
+INSERT INTO event (event_id, title, description, location, type, user_comment, admin_comment, date_start, date_end, technician_asked, user_id)
+VALUES
+    (21, '24h de l INSA', '24h', 'La doua', 1, 'c est urgent merci de valider au plus vite! ca va être de la bombe', '', '2024-05-24', '2024-05-25', false, 1),
+    (22, 'IPI', 'rencontre entreprises', 'Campus HEP', 1, '', '', '2024-05-22', '2024-05-26', false, 2);

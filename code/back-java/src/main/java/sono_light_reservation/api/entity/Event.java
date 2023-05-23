@@ -49,8 +49,7 @@ public class Event {
     @Column(name = "technician_asked")
     private Boolean technician_asked;
 
-    @ManyToOne(optional = true)
-//    @JoinColumn(name = "fk_id_user", nullable = false)
+    @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
 

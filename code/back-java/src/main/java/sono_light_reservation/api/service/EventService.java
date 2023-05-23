@@ -8,6 +8,7 @@ import sono_light_reservation.api.dto.UserDto;
 import sono_light_reservation.api.entity.Event;
 import sono_light_reservation.api.entity.User;
 import sono_light_reservation.api.repository.EventRepository;
+import sono_light_reservation.api.repository.UserRepository;
 import sono_light_reservation.api.service.mapper.EventMapper;
 
 import java.util.List;
@@ -20,7 +21,8 @@ public class EventService {
 
     @Autowired
     private EventRepository eventRepository;
-
+    @Autowired
+    private UserRepository userRepository;
     @Autowired
     private EventMapper eventMapper;
 
@@ -45,8 +47,12 @@ public class EventService {
     }
 
     public EventDto saveEvent(EventDto eventDto) {
-        Event event = eventMapper.convertToEntity(eventDto);
+        Optional<User> userOptional = userRepository.findById(eventDto.getUser_id());
+        User user = userOptional.orElse(null);
+
+        Event event = eventMapper.convertToEntity(eventDto, user);
         eventRepository.save(event);
+
         return eventMapper.convertToDto(Optional.of(event));
     }
 }

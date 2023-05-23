@@ -17,12 +17,6 @@ import java.util.Optional;
 public class EventMapper {
 
     @Autowired
-    private UserService userService;
-    @Autowired
-    private UserMapper userMapper;
-    @Autowired
-    private UserRepository userRepository;
-    @Autowired
     private final EventRepository eventRepository;
 
     public EventMapper(EventRepository eventRepository) {
@@ -49,8 +43,7 @@ public class EventMapper {
      * @param eventDto
      * @return event
      */
-    public Event convertToEntity(EventDto eventDto) {
-
+    public Event convertToEntity(EventDto eventDto, User user) {
         Event event = new Event();
         event.setTitle(eventDto.getTitle());
         event.setDescription(eventDto.getDescription());
@@ -61,13 +54,7 @@ public class EventMapper {
         event.setDate_start(eventDto.getDate_start());
         event.setDate_end(eventDto.getDate_end());
         event.setTechnician_asked(eventDto.getTechnician_asked());
-        if (userRepository.findById(eventDto.getUser_id()).isPresent()) {
-            Optional<User> user = userRepository.findById(eventDto.getUser_id());
-            System.out.println("ENTITY : "+ userRepository.findById(eventDto.getUser_id()));
-            event.setUser(user);
-        }
-        eventRepository.save(event);
-        System.out.println("ENTITYafter : "+ event);
+        event.setUser(user);
         return event;
     }
 }
