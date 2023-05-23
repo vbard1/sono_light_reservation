@@ -1,9 +1,11 @@
 package sono_light_reservation.api.service.mapper;
 
 import lombok.Data;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sono_light_reservation.api.dto.EventDto;
 import sono_light_reservation.api.entity.Event;
+import sono_light_reservation.api.service.UserService;
 
 import java.util.Optional;
 
@@ -11,15 +13,21 @@ import java.util.Optional;
 @Service
 public class EventMapper {
 
+    @Autowired
+    private UserService userService;
     /**
      * Convert event information to DTO , for  eventController
      * @param event
      * @return eventDto
      */
     public EventDto convertToDto(Optional<Event> event) {
+        int event_user_id = -1;
+        if (event.get().getUser() != null) {
+            event_user_id = event.get().getUser().getUser_id();
+        }
         return new EventDto(event.get().getEvent_id(), event.get().getTitle(), event.get().getDescription(), event.get().getLocation(),
                 event.get().getType(), event.get().getUser_comment(), event.get().getAdmin_comment(), event.get().getDate_start(),
-                event.get().getDate_end(), event.get().getTechnician_asked(), event.get().getUser());
+                event.get().getDate_end(), event.get().getTechnician_asked(), event_user_id   );
     }
 
     /**
@@ -38,7 +46,10 @@ public class EventMapper {
         event.setDate_start(eventDto.getDate_start());
         event.setDate_end(eventDto.getDate_end());
         event.setTechnician_asked(eventDto.getTechnician_asked());
-        event.setUser(eventDto.getUser());
+        if (userService.getUser(eventDto.getUser_id()) != null) {
+            event.setUser(userService.getUser(eventDto.getUser_id()));
+        }
+
         return event;
     }
 }

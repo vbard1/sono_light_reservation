@@ -5,8 +5,10 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import sono_light_reservation.api.dto.UserDto;
 
 import java.util.Date;
+import java.util.Optional;
 
 @Data
 @Entity
@@ -69,5 +71,8 @@ public class Event {
 
     public Event() {
 
+    }
+
+    public void setUser(Optional<UserDto> user) {
     }
 }

@@ -95,9 +95,21 @@ CREATE TABLE `reservation` (
   CONSTRAINT `reservation_FK_2` FOREIGN KEY (`equipment_id`) REFERENCES `equipment` (`equipement_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+
+
+
+
+-- create data for tests
 INSERT INTO section (label) VALUES
     ('Son'),
     ('Lumière'),
     ('Règles DJ'),
     ('Equipement divers');
 
+INSERT INTO user (user_id, firstname, name, email, phone, address, email_validation, password, level)
+VALUES
+    (1, 'Homer', 'Simpson', 'homer@example.com', '123456789', '742 Evergreen Terrace', true, 'password123', 1),
+    (2, 'Marge', 'Simpson', 'marge@example.com', '987654321', '742 Evergreen Terrace', true, 'password456', 1),
+    (3, 'Bart', 'Simpson', 'bart@example.com', '555555555', '742 Evergreen Terrace', true, 'password789', 2),
+    (4, 'Lisa', 'Simpson', 'lisa@example.com', '999999999', '742 Evergreen Terrace', true, 'passwordabc', 2),
+    (5, 'Maggie', 'Simpson', 'maggie@example.com', '111111111', '742 Evergreen Terrace', true, 'passwordxyz', 3);

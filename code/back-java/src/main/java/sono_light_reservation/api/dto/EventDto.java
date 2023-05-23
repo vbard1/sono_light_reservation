@@ -36,9 +36,9 @@ public class EventDto {
 
     private Boolean technician_asked;
 
-    private User user;
+    private int user_id;
 
-    public EventDto(int event_id, String title, String description, String location, Integer type, String user_comment, String admin_comment, Date date_start, Date date_end, Boolean technician_asked, User user) {
+    public EventDto(int event_id, String title, String description, String location, Integer type, String user_comment, String admin_comment, Date date_start, Date date_end, Boolean technician_asked, int user_id) {
         this.event_id = event_id;
         this.title = title;
         this.description = description;
@@ -49,6 +49,6 @@ public class EventDto {
         this.date_start = date_start;
         this.date_end = date_end;
         this.technician_asked = technician_asked;
-        this.user = user;
+        this.user_id = user_id;
     }
 }
