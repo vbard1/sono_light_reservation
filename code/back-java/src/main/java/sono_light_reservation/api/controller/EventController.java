@@ -1,11 +1,9 @@
 package sono_light_reservation.api.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import sono_light_reservation.api.dto.EventDto;
+import sono_light_reservation.api.dto.UserDto;
 import sono_light_reservation.api.service.EventService;
 
 import java.util.List;
@@ -36,4 +34,14 @@ public class EventController {
         return eventService.getEvents();
     }
 
+    /**
+     * Create a new event
+     * @param newEventDto
+     * @return the details of the new userDto
+     */
+    @PostMapping("/event")
+    public EventDto createEvent(@RequestBody EventDto newEventDto) {
+        return eventService.saveEvent(newEventDto);
+    }
 }
+

@@ -4,7 +4,9 @@ import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sono_light_reservation.api.dto.EventDto;
+import sono_light_reservation.api.dto.UserDto;
 import sono_light_reservation.api.entity.Event;
+import sono_light_reservation.api.entity.User;
 import sono_light_reservation.api.repository.EventRepository;
 import sono_light_reservation.api.service.mapper.EventMapper;
 
@@ -40,5 +42,11 @@ public class EventService {
      */
     public List<EventDto> getEvents() {
         return ((List<Event>) eventRepository.findAll()).stream().map(event -> eventMapper.convertToDto(Optional.ofNullable(event))).collect(Collectors.toList());
+    }
+
+    public EventDto saveEvent(EventDto eventDto) {
+        Event event = eventMapper.convertToEntity(eventDto);
+        eventRepository.save(event);
+        return eventMapper.convertToDto(Optional.of(event));
     }
 }
