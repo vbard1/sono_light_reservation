@@ -1,6 +1,5 @@
 package sono_light_reservation.api.dto;
 
-import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import lombok.Getter;
 import lombok.ToString;
@@ -10,7 +9,6 @@ import lombok.ToString;
 @ToString
 public class SectionDto {
     private int section_id;
-    @NotNull
     private String label;
 
     public SectionDto(int section_id, String label) {
@@ -25,8 +23,8 @@ public class SectionDto {
         return section_id;
     }
 
-    public void setSection_id(int sectionid) {
-        this.section_id = sectionid;
+    public void setSection_id(int section_id) {
+        this.section_id = section_id;
     }
 
     public String getLabel() {
