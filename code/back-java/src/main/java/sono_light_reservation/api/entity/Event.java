@@ -5,7 +5,6 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import sono_light_reservation.api.dto.UserDto;
 
 import java.util.Date;
 import java.util.Optional;
@@ -50,7 +49,7 @@ public class Event {
     @Column(name = "technician_asked")
     private Boolean technician_asked;
 
-    @ManyToOne
+    @ManyToOne(optional = true)
 //    @JoinColumn(name = "fk_id_user", nullable = false)
     @JoinColumn(name = "user_id")
     private User user;
@@ -73,6 +72,7 @@ public class Event {
 
     }
 
-    public void setUser(Optional<UserDto> user) {
+    public void setUser(User user) {
+        this.user = user;
     }
 }
