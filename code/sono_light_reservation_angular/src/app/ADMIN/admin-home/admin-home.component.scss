@@ -1,5 +1,4 @@
 @import '../../../styles.var.scss';
-
 body{
     padding: 10px;
 }
@@ -10,7 +9,6 @@ body{
     background-color: var(--elementBackgroundColor); 
     font: bolder;
     text-decoration: none;
-
     border-radius: 10px;
 
  }
@@ -23,6 +21,5 @@ body{
  .tab:focus,
  .selected {
    box-shadow: 0 0.5em 0.5em -0.4em var(--lowImpact);
-
    transform: translateY(-0.25em);
  }

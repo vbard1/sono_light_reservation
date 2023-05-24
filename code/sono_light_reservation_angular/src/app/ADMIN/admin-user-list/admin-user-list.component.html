@@ -1,4 +1,4 @@
-<table class="table table-dark table-striped">
+<table class="table table-dark table-striped table-sm table-dense">
     <thead>
         <tr>
             <th>#</th>
@@ -17,7 +17,6 @@
             <td>{{ row.phone}}</td>
             <td>{{ row.address}}</td>
             <td class="actions"><button class="btn btn-info btn-sm" (click)="seeUserDetails( row.user_id)">voir la fiche</button></td>
-        
             <td class="actions"><button class="btn btn-danger btn-sm" (click)="deleteUser(row.user_id)">supprimer</button></td>
     </tr>
   </tbody>

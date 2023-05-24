@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { User } from 'src/app/UTILS/User';
+import { User } from 'src/app/MODELS/User';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/SERVICES/User.service';
 
@@ -32,21 +32,8 @@ export class  AdminUserListComponent {
    */
   deleteUser(user_id: number) {
 
-      this.userService.deleteCompte(user_id).subscribe({
-        next: () => {
-          console.log('Utilisateur supprimé avec succès');
-          // Réactualiser la liste des utilisateurs ou effectuer toute autre action nécessaire
-        },
-        error: (error) => {
-          console.log('Erreur lors de la suppression de l\'utilisateur :', error);
-        },
-        complete: () => {
-          console.log('Suppression de l\'utilisateur terminée');
-        }
-      });
-      this.userService.getComptes().subscribe(users => {
-        this.rows = users;
-      });
+      this.userService.deleteCompte(user_id).subscribe({});
+      this.userService.getComptes().subscribe(users => {this.rows = users;});
     
   }
 }
