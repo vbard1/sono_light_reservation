@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl } from '@angular/forms';
-import { Category } from 'src/app/UTILS/Category';
-import { Equipment } from 'src/app/UTILS/Equipment';
-import { Section } from 'src/app/UTILS/Section';
+import { Category } from 'src/app/MODELS/Category';
+import { Equipment } from 'src/app/MODELS/Equipment';
+import { Section } from 'src/app/MODELS/Section';
 
 @Component({
   selector: 'app-admin-equipment-list',

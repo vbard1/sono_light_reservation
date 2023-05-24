@@ -4,7 +4,7 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { Router, ActivatedRoute } from "@angular/router";
 import { Observable, map } from "rxjs";
 import { UserService } from "src/app/SERVICES/User.service";
-import { User } from "src/app/UTILS/User";
+import { User } from "src/app/MODELS/User";
 
 
 
