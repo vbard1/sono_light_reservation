@@ -11,6 +11,7 @@ export class AdminHomeComponent {
 
   ngOnInit(){
     this.tabselector='secondTab'; //onglet par défaut, à l'ouverture
+
   }
 
   //permet de changer d'onglet et de garder la persistance du focus sur l'onglet (on voit que l'onglet est actif)
