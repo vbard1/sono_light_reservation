@@ -10,7 +10,6 @@ import { Section } from 'src/app/UTILS/Section';
   styleUrls: ['./admin-equipment-list.component.scss']
 })
 export class AdminEquipmentListComponent implements OnInit {
-
   /** sections list, to sort equipments */
   sections: Section[] = [];
   /** categories list, to sort equipments */
