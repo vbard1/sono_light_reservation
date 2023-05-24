@@ -1,3 +1,5 @@
+@import '../../../styles.var.scss';
+
 body{
     padding: 10px;
 }
@@ -5,10 +7,10 @@ body{
 
     padding: 10px 20px;
     margin: 5px;
-    background-color: rgba(128, 128, 128, 0.443); 
+    background-color: var(--elementBackgroundColor); 
     font: bolder;
     text-decoration: none;
-    color: white;
+
     border-radius: 10px;
 
  }
@@ -20,6 +22,7 @@ body{
  .tab:hover,
  .tab:focus,
  .selected {
-   box-shadow: 0 0.5em 0.5em -0.4em var(--evidence);
+   box-shadow: 0 0.5em 0.5em -0.4em var(--lowImpact);
+
    transform: translateY(-0.25em);
  }

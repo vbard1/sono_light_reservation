@@ -9,7 +9,8 @@ import { PageNotFoundComponent } from './GENERAL/page-not-found/page-not-found.c
 
 import { HttpClientModule } from '@angular/common/http';
 import { AdminHomeComponent } from './ADMIN/admin-home/admin-home.component';
-import { AdminEquipmentComponent } from './ADMIN/admin-equipment/admin-equipment.component';
+import { AdminEquipmentListComponent } from './ADMIN/admin-equipment-list/admin-equipment-list.component';
+
 import { AdminReservationComponent } from './ADMIN/admin-reservation/admin-reservation.component';
 import { AdminUserListComponent } from './ADMIN/admin-user-list/admin-user-list.component';
 import { AdminUserDetailsComponent } from './ADMIN/admin-user-details/admin-user-details.component';
@@ -21,7 +22,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     AdminHomeComponent,
     PageNotFoundComponent,
-    AdminEquipmentComponent,
+    AdminEquipmentListComponent,
     AdminUserListComponent,
     AdminReservationComponent,
     AdminUserDetailsComponent,
