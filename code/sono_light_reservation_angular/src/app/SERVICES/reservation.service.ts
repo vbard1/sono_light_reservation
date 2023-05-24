@@ -13,22 +13,22 @@ export class ReservationService {
   constructor(private http: HttpClient) { }
 
   getReservationsByClient(clientId: number): Observable<Reservation[]> {
-    return this.http.get<Reservation[]>(`${this.url}/${clientId}`);
+    return this.http.get<Reservation[]>(`${this.baseUrl}/${clientId}`);
   }
 
   getReservationById(id: number): Observable<Reservation> {
-    return this.http.get<Reservation>(`${this.url}/${id}`);
+    return this.http.get<Reservation>(`${this.baseUrl}/${id}`);
   }
 
   addReservation(reservation: Reservation): Observable<Reservation> {
-    return this.http.post<Reservation>(this.url, reservation);
+    return this.http.post<Reservation>(this.baseUrl, reservation);
   }
 
   updateReservation(reservation: Reservation): Observable<Reservation> {
-    return this.http.put<Reservation>(this.url, reservation);
+    return this.http.put<Reservation>(this.baseUrl, reservation);
   }
 
   deleteReservation(id: number): Observable<any> {
-    return this.http.delete(`${this.url}/${id}`);
+    return this.http.delete(`${this.baseUrl}/${id}`);
   }
 }
