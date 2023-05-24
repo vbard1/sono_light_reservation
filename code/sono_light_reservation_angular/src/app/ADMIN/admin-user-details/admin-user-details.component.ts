@@ -99,20 +99,12 @@ export class AdminUserDetailsComponent implements OnInit {
 
     this.comptesService.updateCompte(formData).subscribe({
       next: () => {
-        console.log("Le compte a été mis à jour avec succès");
         this.router.navigateByUrl("/ADMIN/admin-accueil");
-      },
-      error: (err) => {
-        console.log("Une erreur est survenue lors de la mise à jour du compte : ", err);
-      },
-      complete: () => {
-        console.log("Mise à jour du compte terminée");
       }
     });
   }
 
   doNothing(): void {
-    console.log("OPERATION ANNULEE");
     this.router.navigateByUrl("/ADMIN/admin-accueil");
   }
 }
