@@ -1,0 +1,37 @@
+<h2> Détails du compte </h2>
+<form>
+    <div [formGroup]="userForm" class="form-row">
+        <div class="form-row">
+            <label for="firstname"> Prénom </label>
+            <input type="text" id="firstname" formControlName="firstname">
+            <label for="name"> Nom </label>
+            <input type="text" id="name" formControlName="name">
+        </div>
+        <div class="form-row">
+            <label for="email"> E-mail </label>
+            <input type="email" id="email" formControlName="email" placeholder="insa.kleson@gmail.com">
+            <label for="phone"> Téléphone </label>
+            <input type="tel" id="phone" formControlName="phone" placeholder="0102030405">
+        </div>
+        <div class="form-row">
+            <label for="address">Adresse</label>
+            <input type="text" id="address" formControlName="address"
+                placeholder="20 Avenue Albert Einstein, 69621 Villeurbanne">
+        </div>
+        <div class="form-row">
+            <label for="level">Niveau</label>
+            <select id="level" formControlName="level">
+                <option value="client" selected>Client</option>
+                <option value="admin">Admin</option>
+            </select>
+        </div>
+
+        <div class="form-row">
+            <div class="col">
+                <button type="submit" (click)="onSubmitForm()" class="btn btn-info btn-sm"
+                    [disabled]="userForm.invalid">Enregistrer</button>
+                <button type="reset" (click)="doNothing()" class="btn btn-danger btn-sm">Annuler</button>
+            </div>
+        </div>
+    </div>
+</form>

@@ -11,19 +11,19 @@
 }
 
 ::selection {
-    background-color: var(--surlignage);
+    background-color: var(--highlights);
 }
 
 html, body {
-     color: var(--texte) !important;
-     background-color: var(--fond) !important;
-    transition: var(--tps-transition);
+     color: var(--text) !important;
+     background-color: var(--backgroundColor) !important;
+    transition: var(--transitionTime);
 }
 
 .mat-mdc-snack-bar-container {
-    //bouton
+    //button
     --mat-mdc-snack-bar-button-color: #ffffff;
-    //texte
+    //text
     --mdc-snackbar-supporting-text-color: #ffffff;
   
     &.fail-snackbar {
