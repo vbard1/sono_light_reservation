@@ -9,7 +9,7 @@ mat-expansion-panel-header {
 }
 
 mat-expansion-panel {
-    background-color: var(--fond) !important;
+    background-color: var(--backgroundColor) !important;
 }
 
 .reservation {
@@ -17,7 +17,7 @@ mat-expansion-panel {
 }
 
 .btn{
-    border-radius: var(--arrondi);
+    border-radius: var(--rounding);
 }
 .actions{
     text-align: center;
