@@ -16,8 +16,11 @@ Renommer le nom du --volume (dossier-hote) avec le chemin du dossier qui accueil
 docker run --name=sonoLightReservation \
    --volume=/dossier-hote:/var/lib/mysql \
    -p 3308:3306 -e MYSQL_ROOT_PASSWORD=root -d mysql
-   
-#Exemple:
+
+#Exemple pour les utilisateurs de Windows :
+docker run --name=sonoLightReservation --volume=C:\Users\felix\Documents\sono_light_reservation_DATABASE:/var/lib/mysql -p 3308:3306 -e MYSQL_ROOT_PASSWORD=root -d mysql
+
+#Exemple pour les utilisateurs de linux :
 docker run --name=sonoLightReservation \
    --volume=/home/laurent/Documents/sono_light_reservation_DATABASE/db:/var/lib/mysql \
    -p 3308:3306 -e MYSQL_ROOT_PASSWORD=root -d mysql
