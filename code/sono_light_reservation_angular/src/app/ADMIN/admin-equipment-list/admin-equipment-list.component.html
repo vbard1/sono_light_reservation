@@ -18,23 +18,15 @@
   <button type="button" class="btn btn-primary" routerLink="/create-equipment">Ajouter un matériel</button>
 </table>
 
-<div *ngIf="sort.value === 'aucun'">
-  <table class="table table-dark table-striped">
-    <tbody>
-      <tr *ngFor="let equipment of getAllEquipments()">
-        <td>{{equipment.label}}</td>
-        <td>{{equipment.description}}</td>
-        <td>{{equipment.owner}}</td>
-        <td>{{equipment.status}}</td>
-        <td>{{equipment.daily_price}}</td>
-        <td>{{equipment.replacement_price}}</td>
-        <td>
-          <button type="button" class="btn btn-primary" (click)="viewEquipment(equipment)">Voir</button>
-          <button type="button" class="btn btn-danger" (click)="deleteEquipment(equipment)">Supprimer</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<div *ngIf="sort.value === 'Aucun'">
+      <table class="table table-dark table-striped">
+        <tbody>
+          <tr *ngFor="let equipment of getAllEquipments()">
+            <app-admin-equipment-line [equipment]="equipment"></app-admin-equipment-line>
+          </tr>
+        </tbody>
+      </table>
+  
 </div>
 
 <div *ngIf="sort.value === 'section'">
@@ -45,15 +37,8 @@
     <div class="section-equipment-content" [hidden]="isSectionCollapsed(section)">
       <table class="table table-dark table-striped">
         <tbody>
-          <tr *ngFor="let equipment of getEquipmentsBySection(section.sectionId)">
-            <td>{{equipment.label}}</td>
-            <td>{{equipment.owner}}</td>
-            <td>{{equipment.daily_price}}</td>
-            <td>{{equipment.replacement_price}}</td>
-            <td>
-              <button type="button" class="btn btn-primary" (click)="viewEquipment(equipment)">Voir</button>
-              <button type="button" class="btn btn-danger" (click)="deleteEquipment(equipment)">Supprimer</button>
-            </td>
+          <tr *ngFor="let equipment of getEquipmentsBySection(section.section_id)">
+            <app-admin-equipment-line [equipment]="equipment"></app-admin-equipment-line>
           </tr>
         </tbody>
       </table>
@@ -70,14 +55,7 @@
       <table class="table table-dark table-striped">
         <tbody>
           <tr *ngFor="let equipment of getEquipmentsByCategory(category.category_id)">
-            <td>{{equipment.label}}</td>
-            <td>{{equipment.owner}}</td>
-            <td>{{equipment.daily_price}}</td>
-            <td>{{equipment.replacement_price}}</td>
-            <td>
-              <button type="button" class="btn btn-primary" (click)="viewEquipment(equipment)">Voir</button>
-              <button type="button" class="btn btn-danger" (click)="deleteEquipment(equipment)">Supprimer</button>
-            </td>
+            <app-admin-equipment-line [equipment]="equipment"></app-admin-equipment-line>
           </tr>
         </tbody>
       </table>

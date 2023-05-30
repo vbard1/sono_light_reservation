@@ -1,7 +1,10 @@
-#numero{
-    width : 50px;
+@import '../../../styles.var.scss';
+
+#numero {
+    width: 50px;
 }
-form>*{
+
+form>* {
     padding: 15px;
 }
 
@@ -11,6 +14,15 @@ label {
     margin-right: 20px;
     margin-bottom: 25px;
 }
-button{
-    margin:10px;
+
+button {
+    margin: 10px;
+}
+
+.btn-save {
+    background-color: var(--lowImpact);
+}
+
+.btn-cancel {
+    background-color: var(--danger);
 }

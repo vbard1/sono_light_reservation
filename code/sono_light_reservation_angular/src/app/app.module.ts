@@ -14,6 +14,8 @@ import { AdminReservationComponent } from './ADMIN/admin-reservation/admin-reser
 import { AdminUserListComponent } from './ADMIN/admin-user-list/admin-user-list.component';
 import { AdminUserDetailsComponent } from './ADMIN/admin-user-details/admin-user-details.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AdminEquipmentLineComponent } from './ADMIN/admin-equipment-line/admin-equipment-line.component';
+import { AdminEquipmentDetailsComponent } from './ADMIN/admin-equipment-details/admin-equipment-details.component';
 
 
 @NgModule({
@@ -25,6 +27,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AdminUserListComponent,
     AdminReservationComponent,
     AdminUserDetailsComponent,
+    AdminEquipmentLineComponent,
+    AdminEquipmentDetailsComponent,
   ],
   imports: [
     BrowserModule,

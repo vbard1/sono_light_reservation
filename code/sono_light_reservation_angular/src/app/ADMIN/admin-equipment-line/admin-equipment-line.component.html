@@ -1,0 +1,12 @@
+<tr>
+    <td>{{equipment.label}}</td>
+    <td>{{equipment.owner}}</td>
+    <td>{{equipment.daily_price}}</td>
+    <td>{{equipment.replacement_price}}</td>
+    <td>
+        <button type="button" class="btn btn-primary"
+            (click)="viewEquipment(equipment)">Voir</button>
+        <button type="button" class="btn btn-danger"
+            (click)="deleteEquipment(equipment)">Supprimer</button>
+    </td>
+</tr>

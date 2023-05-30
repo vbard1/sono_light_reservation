@@ -9,9 +9,11 @@
         </div>
         <div class="form-row">
             <label for="email"> E-mail </label>
-            <input type="email" id="email" formControlName="email" placeholder="insa.kleson@gmail.com">
+            <input type="email" id="email" formControlName="email"
+                placeholder="insa.kleson@gmail.com">
             <label for="phone"> Téléphone </label>
-            <input type="tel" id="phone" formControlName="phone" placeholder="0102030405">
+            <input type="tel" id="phone" formControlName="phone"
+                placeholder="0102030405">
         </div>
         <div class="form-row">
             <label for="address">Adresse</label>
@@ -28,9 +30,13 @@
 
         <div class="form-row">
             <div class="col">
-                <button type="submit" (click)="onSubmitForm()" class="btn btn-info btn-sm"
-                    [disabled]="userForm.invalid">Enregistrer</button>
-                <button type="reset" (click)="doNothing()" class="btn btn-danger btn-sm">Annuler</button>
+                <button type="submit" (click)="onSubmitForm()"
+                    class="btn btn-info btn-sm"
+                    [ngClass]="saveButtonColor" [disabled]="userForm.invalid">Enregistrer</button>
+
+                <button type="reset" (click)="doNothing()"
+                    class="btn btn-danger btn-sm"
+                    [ngClass]="cancelButtonColor">Annuler</button>
             </div>
         </div>
     </div>

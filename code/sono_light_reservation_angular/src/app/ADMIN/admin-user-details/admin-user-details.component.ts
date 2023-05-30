@@ -21,6 +21,11 @@ export class AdminUserDetailsComponent implements OnInit {
   emailRegEx!: RegExp;
   cpRegEx!: RegExp;
   id!: string;
+
+  /**html related attributes (styling classes, enum) */
+  saveButtonColor: string = 'btn-save';
+  cancelButtonColor: string = 'btn-cancel';
+
   levels: { value:string, numero:number }[] = [
     { value: "client", numero:3},
     { value: "admin", numero:2},
@@ -31,7 +36,7 @@ export class AdminUserDetailsComponent implements OnInit {
     private formBuilder: FormBuilder,
     private router: Router,
     private route: ActivatedRoute,
-    private comptesService: UserService
+    private userService: UserService
   ) {
     this.phoneRegEx = /^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/;
     this.emailRegEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
@@ -59,7 +64,7 @@ export class AdminUserDetailsComponent implements OnInit {
 
 
     // Récupération des informations du compte à partir du service
-    this.comptesService.getCompteById(Number(this.id)).subscribe({
+    this.userService.getCompteById(Number(this.id)).subscribe({
       next: (user: User) => {
         // Populate the form with the retrieved account data
         const levelLabel = this.levels.find(level => level.numero === user.level)?.value;
@@ -97,7 +102,7 @@ export class AdminUserDetailsComponent implements OnInit {
       formData.level = numero;
     }
 
-    this.comptesService.updateCompte(formData).subscribe({
+    this.userService.updateCompte(formData).subscribe({
       next: () => {
         this.router.navigateByUrl("/ADMIN/admin-accueil");
       }
