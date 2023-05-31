@@ -1,10 +1,8 @@
 # SonoLight_reservation
  Une application web de réservation de matériel sonorisation et lumière
 
-# Font-end : Angular
-
-
-# Back-end : Java + Mysql
+Font-end : Angular
+Back-end : Java + Mysql
 
 ## Lancer Mysql sur votre pc, au choix :
 ### - Avec une app Mysql
