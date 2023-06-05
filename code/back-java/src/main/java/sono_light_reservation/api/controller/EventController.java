@@ -43,5 +43,26 @@ public class EventController {
     public EventDto createEvent(@RequestBody EventDto newEventDto) {
         return eventService.saveEvent(newEventDto);
     }
+
+    /**
+     * Update the details of the event get by id
+     * @param id
+     * @param updatedEventDto
+     * @return eventDto with modifications
+     */
+    @PutMapping("/event/{id}")
+    public EventDto updateEvent(@PathVariable int id, @RequestBody EventDto updatedEventDto) {
+        return eventService.updateEvent(id, updatedEventDto);
+    }
+
+    /**
+     * Delete existant event
+     * @param id
+     * @return String messsage : confirm of the suppression
+     */
+    @DeleteMapping("/event/{id}")
+    public String deleteEvent(@PathVariable int id) {
+        return eventService.deleteEvent(id);
+    }
 }
 
