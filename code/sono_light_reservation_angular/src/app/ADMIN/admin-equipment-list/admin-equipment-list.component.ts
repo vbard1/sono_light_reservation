@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+
 import { Category } from 'src/app/MODELS/Category';
 import { Equipment } from 'src/app/MODELS/Equipment';
-import { Section } from 'src/app/MODELS/Section';
 import { EquipmentService } from 'src/app/SERVICES/Equipment.service';
+import { FormControl } from '@angular/forms';
+import { Section } from 'src/app/MODELS/Section';
 
 @Component({
   selector: 'app-admin-equipment-list',
