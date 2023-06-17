@@ -15,9 +15,44 @@ public class ReservationController {
     @Autowired
     private ReservationService reservationService;
 
+    /**
+     * List of all the reservations
+     * @return the list of the reservationsDto
+     */
     @GetMapping("/reservation")
     public List<ReservationDto> getReservations() {
         return reservationService.getReservations();
+    }
+
+    /**
+     * Read the details of the reservation get by id
+     * @param id
+     * @return reservationDto
+     */
+    @GetMapping("/reservation/{id}")
+    public Optional<ReservationDto> getOneReservation(@PathVariable int id) {
+        return reservationService.getReservation(id);
+    }
+
+    /**
+     * Update the details of the reservation get by id
+     * @param id
+     * @param updatedReservationDto
+     * @return reservationDto with modifications
+     */
+    @PutMapping("/reservation/{id}")
+    public ReservationDto updateReservation(@PathVariable int id, @RequestBody ReservationDto updatedReservationDto) {
+        return reservationService.updateReservation(id, updatedReservationDto);
+    }
+
+    /**
+     * Delete existant reservation
+     * @param id
+     * @return String messsage : confirm of the suppression
+     */
+    @DeleteMapping("/reservation/{id}")
+    public String deleteReservation(@PathVariable int id) {
+        return reservationService.deleteReservation(id);
     }
 
     /**
@@ -29,5 +64,7 @@ public class ReservationController {
     public ReservationDto createReservation(@RequestBody ReservationDto newReservationDto) {
         return reservationService.saveReservation(newReservationDto);
     }
+
+
 
 }
