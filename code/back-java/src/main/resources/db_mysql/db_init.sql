@@ -87,7 +87,6 @@ CREATE TABLE `reservation` (
   `category_id` int DEFAULT NULL,
   `event_id` int DEFAULT NULL,
   PRIMARY KEY (`reservation_id`),
-  UNIQUE KEY `reservation_UN` (`event_id`),
   KEY `reservation_FK_1` (`category_id`),
   KEY `reservation_FK_2` (`equipment_id`),
   CONSTRAINT `reservation_FK` FOREIGN KEY (`event_id`) REFERENCES `event` (`event_id`),

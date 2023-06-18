@@ -45,6 +45,11 @@ public class ReservationService {
         return Optional.of(reservationMapper.convertToDto(reservation));
     }
 
+    public List<ReservationDto> getReservationsByEventId(int event_id) {
+        return (reservationRepository.findReservationByEventId(event_id)).stream()
+                .map(reservation -> reservationMapper.convertToDto(Optional.ofNullable(reservation))).collect(Collectors.toList());
+    }
+
     /**
      * List of all the reservations
      * @return the list of the reservationsDto

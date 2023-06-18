@@ -30,12 +30,12 @@ public class ReservationMapper {
         int reservation_equipment_id = -1;
         int reservation_category_id = -1;
         int reservation_event_id = -1;
-        if (reservation.get().getEquipment() != null) {
-            reservation_equipment_id = reservation.get().getEquipment().getEvent_id();//TODO NOT Event : waiting Equipement class creation
-        }
-        if (reservation.get().getCategory() != null) {
-            reservation_category_id = reservation.get().getCategory().getEvent_id();//TODO NOT Event : waiting category class creation
-        }
+//        if (reservation.get().getCategory() != null) {
+//            reservation_equipment_id = reservation.get().getEquipment().getEvent_id();//TODO NOT Event : waiting Equipement class creation
+//        }
+//        if (reservation.get().getCategory() != null) {
+//            reservation_category_id = reservation.get().getCategory().getEvent_id();//TODO NOT Event : waiting category class creation
+//        }
         if (reservation.get().getEvent() != null) {
             reservation_event_id = reservation.get().getEvent().getEvent_id();
         }

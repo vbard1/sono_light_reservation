@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import sono_light_reservation.api.dto.EventDto;
 
 @Data
 @Entity
