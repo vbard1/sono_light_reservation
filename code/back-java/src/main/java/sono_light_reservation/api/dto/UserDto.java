@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import sono_light_reservation.api.entity.UserLevelEnum;
 
 @Data
 @Getter
@@ -16,11 +17,11 @@ public class UserDto {
     private String email;
     private String phone;
     private String address;
-    private Integer level;
+    private UserLevelEnum level;
 
     // TODO : liste des reservations a intégrer quand class créées
 
-    public UserDto(int user_id, String firstname, String name, String email, String phone, String address, Integer level) {
+    public UserDto(int user_id, String firstname, String name, String email, String phone, String address, UserLevelEnum level) {
         this.user_id = user_id;
         this.firstname = firstname;
         this.name = name;
