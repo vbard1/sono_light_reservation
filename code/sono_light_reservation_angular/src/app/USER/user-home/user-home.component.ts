@@ -1,19 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Reservation } from 'src/app/MODELS/reservation.model';
+import { Reservation } from 'src/app/MODELS/Reservation.model';
 
 
-export enum State {
-  DENIED = 'Refusée',
-  VALIDATED = 'Validée',
-  PENDING = 'En attente',
-  FINISHED = 'Terminée'
-}
-@Component({
+
+ export enum State {
+   DENIED = 'Refusée',
+   VALIDATED = 'Validée',
+   PENDING = 'En attente',
+   FINISHED = 'Terminée'
+ }
+
+ @Component({
   selector: 'app-user-home',
   templateUrl: './user-home.component.html',
-  styleUrls: ['./user-home.component.scss'],
-
+  styleUrls: ['./user-home.component.scss']
 })
 export class UserHomeComponent implements OnInit {
   reservations: Reservation[] = [
@@ -104,3 +105,4 @@ export class UserHomeComponent implements OnInit {
               }
 
 }
+
