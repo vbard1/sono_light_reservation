@@ -4,6 +4,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import lombok.Getter;
 import lombok.ToString;
+import sono_light_reservation.api.entity.Section;
 
 @Data
 @Getter
@@ -14,12 +15,14 @@ public class CategoryDto {
     private String label;
     private String desciption;
     private String picture_link;
+    private Section section;
 
-    public CategoryDto(int categoryId, String label, String desciption, String picture_link) {
+    public CategoryDto(int categoryId, String label, String desciption, String picture_link, Section section) {
         this.categoryId = categoryId;
         this.label = label;
         this.desciption = desciption;
         this.picture_link = picture_link;
+        this.section = section;
     }
 
     public CategoryDto() {
@@ -57,4 +60,11 @@ public class CategoryDto {
         this.picture_link = picture_link;
     }
 
+    public Section getSection() {
+        return this.section;
+    }
+
+    public void setSection(Section section) {
+        this.section = section;
+    }
 }

@@ -23,6 +23,9 @@ public class Category {
     @Column(name = "picture_link", unique = true)
     private String picture_link;
 
+    @Column(name = "section", unique = true)
+    private Section section;
+
     public int getCategory_id() {
         return this.category_id;
     }
@@ -53,5 +56,13 @@ public class Category {
 
     public void setPicture_link(String picture_link) {
         this.picture_link = picture_link;
+    }
+
+    public Section getSection() {
+        return this.section;
+    }
+
+    public void setSection(Section section) {
+        this.section = section;
     }
 }
