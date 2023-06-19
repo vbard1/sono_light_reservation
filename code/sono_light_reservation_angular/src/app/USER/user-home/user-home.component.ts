@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Reservation } from 'src/app/models/reservation.model';
+import { Reservation } from 'src/app/MODELS/reservation.model';
 
 
 export enum State {

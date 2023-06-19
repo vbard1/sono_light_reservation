@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { map, Observable } from 'rxjs';
 import { ComptesService } from 'src/app/SERVICES/comptes.service';
-import { Compte } from 'src/app/models/compte.model';
+import { Compte } from 'src/app/MODELS/compte.model';
 
 @Component({
   selector: 'app-fiche-compte',
