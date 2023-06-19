@@ -82,7 +82,7 @@ CREATE TABLE `event` (
 CREATE TABLE `reservation` (
   `reservation_id` int  AUTO_INCREMENT,
   `reservation_label` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci ,
-  `reservation_state` int DEFAULT NULL COMMENT '(1=enAttente, 2=validée, 3=enCours, 4=terminée)',
+  `reservation_state` int,
   `equipment_id` int DEFAULT NULL,
   `category_id` int DEFAULT NULL,
   `event_id` int DEFAULT NULL,

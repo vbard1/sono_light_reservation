@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import sono_light_reservation.api.dto.ReservationDto;
 import sono_light_reservation.api.entity.Event;
 import sono_light_reservation.api.entity.Reservation;
+import sono_light_reservation.api.entity.ReservationStateEnum;
 import sono_light_reservation.api.repository.EventRepository;
 import sono_light_reservation.api.repository.ReservationRepository;
 import sono_light_reservation.api.repository.UserRepository;
@@ -61,7 +62,7 @@ public class ReservationService {
 
     public ReservationDto saveReservation(ReservationDto reservationDto) {
         if (reservationDto.getReservation_state() == null) {
-            reservationDto.setReservation_state(1); // 1=enAttente, 2=validée, 3=enCours, 4=terminée
+            reservationDto.setReservation_state(ReservationStateEnum.EN_ATTENTE); // 1=enAttente, 2=validée, 3=enCours, 4=terminée
         }
         Optional<Event> eventOptional = eventRepository.findById(reservationDto.getEvent_id());
         Event event = eventOptional.orElse(null);

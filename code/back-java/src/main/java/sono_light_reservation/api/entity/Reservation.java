@@ -24,7 +24,8 @@ public class Reservation {
 
     //reservation_state : 1=enAttente, 2=validée, 3=enCours, 4=terminée
     @Column(name = "reservation_state")
-    private Integer reservation_state;
+    @Enumerated(EnumType.ORDINAL)
+    private ReservationStateEnum reservation_state;
 
     @ManyToOne
     @JoinColumn(name = "equipment_id")
@@ -36,7 +37,7 @@ public class Reservation {
     @JoinColumn(name = "event_id")
     private Event event;
 
-    public Reservation(int reservation_id, String reservation_label, Integer reservation_state, Event equipment, Event category, Event event) {
+    public Reservation(int reservation_id, String reservation_label, ReservationStateEnum reservation_state, Event equipment, Event category, Event event) {
         this.reservation_id = reservation_id;
         this.reservation_label = reservation_label;
         this.reservation_state = reservation_state;
@@ -46,6 +47,5 @@ public class Reservation {
     }
 
     public Reservation() {
-        this.reservation_id = reservation_id;
     }
 }
