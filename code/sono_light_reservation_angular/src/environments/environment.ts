@@ -4,7 +4,7 @@
 
 export const environment = {
     production: false,
-    api_url:"http://localhost/sonolight/"
+    api_url:"http://localhost:4200/"
   };
   
   /*
