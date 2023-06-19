@@ -1,0 +1,86 @@
+<table class="table table-dark table-striped table-sm table-dense">
+  <thead>
+    <tr>
+      <th>Matériel</th>
+      <th>Propriétaire</th>
+      <th>Etat</th>
+      <th>Prix/j</th>
+      <th>Prix unitaire</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <label for="sort">Trier par : </label>
+  <select id="sort" [formControl]="sort">
+    <option value="Aucun" selected>Aucun</option>
+    <option value="section">Section</option>
+    <option value="category">Catégorie</option>
+  </select>
+  <button type="button" class="btn btn-primary" routerLink="/create-equipment">Ajouter un matériel</button>
+</table>
+
+<div *ngIf="sort.value === 'aucun'">
+  <table class="table table-dark table-striped">
+    <tbody>
+      <tr *ngFor="let equipment of getAllEquipments()">
+        <td>{{equipment.label}}</td>
+        <td>{{equipment.description}}</td>
+        <td>{{equipment.owner}}</td>
+        <td>{{equipment.status}}</td>
+        <td>{{equipment.daily_price}}</td>
+        <td>{{equipment.replacement_price}}</td>
+        <td>
+          <button type="button" class="btn btn-primary" (click)="viewEquipment(equipment)">Voir</button>
+          <button type="button" class="btn btn-danger" (click)="deleteEquipment(equipment)">Supprimer</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="sort.value === 'section'">
+  <div *ngFor="let section of sections" [ngClass]="{ 'collapsed': isSectionCollapsed(section) }">
+    <h3 (click)="toggleSection(section)">
+      <button type="button" class="collapsible">{{ section.label }}</button>
+    </h3>
+    <div class="section-equipment-content" [hidden]="isSectionCollapsed(section)">
+      <table class="table table-dark table-striped">
+        <tbody>
+          <tr *ngFor="let equipment of getEquipmentsBySection(section.sectionId)">
+            <td>{{equipment.label}}</td>
+            <td>{{equipment.owner}}</td>
+            <td>{{equipment.daily_price}}</td>
+            <td>{{equipment.replacement_price}}</td>
+            <td>
+              <button type="button" class="btn btn-primary" (click)="viewEquipment(equipment)">Voir</button>
+              <button type="button" class="btn btn-danger" (click)="deleteEquipment(equipment)">Supprimer</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="sort.value === 'category'">
+  <div *ngFor="let category of categories" [ngClass]="{ 'collapsed': isCategoryCollapsed(category) }">
+    <h3 (click)="toggleCategory(category)">
+      <button type="button" class="collapsible">{{ category.label }}</button>
+    </h3>
+    <div class="category-equipment-content" [hidden]="isCategoryCollapsed(category)">
+      <table class="table table-dark table-striped">
+        <tbody>
+          <tr *ngFor="let equipment of getEquipmentsByCategory(category.category_id)">
+            <td>{{equipment.label}}</td>
+            <td>{{equipment.owner}}</td>
+            <td>{{equipment.daily_price}}</td>
+            <td>{{equipment.replacement_price}}</td>
+            <td>
+              <button type="button" class="btn btn-primary" (click)="viewEquipment(equipment)">Voir</button>
+              <button type="button" class="btn btn-danger" (click)="deleteEquipment(equipment)">Supprimer</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

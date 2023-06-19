@@ -1,23 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
-:root {
-  --backgroundColor: rgb(13, 13, 13);
-  --elementBackgroundColor: rgb(71, 71, 71);
-  --highlights: rgba(155, 155, 155, 0.614); //hovers
-  --text: rgb(229, 229, 229);
-  --lowImpact: rgb(0, 238, 255); // low impact actions, informations
-  --danger: rgb(255, 0, 0); //pour les danger, comme supprimer un compte
-  --transitionTime: 0.3s;
-  --rounding: 15px;
-}
+@import './styles.var.scss';
 
 ::selection {
     background-color: var(--highlights);
 }
 
-html, body {
-     color: var(--text) !important;
-     background-color: var(--backgroundColor) !important;
-    transition: var(--transitionTime);
+  
+* {
+  color: var(--text);
+  background-color: var(--backgroundColor);
+  transition: var(--transitionTime) ease-in-out;
 }
 
 .mat-mdc-snack-bar-container {
@@ -40,4 +31,4 @@ html, body {
 .mat-expansion-indicator::after {
     color: white;
 }
-  
+

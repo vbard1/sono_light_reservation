@@ -15,7 +15,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { AdminHomeComponent } from './ADMIN/admin-home/admin-home.component';
-import { AdminEquipmentComponent } from './ADMIN/admin-equipment/admin-equipment.component';
+import { AdminEquipmentListComponent } from './ADMIN/admin-equipment-list/admin-equipment-list.component';
 import { AdminReservationComponent } from './ADMIN/admin-reservation/admin-reservation.component';
 import { AdminUserListComponent } from './ADMIN/admin-user-list/admin-user-list.component';
 import { AdminUserDetailsComponent } from './ADMIN/admin-user-details/admin-user-details.component';
@@ -27,7 +27,7 @@ import { UserHomeComponent } from './USER/user-home/user-home.component';
     AppComponent,
     AdminHomeComponent,
     PageNotFoundComponent,
-    AdminEquipmentComponent,
+    AdminEquipmentListComponent,
     AdminUserListComponent,
     AdminReservationComponent,
     AdminUserDetailsComponent,
