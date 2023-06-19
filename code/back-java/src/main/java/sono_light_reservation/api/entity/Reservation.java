@@ -22,7 +22,7 @@ public class Reservation {
     @Column(name="reservation_label")
     private String reservation_label;
 
-    //reservation_state : 1=enAttente, 2=validée, 3=enCours, 4=terminée
+    //reservation_state : 0=enAttente, 1=validée, 2=enCours, 3=terminée
     @Column(name = "reservation_state")
     @Enumerated(EnumType.ORDINAL)
     private ReservationStateEnum reservation_state;

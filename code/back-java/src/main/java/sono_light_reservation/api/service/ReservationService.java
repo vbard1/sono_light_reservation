@@ -62,7 +62,7 @@ public class ReservationService {
 
     public ReservationDto saveReservation(ReservationDto reservationDto) {
         if (reservationDto.getReservation_state() == null) {
-            reservationDto.setReservation_state(ReservationStateEnum.EN_ATTENTE); // 1=enAttente, 2=validée, 3=enCours, 4=terminée
+            reservationDto.setReservation_state(ReservationStateEnum.EN_ATTENTE); //reservation_state : 0=enAttente, 1=validée, 2=enCours, 3=terminée
         }
         Optional<Event> eventOptional = eventRepository.findById(reservationDto.getEvent_id());
         Event event = eventOptional.orElse(null);

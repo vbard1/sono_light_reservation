@@ -13,7 +13,7 @@ import sono_light_reservation.api.entity.ReservationStateEnum;
 public class ReservationDto {
     private int reservation_id;
     private String reservation_label;
-    private ReservationStateEnum reservation_state; //reservation_state : 1=enAttente, 2=validée, 3=enCours, 4=terminée
+    private ReservationStateEnum reservation_state; //reservation_state : 0=enAttente, 1=validée, 2=enCours, 3=terminée
     private int equipment_id;
     private int category_id;
     private int event_id;
