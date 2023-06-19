@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from 'src/app/MODELS/User.model';
 import { UserService } from 'src/app/SERVICES/User.service';
-import { User } from 'src/app/MODELS/User';
 
 @Component({
   selector: 'app-admin-comptes',
