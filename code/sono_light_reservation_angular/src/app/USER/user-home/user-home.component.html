@@ -1,1 +1,64 @@
-<p>client-accueil works!</p>
+<button (click)="testSuccessSnack()">Success</button>
+<button (click)="testFailSnack()">Fail</button>
+<div class="reservation">
+<h4>Mes réservations en cours</h4>
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <th>Intitulé de l'évènement</th>
+            <th>Date début</th>
+            <th>Date fin</th>
+            <th>Type</th>
+            <th>Etat</th>
+            <th colspan="2" class="actions">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let reservation of reservations">
+            <td>{{ reservation.eventDetails.title}}</td>
+            <td>{{ reservation.eventDetails.dateStart | date:'dd-MM-yyyy' }}</td>
+            <td>{{ reservation.eventDetails.dateEnd | date:'dd-MM-yyyy' }}</td>
+            <td>{{ reservation.eventDetails.type}}</td>
+            <td [ngStyle]="{
+                'color': getColor(reservation.reservationState)
+            }">{{reservation.reservationState}}</td>
+            <td class="actions">
+              <button class="btn btn-info btn-sm" routerLink="/reservation">voir la fiche</button>
+            </td>
+            <td class="actions"><button class="btn btn-danger btn-sm">supprimer</button></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Historique des réservations
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+  
+      <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+              <th>Intitulé de l'évènement</th>
+              <th>Date début</th>
+              <th>Date fin</th>
+              <th>Type</th>
+              <th>Etat</th>
+                <th colspan="2" class="actions">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let reservation of reservations">
+              <td>{{ reservation.eventDetails.title}}</td>
+              <td>{{ reservation.eventDetails.dateStart | date:'dd-MM-yyyy' }}</td>
+              <td>{{ reservation.eventDetails.dateEnd | date:'dd-MM-yyyy' }}</td>
+              <td>{{ reservation.eventDetails.type}}</td>
+                <td>Terminée</td>
+                <td class="actions"><button class="btn btn-info btn-sm">voir la fiche</button></td>
+        </tr>
+      </tbody>
+    </table>
+    </mat-expansion-panel>
+</mat-accordion>

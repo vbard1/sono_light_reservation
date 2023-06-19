@@ -3,8 +3,8 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 
 import { Router, ActivatedRoute } from "@angular/router";
 import { Observable, map } from "rxjs";
+import { User } from "src/app/MODELS/User.model";
 import { UserService } from "src/app/SERVICES/User.service";
-import { User } from "src/app/MODELS/User";
 
 
 
