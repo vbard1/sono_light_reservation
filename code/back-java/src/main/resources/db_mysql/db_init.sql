@@ -108,11 +108,11 @@ INSERT INTO section (label) VALUES
 
 INSERT INTO user (user_id, firstname, name, email, phone, address, email_validation, password, level)
 VALUES
-    (1, 'Homer', 'Simpson', 'homer@example.com', '123456789', '742 Evergreen Terrace', true, 'password123', 1),
-    (2, 'Marge', 'Simpson', 'marge@example.com', '987654321', '742 Evergreen Terrace', true, 'password456', 1),
-    (3, 'Bart', 'Simpson', 'bart@example.com', '555555555', '742 Evergreen Terrace', true, 'password789', 2),
-    (4, 'Lisa', 'Simpson', 'lisa@example.com', '999999999', '742 Evergreen Terrace', true, 'passwordabc', 2),
-    (5, 'Maggie', 'Simpson', 'maggie@example.com', '111111111', '742 Evergreen Terrace', true, 'passwordxyz', 3);
+    (1, 'Homer', 'Simpson', 'homer@example.com', '123456789', '742 Evergreen Terrace', true, 'password123', 0),
+    (2, 'Marge', 'Simpson', 'marge@example.com', '987654321', '742 Evergreen Terrace', true, 'password456', 0),
+    (3, 'Bart', 'Simpson', 'bart@example.com', '555555555', '742 Evergreen Terrace', true, 'password789', 1),
+    (4, 'Lisa', 'Simpson', 'lisa@example.com', '999999999', '742 Evergreen Terrace', true, 'passwordabc', 1),
+    (5, 'Maggie', 'Simpson', 'maggie@example.com', '111111111', '742 Evergreen Terrace', true, 'passwordxyz', 2);
 
 INSERT INTO event (event_id, title, description, location, type, user_comment, admin_comment, date_start, date_end, technician_asked, user_id)
 VALUES
