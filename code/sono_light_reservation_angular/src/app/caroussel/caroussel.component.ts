@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
+
 @Component({
   selector: 'app-caroussel',
   templateUrl: './caroussel.component.html',
@@ -8,4 +10,6 @@ export class CarousselComponent {
   openForm() {
     //this.locationService.openForm();
   }
+  ngonInit(): void {}
+  // caroussel
 }

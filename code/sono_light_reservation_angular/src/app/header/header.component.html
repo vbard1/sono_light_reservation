@@ -1,5 +1,9 @@
 <header>
   <nav class="navbar d-flex justify-content-end align-items-center w-100">
+    <!-- <div class="logo">
+      <a routerLink="/" fragment="home" class="nav-link">
+        <img src="assets/img/logo.png" alt="logo" />
+      </a> -->
     <ul [ngClass]="{ active: openedMobileMenu === true }" class="nav-menu">
       <li class="nav-item">
         <a routerLink="/" (click)="closeMenu()" class="nav-link" fragment="home"

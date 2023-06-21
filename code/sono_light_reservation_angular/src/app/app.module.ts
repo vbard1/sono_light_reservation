@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,6 +17,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { CarousselComponent } from './caroussel/caroussel.component';
 import { LocalisationComponent } from './localisation/localisation.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -41,6 +41,8 @@ import { LocalisationComponent } from './localisation/localisation.component';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    FormsModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
