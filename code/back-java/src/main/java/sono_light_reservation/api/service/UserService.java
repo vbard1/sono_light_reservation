@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sono_light_reservation.api.dto.UserDto;
 import sono_light_reservation.api.entity.User;
+import sono_light_reservation.api.entity.UserLevelEnum;
 import sono_light_reservation.api.repository.UserRepository;
 import sono_light_reservation.api.service.mapper.UserMapper;
 
@@ -45,7 +46,7 @@ public class UserService {
 
     public UserDto saveUser(UserDto userDto) {
         if (userDto.getLevel() == null) {
-            userDto.setLevel(3); // 1=superAdmin, 2=admin, 3=user
+            userDto.setLevel(UserLevelEnum.USER); // 0=superAdmin, 1=admin, 2=user
         }
         User user = userMapper.convertToEntity(userDto);
         userRepository.save(user);

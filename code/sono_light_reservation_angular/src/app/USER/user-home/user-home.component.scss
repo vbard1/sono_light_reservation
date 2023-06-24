@@ -1,0 +1,29 @@
+mat-panel-title {
+    font-size: 1.3em;
+    color: white;
+}
+
+mat-expansion-panel-header {
+    background-color: #212529 !important;
+    margin: 1em;
+}
+
+mat-expansion-panel {
+    background-color: var(--backgroundColor) !important;
+}
+
+.reservation {
+    margin: 1em;
+}
+
+.btn{
+    border-radius: var(--rounding);
+}
+.actions{
+    text-align: center;
+    width: 8%;
+}
+td{
+    white-space: nowrap;
+    overflow:hidden;
+}

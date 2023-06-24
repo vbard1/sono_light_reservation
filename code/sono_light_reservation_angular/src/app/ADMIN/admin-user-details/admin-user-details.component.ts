@@ -3,7 +3,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Observable, map } from "rxjs";
 
-import { User } from "src/app/MODELS/User";
+import { User } from "src/app/MODELS/User.model";
 import { UserService } from "src/app/SERVICES/User.service";
 
 @Component({

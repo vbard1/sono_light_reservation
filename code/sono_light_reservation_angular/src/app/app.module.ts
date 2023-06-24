@@ -1,4 +1,5 @@
-import { AdminEquipmentDetailsComponent } from './ADMIN/admin-equipment-details/admin-equipment-details.component';
+import { MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
+
 import { AdminEquipmentListComponent } from './ADMIN/admin-equipment-list/admin-equipment-list.component';
 import { AdminHomeComponent } from './ADMIN/admin-home/admin-home.component';
 import { AdminReservationComponent } from './ADMIN/admin-reservation/admin-reservation.component';
@@ -9,9 +10,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatIconModule} from '@angular/material/icon';
+import {MatInputModule} from '@angular/material/input';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './GENERAL/page-not-found/page-not-found.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { UserHomeComponent } from './USER/user-home/user-home.component';
 
 @NgModule({
   declarations: [
@@ -22,16 +29,22 @@ import { ReactiveFormsModule } from '@angular/forms';
     AdminUserListComponent,
     AdminReservationComponent,
     AdminUserDetailsComponent,
-    AdminEquipmentDetailsComponent,
+    UserHomeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSnackBarModule,
+    MatIconModule,
+    MatExpansionModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule, 
   ],
-  providers: [],
-  bootstrap: [AppComponent],
+  providers: [{provide: MAT_DATE_LOCALE, useValue: 'fr-FR'},],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

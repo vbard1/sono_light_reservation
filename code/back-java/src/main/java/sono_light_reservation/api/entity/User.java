@@ -35,11 +35,21 @@ public class User {
     @Column(name = "password")
     private String password;
 
-    //level : 1=superAdmin, 2=admin, 3=user
+    //level : 0=superAdmin, 1=admin, 2=user
     @Column(name = "level")
-    private Integer level;
+    @Enumerated(EnumType.ORDINAL)
+    private UserLevelEnum level;
 
-    public User(int user_id, String firstname, String name, String email, String phone, String address, Integer niveau) {
+    public User(int user_id, String firstname, String name, String email, String phone, String address, Boolean email_validation, String password, UserLevelEnum level) {
+        this.user_id = user_id;
+        this.firstname = firstname;
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+        this.address = address;
+        this.email_validation = email_validation;
+        this.password = password;
+        this.level = level;
     }
 
     public User() {
