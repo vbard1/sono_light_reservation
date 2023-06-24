@@ -13,6 +13,12 @@ import { Section } from 'src/app/MODELS/Section';
   styleUrls: ['./admin-equipment-list.component.scss']
 })
 export class AdminEquipmentListComponent implements OnInit {
+viewEquipment(_t57: Equipment) {
+throw new Error('Method not implemented.');
+}
+deleteEquipment(_t57: Equipment) {
+throw new Error('Method not implemented.');
+}
   /** sections list, to sort equipments */
   sections: Section[] = [];
   /** categories list, to sort equipments */
@@ -34,9 +40,9 @@ export class AdminEquipmentListComponent implements OnInit {
       console.log(this.sections);
     });
     this.categories.push(
-      { category_id: 1, label: "Enceintes de laurent", description: "musique", picture_link: "link", section_id:13, isCollapsed: true },
-      { category_id: 2, label: "Câbles", description: "cables", picture_link: "link", section_id:14, isCollapsed: true },
-      { category_id: 3, label: "Lumières", description: "lights", picture_link: "link", section_id:15, isCollapsed: true },
+      { category_id: 1, label: "Enceintes de laurent", description: "musique", picture_link: "link", section_id:13, isCollapsed: false },
+      { category_id: 2, label: "Câbles", description: "cables", picture_link: "link", section_id:14, isCollapsed: false },
+      { category_id: 3, label: "Lumières", description: "lights", picture_link: "link", section_id:15, isCollapsed: false },
     );
     this.equipments.push({
       equipment_id: 1,

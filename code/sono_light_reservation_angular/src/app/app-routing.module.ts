@@ -1,11 +1,12 @@
-import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { AppComponent } from './app.component';
-import { PageNotFoundComponent } from './GENERAL/page-not-found/page-not-found.component';
+import { AdminEquipmentDetailsComponent } from './ADMIN/admin-equipment-details/admin-equipment-details.component';
 import { AdminHomeComponent } from './ADMIN/admin-home/admin-home.component';
-import { AdminUserListComponent } from './ADMIN/admin-user-list/admin-user-list.component';
 import { AdminUserDetailsComponent } from './ADMIN/admin-user-details/admin-user-details.component';
+import { AdminUserListComponent } from './ADMIN/admin-user-list/admin-user-list.component';
+import { AppComponent } from './app.component';
+import { NgModule } from '@angular/core';
+import { PageNotFoundComponent } from './GENERAL/page-not-found/page-not-found.component';
 import { UserHomeComponent } from './USER/user-home/user-home.component';
 
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
   {
     path: 'ADMIN/fiche-compte/:user_id',
     component: AdminUserDetailsComponent
-  }, 
+  },
+  { path: 'create-equipment', component: AdminEquipmentDetailsComponent }, 
   { path: 'CLIENT/client-accueil', component: UserHomeComponent },
   { path: '', redirectTo: '/ADMIN/comptes', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },

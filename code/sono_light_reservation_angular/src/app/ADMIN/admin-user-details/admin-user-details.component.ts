@@ -1,12 +1,10 @@
+import { ActivatedRoute, Router } from "@angular/router";
 import { Component, OnInit } from "@angular/core";
-import { FormGroup, FormBuilder, Validators } from "@angular/forms";
-
-import { Router, ActivatedRoute } from "@angular/router";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Observable, map } from "rxjs";
-import { UserService } from "src/app/SERVICES/User.service";
+
 import { User } from "src/app/MODELS/User";
-
-
+import { UserService } from "src/app/SERVICES/User.service";
 
 @Component({
   selector: 'app-admin-user-details',
@@ -38,7 +36,7 @@ export class AdminUserDetailsComponent implements OnInit {
     private route: ActivatedRoute,
     private userService: UserService
   ) {
-    this.phoneRegEx = /^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/;
+    this.phoneRegEx = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
     this.emailRegEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
     this.cpRegEx = /^\d{5}$/;
   }

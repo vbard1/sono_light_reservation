@@ -3,7 +3,6 @@
     <tr>
       <th>Matériel</th>
       <th>Propriétaire</th>
-      <th>Etat</th>
       <th>Prix/j</th>
       <th>Prix unitaire</th>
       <th>Actions</th>
@@ -22,8 +21,16 @@
       <table class="table table-dark table-striped">
         <tbody>
           <tr *ngFor="let equipment of getAllEquipments()">
-            <app-admin-equipment-line [equipment]="equipment"></app-admin-equipment-line>
-          </tr>
+            <td>{{equipment.label}}</td>
+            <td>{{equipment.owner}}</td>
+            <td>{{equipment.daily_price}}  euros/j</td>
+            <td>{{equipment.replacement_price}} euros</td>
+            <td>
+                <button type="button" class="btn btn-primary"
+                    (click)="viewEquipment(equipment)">Voir</button>
+                <button type="button" class="btn btn-danger"
+                    (click)="deleteEquipment(equipment)">Supprimer</button>
+            </td>          </tr>
         </tbody>
       </table>
   
@@ -38,8 +45,16 @@
       <table class="table table-dark table-striped">
         <tbody>
           <tr *ngFor="let equipment of getEquipmentsBySection(section.section_id)">
-            <app-admin-equipment-line [equipment]="equipment"></app-admin-equipment-line>
-          </tr>
+            <td>{{equipment.label}}</td>
+            <td>{{equipment.owner}}</td>
+            <td>{{equipment.daily_price}} euros/j</td>
+            <td>{{equipment.replacement_price}} euros</td>
+            <td>
+                <button type="button" class="btn btn-primary"
+                    (click)="viewEquipment(equipment)">Voir</button>
+                <button type="button" class="btn btn-danger"
+                    (click)="deleteEquipment(equipment)">Supprimer</button>
+            </td>          </tr>
         </tbody>
       </table>
     </div>
@@ -55,8 +70,16 @@
       <table class="table table-dark table-striped">
         <tbody>
           <tr *ngFor="let equipment of getEquipmentsByCategory(category.category_id)">
-            <app-admin-equipment-line [equipment]="equipment"></app-admin-equipment-line>
-          </tr>
+            <td>{{equipment.label}}</td>
+            <td>{{equipment.owner}}</td>
+            <td>{{equipment.daily_price}} euros/j</td>
+            <td>{{equipment.replacement_price}} euros</td>
+            <td>
+                <button type="button" class="btn btn-primary"
+                    (click)="viewEquipment(equipment)">Voir</button>
+                <button type="button" class="btn btn-danger"
+                    (click)="deleteEquipment(equipment)">Supprimer</button>
+            </td>          </tr>
         </tbody>
       </table>
     </div>
