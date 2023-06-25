@@ -1,3 +1,4 @@
+
 /* You can add global styles to this file, and also import other style files */
 :root {
    --fond: rgb(13, 13, 13);
@@ -9,12 +10,39 @@
     --arrondi: 15px;
 }
 
+@import './styles.var.scss';
+
+
 ::selection {
-    background-color: var(--surlignage);
+    background-color: var(--highlights);
 }
 
+  
 * {
-    color: var(--texte);
-    background-color: var(--fond);
-    transition: var(--tps-transition);
+  color: var(--text);
+  background-color: var(--backgroundColor);
+  transition: var(--transitionTime) ease-in-out;
 }
+
+.mat-mdc-snack-bar-container {
+  background: none;
+    //button
+    --mat-mdc-snack-bar-button-color: #ffffff;
+    //text
+    --mdc-snackbar-supporting-text-color: #ffffff;
+  
+    &.fail-snackbar {
+        //background
+      --mdc-snackbar-container-color: #f23a2f;
+    }
+  
+    &.success-snackbar {
+      --mdc-snackbar-container-color: #43a446;
+    }
+  }
+
+  .mat-expansion-panel-header-description, 
+.mat-expansion-indicator::after {
+    color: white;
+}
+
