@@ -25,9 +25,9 @@ export class AdminUserDetailsComponent implements OnInit {
   cancelButtonColor: string = 'btn-cancel';
 
   levels: { value:string, numero:number }[] = [
-    { value: "client", numero:3},
-    { value: "admin", numero:2},
-    { value: "superAdmin", numero:1}
+    { value: "USER", numero:2},
+    { value: "ADMIN", numero:1},
+    { value: "SUPER_ADMIN", numero:0}
   ];
 
   constructor(
@@ -64,8 +64,8 @@ export class AdminUserDetailsComponent implements OnInit {
     // Récupération des informations du compte à partir du service
     this.userService.getCompteById(Number(this.id)).subscribe({
       next: (user: User) => {
-        // Populate the form with the retrieved account data
-        const levelLabel = this.levels.find(level => level.numero === user.level)?.value;
+        const levelLabel = this.levels.find(level => level.value === user.level)?.value;
+        console.log(levelLabel);
         this.userForm.patchValue({
           user_id: user.user_id,
           name: user.name,

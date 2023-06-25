@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, NgModule, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'admin-equipment-details',
@@ -10,8 +12,6 @@ export class AdminEquipmentDetailsComponent implements OnInit {
   /**html related attributes (styling classes, enum) */
   saveButtonColor: string = 'btn-save';
   cancelButtonColor: string = 'btn-cancel';
-
-
   equipmentForm!: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {}
@@ -41,3 +41,15 @@ export class AdminEquipmentDetailsComponent implements OnInit {
     // Fonction vide pour le bouton d'annulation
   }
 }
+
+
+@NgModule({
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+  ],
+  declarations: [
+    AdminEquipmentDetailsComponent,
+  ],
+})
+export class AdminEquipmentDetailsModule { }
