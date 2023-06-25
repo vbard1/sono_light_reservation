@@ -1,7 +1,10 @@
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl } from '@angular/forms';
+
 import { Category } from 'src/app/MODELS/Category.model';
 import { Equipment } from 'src/app/MODELS/Equipment.model';
+import { EquipmentService } from 'src/app/SERVICES/Equipment.service';
 import { Section } from 'src/app/MODELS/Section.model';
 
 @Component({
@@ -10,27 +13,37 @@ import { Section } from 'src/app/MODELS/Section.model';
   styleUrls: ['./admin-equipment-list.component.scss']
 })
 export class AdminEquipmentListComponent implements OnInit {
+viewEquipment(_t57: Equipment) {
+throw new Error('Method not implemented.');
+}
+deleteEquipment(_t57: Equipment) {
+throw new Error('Method not implemented.');
+}
   /** sections list, to sort equipments */
   sections: Section[] = [];
   /** categories list, to sort equipments */
   categories: Category[] = [];
   /** equipment */
   equipments: Equipment[] = [];
-
+  
   sort = new FormControl('Aucun');
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private equipmentService: EquipmentService) {
+  }
+  
 
   ngOnInit(): void {
-    this.sections.push(
-      { sectionId: 1, label: "Sono", isCollapsed: true },
-      { sectionId: 2, label: "Light", isCollapsed: true },
-      { sectionId: 3, label: "Autres", isCollapsed: true });
+    // Récupération des sections à partir de l'URL
+    this.equipmentService.getSections()
+    .subscribe((sections: Section[]) => {
+      this.sections = sections;
+      console.log(sections);
+      console.log(this.sections);
+    });
     this.categories.push(
-      { category_id: 1, label: "Enceintes de laurent", description: "musique", picture_link: "link", section_id: 1, isCollapsed: true },
-      { category_id: 2, label: "Câbles", description: "cables", picture_link: "link", section_id: 3, isCollapsed: true },
-      { category_id: 3, label: "Lumières", description: "lights", picture_link: "link", section_id: 2, isCollapsed: true },
+      { category_id: 1, label: "Enceintes de laurent", description: "musique", picture_link: "link", section_id:13, isCollapsed: false },
+      { category_id: 2, label: "Câbles", description: "cables", picture_link: "link", section_id:14, isCollapsed: false },
+      { category_id: 3, label: "Lumières", description: "lights", picture_link: "link", section_id:15, isCollapsed: false },
     );
-
     this.equipments.push({
       equipment_id: 1,
       label: "Equipement 1",
@@ -61,20 +74,10 @@ export class AdminEquipmentListComponent implements OnInit {
 
   }
   
-  viewEquipment(equipment:Equipment): any{
 
-  }
-
-  deleteEquipment(equipment:Equipment): any{
-    
-  }
   
   //TODO ajouter la logique d'ajout et supression d'équipment,
   // et les vérifications d'engaement en réservation §!§
-  
-  getAllEquipments(): any {
-    return this.equipments;
-  }
 
   getEquipmentsBySection(sectionId: number): Equipment[] {
     const categoryIds = this.categories
@@ -84,9 +87,12 @@ export class AdminEquipmentListComponent implements OnInit {
     return this.equipments.filter(equipment => categoryIds.includes(equipment.category_id));
   }
   
-
   getEquipmentsByCategory(categoryId: number): Equipment[] {
     return this.equipments.filter(equipment => equipment.category_id === categoryId);
+  }
+
+  getAllEquipments(): Equipment[]{
+    return this.equipments;
   }
   
   toggleSection(section: Section) {

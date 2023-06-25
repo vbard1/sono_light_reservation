@@ -1,5 +1,5 @@
 export interface Section {
-    isCollapsed: boolean; // used for front purposes only
-    sectionId: number;
+    section_id: number;
     label: string;
+    isCollapsed: boolean; // used for front purposes only
 }  
