@@ -96,8 +96,6 @@ CREATE TABLE `reservation` (
 
 
 
-
-
 -- create data for tests
 INSERT INTO section (label) VALUES
     ('Son'),
@@ -118,3 +116,8 @@ VALUES
     (21, '24h de l INSA', '24h', 'La doua', 1, 'c est urgent merci de valider au plus vite! ca va être de la bombe', '', '2024-05-24', '2024-05-25', false, 1),
     (22, 'IPI', 'rencontre entreprises', 'Campus HEP', 1, '', '', '2024-05-22', '2024-05-26', false, 2);
 
+-- En attente des tables equipment et category
+INSERT INTO reservation (reservation_id, reservation_label, reservation_state, event_id)
+VALUES
+    ( 11, "resa full matos", 0 , 21),
+    (12, "matos lumieres jaunes", 0, 22);
