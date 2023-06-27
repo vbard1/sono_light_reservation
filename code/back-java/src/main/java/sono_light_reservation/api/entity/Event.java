@@ -29,10 +29,10 @@ public class Event {
     @Column(name = "location")
     private String location;
 
-    //1=Assos INSA, 2=interne KLS, 3=autre-particulier
+    //0=Assos INSA, 1=interne KLS, 2=autre-particulier
 //    @Column(name = "type", nullable=false)
     @Column(name = "type")
-    private Integer type;
+    private EventTypeEnum type;
 
     @Column(name = "user_comment")
     private String user_comment;
@@ -53,7 +53,7 @@ public class Event {
     @JoinColumn(name = "user_id")
     private User user;
 
-    public Event(int event_id, String title, String description, String location, Integer type, String user_comment, String admin_comment, Date date_start, Date date_end, Boolean technician_asked, User user) {
+    public Event(int event_id, String title, String description, String location, EventTypeEnum type, String user_comment, String admin_comment, Date date_start, Date date_end, Boolean technician_asked, User user) {
         this.event_id = event_id;
         this.title = title;
         this.description = description;

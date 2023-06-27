@@ -82,20 +82,17 @@ CREATE TABLE `event` (
 CREATE TABLE `reservation` (
   `reservation_id` int  AUTO_INCREMENT,
   `reservation_label` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci ,
-  `reservation_state` int DEFAULT NULL COMMENT '(1=enAttente, 2=validée, 3=enCours, 4=terminée)',
+  `reservation_state` int,
   `equipment_id` int DEFAULT NULL,
   `category_id` int DEFAULT NULL,
   `event_id` int DEFAULT NULL,
   PRIMARY KEY (`reservation_id`),
-  UNIQUE KEY `reservation_UN` (`event_id`),
   KEY `reservation_FK_1` (`category_id`),
   KEY `reservation_FK_2` (`equipment_id`),
   CONSTRAINT `reservation_FK` FOREIGN KEY (`event_id`) REFERENCES `event` (`event_id`),
   CONSTRAINT `reservation_FK_1` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`),
   CONSTRAINT `reservation_FK_2` FOREIGN KEY (`equipment_id`) REFERENCES `equipment` (`equipement_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
-
 
 
 
@@ -118,3 +115,9 @@ INSERT INTO event (event_id, title, description, location, type, user_comment, a
 VALUES
     (21, '24h de l INSA', '24h', 'La doua', 1, 'c est urgent merci de valider au plus vite! ca va être de la bombe', '', '2024-05-24', '2024-05-25', false, 1),
     (22, 'IPI', 'rencontre entreprises', 'Campus HEP', 1, '', '', '2024-05-22', '2024-05-26', false, 2);
+
+-- En attente des tables equipment et category
+INSERT INTO reservation (reservation_id, reservation_label, reservation_state, event_id)
+VALUES
+    ( 11, "resa full matos", 0 , 21),
+    (12, "matos lumieres jaunes", 0, 22);
