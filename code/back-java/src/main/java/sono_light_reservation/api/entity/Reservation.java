@@ -27,13 +27,24 @@ public class Reservation {
 
     @ManyToOne
     @JoinColumn(name = "equipment_id")
-    private User equipment; //TODO NOT USER : waiting Equipement class creation
+    private Event equipment; //TODO NOT Event : waiting Equipement class creation
     @ManyToOne
     @JoinColumn(name = "category_id")
-    private User category; //TODO NOT USER : waiting Category class creation
+    private Event category; //TODO NOT Event : waiting Category class creation
     @ManyToOne
     @JoinColumn(name = "event_id")
-    private User event; //TODO NOT USER : waiting Event class creation
+    private Event event;
 
+    public Reservation(int reservation_id, String reservation_label, Integer reservation_state, Event equipment, Event category, Event event) {
+        this.reservation_id = reservation_id;
+        this.reservation_label = reservation_label;
+        this.reservation_state = reservation_state;
+        this.equipment = equipment;
+        this.category = category;
+        this.event = event;
+    }
 
+    public Reservation() {
+        this.reservation_id = reservation_id;
+    }
 }

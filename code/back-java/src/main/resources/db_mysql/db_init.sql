@@ -118,3 +118,4 @@ INSERT INTO event (event_id, title, description, location, type, user_comment, a
 VALUES
     (21, '24h de l INSA', '24h', 'La doua', 1, 'c est urgent merci de valider au plus vite! ca va être de la bombe', '', '2024-05-24', '2024-05-25', false, 1),
     (22, 'IPI', 'rencontre entreprises', 'Campus HEP', 1, '', '', '2024-05-22', '2024-05-26', false, 2);
+
