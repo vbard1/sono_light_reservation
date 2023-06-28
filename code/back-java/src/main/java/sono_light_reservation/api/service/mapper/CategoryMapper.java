@@ -4,6 +4,7 @@ import lombok.Data;
 import org.springframework.stereotype.Service;
 import sono_light_reservation.api.dto.CategoryDto;
 import sono_light_reservation.api.entity.Category;
+import sono_light_reservation.api.entity.Section;
 
 import java.util.Optional;
 
@@ -17,8 +18,12 @@ public class CategoryMapper {
      * @return categoryDto
      */
     public CategoryDto convertToDto(Optional<Category> category) {
+        int category_section_id = -1;
+        if (category.get().getSection() != null) {
+            category_section_id = category.get().getSection().getSection_id();
+        }
         return new CategoryDto(category.get().getCategory_id(), category.get().getLabel(),
-                category.get().getDescription(), category.get().getPicture_link(), category.get().getSection());
+                category.get().getDescription(), category.get().getPicture_link(), category_section_id);
     }
 
     /**
@@ -27,12 +32,12 @@ public class CategoryMapper {
      * @param categoryDto
      * @return category
      */
-    public Category convertToEntity(CategoryDto categoryDto) {
+    public Category convertToEntity(CategoryDto categoryDto, Section section) {
         Category category = new Category();
         category.setLabel(categoryDto.getLabel());
-        category.setDescription(categoryDto.getDesciption());
+        category.setDescription(categoryDto.getDescription());
         category.setPicture_link(categoryDto.getPicture_link());
-        category.setSection(categoryDto.getSection());
+        category.setSection(section);
         return category;
     }
 }

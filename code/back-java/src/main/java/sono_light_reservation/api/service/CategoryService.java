@@ -5,7 +5,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sono_light_reservation.api.dto.CategoryDto;
 import sono_light_reservation.api.entity.Category;
+import sono_light_reservation.api.entity.Section;
 import sono_light_reservation.api.repository.CategoryRepository;
+import sono_light_reservation.api.repository.SectionRepository;
 import sono_light_reservation.api.service.mapper.CategoryMapper;
 
 import java.util.List;
@@ -19,6 +21,8 @@ public class CategoryService {
     private CategoryRepository categoryRepository;
     @Autowired
     private CategoryMapper categoryMapper;
+    @Autowired
+    private SectionRepository sectionRepository;
 
     /**
      * Read the details of the category get by id
@@ -49,7 +53,10 @@ public class CategoryService {
      * @param categoryDto: Save
      */
     public CategoryDto saveCategory(CategoryDto categoryDto) {
-        Category category = categoryMapper.convertToEntity(categoryDto);
+        Optional<Section> sectionOptional = sectionRepository.findById(categoryDto.getSection());
+        Section section = sectionOptional.orElse(null);
+
+        Category category = categoryMapper.convertToEntity(categoryDto, section);
         categoryRepository.save(category);
         return categoryMapper.convertToDto(Optional.of(category));
     }
@@ -82,6 +89,17 @@ public class CategoryService {
         if (updatedCategory.getLabel() != null) {
             category.setLabel(updatedCategory.getLabel());
         }
+        if (updatedCategory.getDescription() != null) {
+            category.setDescription(updatedCategory.getDescription());
+        }
+        if (updatedCategory.getPicture_link() != null) {
+            category.setPicture_link(updatedCategory.getPicture_link());
+        }
+
+        Optional<Section> sectionOptional = sectionRepository.findById(updatedCategory.getSection());
+        Section section = sectionOptional.orElse(null);
+        category.setSection(section);
+
         return categoryMapper.convertToDto(Optional.of(categoryRepository.save(category)));
     }
 }

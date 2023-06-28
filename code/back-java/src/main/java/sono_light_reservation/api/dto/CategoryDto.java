@@ -9,14 +9,14 @@ import sono_light_reservation.api.entity.Section;
 public class CategoryDto {
     private int categoryId;
     private String label;
-    private String desciption;
+    private String description;
     private String picture_link;
-    private Section section;
+    private int section;
 
-    public CategoryDto(int categoryId, String label, String desciption, String picture_link, Section section) {
+    public CategoryDto(int categoryId, String label, String description, String picture_link, int section) {
         this.categoryId = categoryId;
         this.label = label;
-        this.desciption = desciption;
+        this.description = description;
         this.picture_link = picture_link;
         this.section = section;
     }
@@ -40,12 +40,12 @@ public class CategoryDto {
         this.label = label;
     }
 
-    public String getDesciption() {
-        return this.desciption;
+    public String getDescription() {
+        return this.description;
     }
 
-    public void setDesciption(String desciption) {
-        this.desciption = desciption;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getPicture_link() {
@@ -56,11 +56,11 @@ public class CategoryDto {
         this.picture_link = picture_link;
     }
 
-    public Section getSection() {
+    public int getSection() {
         return this.section;
     }
 
-    public void setSection(Section section) {
+    public void setSection(int section) {
         this.section = section;
     }
 }
