@@ -4,9 +4,10 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import sono_light_reservation.api.entity.User;
+import sono_light_reservation.api.entity.EventTypeEnum;
 
 import java.util.Date;
+import java.util.List;
 
 @Data
 @Getter
@@ -23,8 +24,8 @@ public class EventDto {
 
     private String location;
 
-    //1=Assos INSA, 2=interne KLS, 3=autre-particuler
-    private Integer type;
+    //0=Assos INSA, 1=interne KLS, 2=autre-particulier
+    private EventTypeEnum type;
 
     private String user_comment;
 
@@ -38,7 +39,10 @@ public class EventDto {
 
     private int user_id;
 
-    public EventDto(int event_id, String title, String description, String location, Integer type, String user_comment, String admin_comment, Date date_start, Date date_end, Boolean technician_asked, int user_id) {
+    private List<ReservationDto> reservations_list;
+
+
+    public EventDto(int event_id, String title, String description, String location, EventTypeEnum type, String user_comment, String admin_comment, Date date_start, Date date_end, Boolean technician_asked, int user_id, List<ReservationDto> reservations_list) {
         this.event_id = event_id;
         this.title = title;
         this.description = description;
@@ -50,5 +54,7 @@ public class EventDto {
         this.date_end = date_end;
         this.technician_asked = technician_asked;
         this.user_id = user_id;
+        this.reservations_list = reservations_list;
     }
+    
 }

@@ -4,12 +4,15 @@ import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sono_light_reservation.api.dto.EventDto;
+import sono_light_reservation.api.dto.ReservationDto;
 import sono_light_reservation.api.entity.Event;
 import sono_light_reservation.api.entity.User;
 import sono_light_reservation.api.repository.EventRepository;
 import sono_light_reservation.api.repository.UserRepository;
+import sono_light_reservation.api.service.ReservationService;
 import sono_light_reservation.api.service.UserService;
 
+import java.util.List;
 import java.util.Optional;
 
 @Data
@@ -18,6 +21,9 @@ public class EventMapper {
 
     @Autowired
     private final EventRepository eventRepository;
+
+    @Autowired
+    private ReservationService reservationService;
 
     public EventMapper(EventRepository eventRepository) {
         this.eventRepository = eventRepository;
@@ -33,9 +39,11 @@ public class EventMapper {
         if (event.get().getUser() != null) {
             event_user_id = event.get().getUser().getUser_id();
         }
+        List<ReservationDto> reservations_list = reservationService.getReservationsByEventId(event.get().getEvent_id());
+
         return new EventDto(event.get().getEvent_id(), event.get().getTitle(), event.get().getDescription(), event.get().getLocation(),
                 event.get().getType(), event.get().getUser_comment(), event.get().getAdmin_comment(), event.get().getDate_start(),
-                event.get().getDate_end(), event.get().getTechnician_asked(), event_user_id);
+                event.get().getDate_end(), event.get().getTechnician_asked(), event_user_id, reservations_list);
     }
 
     /**

@@ -1,12 +1,10 @@
+import { ActivatedRoute, Router } from "@angular/router";
 import { Component, OnInit } from "@angular/core";
-import { FormGroup, FormBuilder, Validators } from "@angular/forms";
-
-import { Router, ActivatedRoute } from "@angular/router";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Observable, map } from "rxjs";
+
 import { User } from "src/app/MODELS/User.model";
 import { UserService } from "src/app/SERVICES/User.service";
-
-
 
 @Component({
   selector: 'app-admin-user-details',
@@ -21,19 +19,24 @@ export class AdminUserDetailsComponent implements OnInit {
   emailRegEx!: RegExp;
   cpRegEx!: RegExp;
   id!: string;
+
+  /**html related attributes (styling classes, enum) */
+  saveButtonColor: string = 'btn-save';
+  cancelButtonColor: string = 'btn-cancel';
+
   levels: { value:string, numero:number }[] = [
-    { value: "client", numero:3},
-    { value: "admin", numero:2},
-    { value: "superAdmin", numero:1}
+    { value: "USER", numero:2},
+    { value: "ADMIN", numero:1},
+    { value: "SUPER_ADMIN", numero:0}
   ];
 
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
     private route: ActivatedRoute,
-    private comptesService: UserService
+    private userService: UserService
   ) {
-    this.phoneRegEx = /^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/;
+    this.phoneRegEx = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
     this.emailRegEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
     this.cpRegEx = /^\d{5}$/;
   }
@@ -59,10 +62,10 @@ export class AdminUserDetailsComponent implements OnInit {
 
 
     // Récupération des informations du compte à partir du service
-    this.comptesService.getCompteById(Number(this.id)).subscribe({
+    this.userService.getCompteById(Number(this.id)).subscribe({
       next: (user: User) => {
-        // Populate the form with the retrieved account data
-        const levelLabel = this.levels.find(level => level.numero === user.level)?.value;
+        const levelLabel = this.levels.find(level => level.value === user.level)?.value;
+        console.log(levelLabel);
         this.userForm.patchValue({
           user_id: user.user_id,
           name: user.name,
@@ -97,7 +100,7 @@ export class AdminUserDetailsComponent implements OnInit {
       formData.level = numero;
     }
 
-    this.comptesService.updateCompte(formData).subscribe({
+    this.userService.updateCompte(formData).subscribe({
       next: () => {
         this.router.navigateByUrl("/ADMIN/admin-accueil");
       }

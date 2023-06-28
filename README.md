@@ -1,10 +1,8 @@
 # SonoLight_reservation
  Une application web de réservation de matériel sonorisation et lumière
 
-# Font-end : Angular
-
-
-# Back-end : Java + Mysql
+Font-end : Angular
+Back-end : Java + Mysql
 
 ## Lancer Mysql sur votre pc, au choix :
 ### - Avec une app Mysql
@@ -13,12 +11,10 @@
 **Note : la commande RUN s'utilise quand le container est inexistant, DB inexistante ou deja présente.**  
 Renommer le nom du --volume (dossier-hote) avec le chemin du dossier qui accueillera la db, à l'extérieur du dossier back-end
 ```sh
-docker run --name=sonoLightReservation \
-   --volume=/dossier-hote:/var/lib/mysql \
-   -p 3308:3306 -e MYSQL_ROOT_PASSWORD=root -d mysql
+docker run --name=sonoLightReservation --volume=/dossier-hote:/var/lib/mysql -p 3308:3306 -e MYSQL_ROOT_PASSWORD=root -d mysql
 
 #Exemple pour les utilisateurs de Windows :
-docker run --name=sonoLightReservation --volume=C:\Users\felix\Documents\sono_light_reservation_DATABASE:/var/lib/mysql -p 3308:3306 -e MYSQL_ROOT_PASSWORD=root -d mysql
+docker run --name=sonoLightReservation --volume=C:\Users\bardi\Documents\enviro_slr:/var/lib/mysql -p 3308:3306 -e MYSQL_ROOT_PASSWORD=root -d mysql
 
 #Exemple pour les utilisateurs de linux :
 docker run --name=sonoLightReservation \
