@@ -17,7 +17,6 @@ export class  AdminUserListComponent {
   ngOnInit():void{
     this.userService.getComptes().subscribe(users => {
       this.rows = users;
-      console.log(users);
     });
   }
 

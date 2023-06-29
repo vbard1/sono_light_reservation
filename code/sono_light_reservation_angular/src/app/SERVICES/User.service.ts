@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from '../MODELS/User.model';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -10,22 +11,21 @@ import { User } from '../MODELS/User.model';
 
 export class UserService {
 
-  private baseUrl = 'http://localhost:9000';
   constructor(private http: HttpClient) { }
 
   getCompteById(user_id: number): Observable<User> {
-    const url = `${this.baseUrl}/user/${user_id}`;
+    const url = `${environment.api_url}user/${user_id}`;
     return this.http.get<User>(url);
   }
 
   getComptes(): Observable<User[]> {
-    const url = `${this.baseUrl}/user`;
+    const url = `${environment.api_url}user`;
     return this.http.get<User[]>(url);
   }
 
 
   updateCompte(formData: any): Observable<any> {
-    const url = `${this.baseUrl}/user/${formData.user_id}`;
+    const url = `${environment.api_url}user/${formData.user_id}`;
 
     //parse the formData to POST-able object
     const user = {
@@ -46,7 +46,7 @@ export class UserService {
     /**
       * On supprime l'utilisateur demandé TODO supprimer tout en base associé a l'utilisateur?
       */
-    const url = `${this.baseUrl}/user/${user_id}`;
+    const url = `${environment.api_url}user/${user_id}`;
 
     // delete user object
     return this.http.delete(url);

@@ -69,7 +69,7 @@
     <div class="category-equipment-content" [hidden]="isCategoryCollapsed(category)">
       <table class="table table-dark table-striped">
         <tbody>
-          <tr *ngFor="let equipment of getEquipmentsByCategory(category.category_id)">
+          <tr *ngFor="let equipment of getEquipmentsByCategory(category.categoryId)">
             <td>{{equipment.label}}</td>
             <td>{{equipment.owner}}</td>
             <td>{{equipment.daily_price}} euros/j</td>
