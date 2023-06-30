@@ -12,23 +12,23 @@ export class ReservationService {
 
   constructor(private http: HttpClient) { }
 
-  getReservationsByClient(clientId: number): Observable<Reservation[]> {
-    return this.http.get<Reservation[]>(`${this.baseUrl}/${clientId}`);
+  getReservations(): Observable<Reservation[]> {
+    return this.http.get<Reservation[]>(`${this.baseUrl}/reservation`);
   }
 
-  getReservationById(id: number): Observable<Reservation> {
-    return this.http.get<Reservation>(`${this.baseUrl}/${id}`);
+  getOneReservation(id: number): Observable<Reservation> {
+    return this.http.get<Reservation>(`${this.baseUrl}/reservation/${id}`);
   }
 
-  addReservation(reservation: Reservation): Observable<Reservation> {
-    return this.http.post<Reservation>(this.baseUrl, reservation);
+  updateReservation(id: number, updatedReservation: Reservation): Observable<Reservation> {
+    return this.http.put<Reservation>(`${this.baseUrl}/reservation/${id}`, updatedReservation);
   }
 
-  updateReservation(reservation: Reservation): Observable<Reservation> {
-    return this.http.put<Reservation>(this.baseUrl, reservation);
+  deleteReservation(id: number): Observable<string> {
+    return this.http.delete<string>(`${this.baseUrl}/reservation/${id}`);
   }
 
-  deleteReservation(id: number): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/${id}`);
+  createReservation(newReservation: Reservation): Observable<Reservation> {
+    return this.http.post<Reservation>(`${this.baseUrl}/reservation`, newReservation);
   }
 }
