@@ -10,6 +10,6 @@ export interface Equipment {
     date_buy: Date;
     daily_price: number;
     replacement_price: number;
-    category_id: number;
+    categoryId: number;
   }
   
