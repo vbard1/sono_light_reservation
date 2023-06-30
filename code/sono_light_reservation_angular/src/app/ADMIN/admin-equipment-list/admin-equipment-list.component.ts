@@ -1,10 +1,9 @@
-import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl } from '@angular/forms';
 
 import { Category } from 'src/app/MODELS/Category.model';
 import { Equipment } from 'src/app/MODELS/Equipment.model';
 import { EquipmentService } from 'src/app/SERVICES/Equipment.service';
+import { FormControl } from '@angular/forms';
 import { Section } from 'src/app/MODELS/Section.model';
 
 @Component({
@@ -30,8 +29,9 @@ export class AdminEquipmentListComponent implements OnInit {
   constructor(private equipmentService: EquipmentService) {}
 
   ngOnInit(): void {
-    this.equipmentService.getSections().subscribe((sections: Section[]) => {
-      this.sections = sections;
+    this.equipmentService.getSections().subscribe((sect: Section[]) => {
+      this.sections = sect;
+      console.log(this.sections);
     });
   
     this.equipmentService.getCategories().subscribe((categories: Category[]) => {
@@ -55,7 +55,7 @@ export class AdminEquipmentListComponent implements OnInit {
         date_buy: new Date(),
         daily_price: 10.0,
         replacement_price: 100.0,
-        category_id: this.categories[0].categoryId,
+        categoryId: this.categories[0].categoryId,
       },
       {
         equipment_id: 2,
@@ -69,23 +69,25 @@ export class AdminEquipmentListComponent implements OnInit {
         date_buy: new Date(),
         daily_price: 15.0,
         replacement_price: 150.0,
-        category_id: this.categories[0].categoryId,
+        categoryId: this.categories[0].categoryId,
       }
     );
   }
-
   getEquipmentsBySection(sectionId: number): Equipment[] {
     const categoryIds = this.categories
-      .filter((category) => category.section_id == sectionId)
+      .filter((category) => category.sectionId == sectionId)
       .map((category) => category.categoryId);
     return this.equipments.filter((equipment) =>
-      categoryIds.includes(equipment.category_id)
+      categoryIds.includes(equipment.categoryId)
     );
   }
+  
+  
+  
 
   getEquipmentsByCategory(categoryId: number): Equipment[] {
     return this.equipments.filter(
-      (equipment) => equipment.category_id == categoryId
+      (equipment) => equipment.categoryId == categoryId
     );
   }
 
