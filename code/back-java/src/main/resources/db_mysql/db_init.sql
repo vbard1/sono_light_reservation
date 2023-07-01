@@ -121,3 +121,17 @@ INSERT INTO reservation (reservation_id, reservation_label, reservation_state, e
 VALUES
     ( 11, "resa full matos", 0 , 21),
     (12, "matos lumieres jaunes", 0, 22);
+
+INSERT INTO equipment (label,
+                       model,
+                       reference,
+                       owner,
+                       cable_size,
+                       comment,
+                       wear_rate_return,
+                       date_buy,
+                       dayly_price,
+                       replacement_price,
+                       category)
+VALUES
+    ('enceinte BOSE','bose','155X','1',25.0,'je ne sais pas',25,'2024-05-22',35.0,36.0,'0');
