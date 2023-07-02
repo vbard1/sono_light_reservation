@@ -26,6 +26,26 @@ public class EquipmentController {
     }
 
     /**
+     * List of all the equipments by SECTION id
+     *
+     * @return the list of the equipments
+     */
+    @GetMapping("/equipment/section/{id}")
+    public List<EquipmentDto> getEquipmentsBySection(@PathVariable int id) {
+        return equipmentService.getEquipmentsBySection(id);
+    }
+
+    /**
+     * List of all the equipments by CATEGORY id
+     *
+     * @return the list of the equipments
+     */
+    @GetMapping("/equipment/category/{id}")
+    public List<EquipmentDto> getEquipmentsByCategory(@PathVariable int id) {
+        return equipmentService.getEquipmentsByCategory(id);
+    }
+
+    /**
      * Update the details of the equipment get by id
      *
      * @param id
