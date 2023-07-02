@@ -19,6 +19,7 @@ import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './GENERAL/page-not-found/page-not-found.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserHomeComponent } from './USER/user-home/user-home.component';
+import { FormContactComponent } from './form-contact/form-contact.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { UserHomeComponent } from './USER/user-home/user-home.component';
     AdminReservationComponent,
     AdminUserDetailsComponent,
     UserHomeComponent,
+    FormContactComponent,
   ],
   imports: [
     BrowserModule,
