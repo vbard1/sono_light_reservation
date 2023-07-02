@@ -25,6 +25,15 @@ public class ReservationController {
     }
 
     /**
+     * List of all the reservations by EVENT id
+     * @return the list of the reservationsDto
+     */
+    @GetMapping("/reservation/event/{id}")
+    public List<ReservationDto> getReservationByEvent(@PathVariable int id) {
+        return reservationService.getReservationsByEventId(id);
+    }
+
+    /**
      * Read the details of the reservation get by id
      * @param id
      * @return reservationDto

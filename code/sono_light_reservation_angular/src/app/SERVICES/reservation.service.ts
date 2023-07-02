@@ -1,34 +1,33 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
 import { Reservation } from '../MODELS/Reservation.model';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ReservationService {
-  baseUrl = environment.api_url;
 
   constructor(private http: HttpClient) { }
 
-  getReservations(): Observable<Reservation[]> {
-    return this.http.get<Reservation[]>(`${this.baseUrl}/reservation`);
+  getReservationsByClient(clientId: number): Observable<Reservation[]> {
+    return this.http.get<Reservation[]>(`${environment.api_url}/${clientId}`);
   }
 
-  getOneReservation(id: number): Observable<Reservation> {
-    return this.http.get<Reservation>(`${this.baseUrl}/reservation/${id}`);
+  getReservationById(id: number): Observable<Reservation> {
+    return this.http.get<Reservation>(`${environment.api_url}/${id}`);
   }
 
-  updateReservation(id: number, updatedReservation: Reservation): Observable<Reservation> {
-    return this.http.put<Reservation>(`${this.baseUrl}/reservation/${id}`, updatedReservation);
+  addReservation(reservation: Reservation): Observable<Reservation> {
+    return this.http.post<Reservation>(environment.api_url, reservation);
   }
 
-  deleteReservation(id: number): Observable<string> {
-    return this.http.delete<string>(`${this.baseUrl}/reservation/${id}`);
+  updateReservation(reservation: Reservation): Observable<Reservation> {
+    return this.http.put<Reservation>(environment.api_url, reservation);
   }
 
-  createReservation(newReservation: Reservation): Observable<Reservation> {
-    return this.http.post<Reservation>(`${this.baseUrl}/reservation`, newReservation);
+  deleteReservation(id: number): Observable<any> {
+    return this.http.delete(`${environment.api_url}/${id}`);
   }
 }
