@@ -49,6 +49,28 @@ public class EquipmentService {
     }
 
     /**
+     * List of all the equipments by SECTION id
+     *
+     * @return the list of the equipments
+     */
+    public List<EquipmentDto> getEquipmentsBySection(int sectionId) {
+        return (equipmentRepository.findEquipmentsBySection(sectionId)).stream()
+                .map(equipment -> equipmentMapper.convertToDto(Optional.ofNullable(equipment)))
+                .collect(Collectors.toList());
+    }
+
+    /**
+     * List of all the equipments by CATEGORY id
+     *
+     * @return the list of the equipments
+     */
+    public List<EquipmentDto> getEquipmentsByCategory(int categoryId) {
+        return (equipmentRepository.findEquipmentsByCategory(categoryId)).stream()
+                .map(equipment -> equipmentMapper.convertToDto(Optional.ofNullable(equipment)))
+                .collect(Collectors.toList());
+    }
+
+    /**
      * Save equipment
      *
      * @param equipmentDto: Save
