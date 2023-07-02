@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './GENERAL/page-not-found/page-not-found.component';
 import { UserHomeComponent } from './USER/user-home/user-home.component';
+import { FormContactComponent } from './form-contact/form-contact.component';
 
 const routes: Routes = [
   { path: 'AppComponent', component: AppComponent },
@@ -15,16 +16,17 @@ const routes: Routes = [
   { path: 'ADMIN/comptes', component: AdminUserListComponent },
   {
     path: 'ADMIN/fiche-compte/:user_id',
-    component: AdminUserDetailsComponent
+    component: AdminUserDetailsComponent,
   },
-  { path: 'create-equipment', component: AdminEquipmentDetailsComponent }, 
+  { path: 'create-equipment', component: AdminEquipmentDetailsComponent },
   { path: 'CLIENT/client-accueil', component: UserHomeComponent },
   { path: '', redirectTo: '/ADMIN/comptes', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
+  { path: 'contact', component: FormContactComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

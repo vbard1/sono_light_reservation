@@ -1,0 +1,133 @@
+<div class="blackTitle">
+  <h1>Contact</h1>
+  <hr class="mb-2 mt-1" />
+</div>
+<div class="container mt-4">
+  <p class="text-center">
+    Vous souhaitez obtenir des informations, participer ou organiser un
+    évènement ou simplement nous contacter ? Remplissez ce formulaire et notre
+    équipe vous répondra dans les plus brefs délais.
+  </p>
+  <form
+    #myContactForm="ngForm"
+    (ngSubmit)="myContactForm.valid && sendForm()"
+    [formGroup]="contactForm"
+  >
+    <mat-form-field appearance="fill" class="mb-3">
+      <mat-label>Votre nom</mat-label>
+      <input
+        matInput
+        id="name"
+        type="text"
+        name="name"
+        required
+        formControlName="name"
+      />
+      <mat-error
+        *ngIf="
+          contactForm.controls['name'].invalid &&
+          contactForm.controls['name'].errors!['required']
+        "
+        >Votre nom est requis.</mat-error
+      >
+      <mat-error
+        *ngIf="
+          contactForm.controls['name'].invalid &&
+          contactForm.controls['name'].errors!['maxlength']
+        "
+        >Votre nom ne peut contenir plus de 15 caractères.</mat-error
+      >
+      <mat-error
+        *ngIf="
+          contactForm.controls['name'].invalid &&
+          contactForm.controls['name'].errors!['minlength']
+        "
+        >Votre nom doit contenir au moins 2 caractères.</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="mb-3">
+      <mat-label>Votre adresse email</mat-label>
+      <input
+        matInput
+        formControlName="email"
+        type="email"
+        name="email"
+        required
+        email
+      />
+      <mat-error
+        *ngIf="
+          contactForm.controls['email'].invalid &&
+          contactForm.controls['email'].errors!['required']
+        "
+        >Votre email est requis.</mat-error
+      >
+      <mat-error
+        *ngIf="
+          contactForm.controls['email'].invalid &&
+          contactForm.controls['email'].errors!['pattern']
+        "
+        >Email invalide (example@crh.fr)</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="mb-4">
+      <mat-label>Objet de votre message</mat-label>
+      <input
+        matInput
+        formControlName="object"
+        type="text"
+        name="object"
+        required
+      />
+      <mat-error
+        *ngIf="
+          contactForm.controls['object'].invalid &&
+          contactForm.controls['object'].errors!['required']
+        "
+        >L'objet de votre message est requis.</mat-error
+      >
+      <mat-error
+        *ngIf="
+          contactForm.controls['object'].invalid &&
+          contactForm.controls['object'].errors!['maxlength']
+        "
+        >L'objet de votre message ne peut contenir plus de 255
+        caractères.</mat-error
+      >
+      <mat-error
+        *ngIf="
+          contactForm.controls['object'].invalid &&
+          contactForm.controls['object'].errors!['minlength']
+        "
+        >L'objet de votre message doit contenir au moins de 4
+        caractères.</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="mb-3">
+      <mat-label>Votre message</mat-label>
+      <textarea
+        name="message"
+        formControlName="message"
+        rows="7"
+        matInput
+        required
+      ></textarea>
+      <mat-error
+        *ngIf="
+          contactForm.controls['message'].invalid &&
+          contactForm.controls['message'].errors!['required']
+        "
+        >Le contenu de votre message est requis.</mat-error
+      >
+    </mat-form-field>
+    <input type="hidden" name="areyouarobot" formControlName="areyouarobot" />
+    <button
+      class="btn btn-primary text-light mb-3"
+      type="submit"
+      [disabled]="myContactForm.invalid"
+    >
+      Envoyer
+    </button>
+  </form>
+</div>
