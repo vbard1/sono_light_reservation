@@ -36,6 +36,12 @@ public class CategoryService {
         return Optional.ofNullable(categoryDto);
     }
 
+    public Category getEntityCategory(int id) {
+        Optional<Category> categoryOptional = categoryRepository.findById(id);
+        return categoryOptional.orElse(null);
+    }
+
+
     /**
      * List of all the categories
      *
