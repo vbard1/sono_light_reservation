@@ -33,9 +33,14 @@ public class EventService {
      */
     public EventDto getEvent(int id) {
         Optional<Event> event = eventRepository.findById(id);
-        EventDto eventDto = eventMapper.convertToDto(event);
-        return eventDto;
+        return eventMapper.convertToDto(event);
     }
+
+    public Event getEntityEvent(int id) {
+        Optional<Event> eventOptional = eventRepository.findById(id);
+        return eventOptional.orElse(null);
+    }
+
 
     /**
      * List of all the events

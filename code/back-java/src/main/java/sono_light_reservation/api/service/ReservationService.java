@@ -4,12 +4,8 @@ import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sono_light_reservation.api.dto.ReservationDto;
-import sono_light_reservation.api.entity.Event;
-import sono_light_reservation.api.entity.Reservation;
-import sono_light_reservation.api.entity.ReservationStateEnum;
-import sono_light_reservation.api.repository.EventRepository;
-import sono_light_reservation.api.repository.ReservationRepository;
-import sono_light_reservation.api.repository.UserRepository;
+import sono_light_reservation.api.entity.*;
+import sono_light_reservation.api.repository.*;
 import sono_light_reservation.api.service.mapper.ReservationMapper;
 
 import java.util.List;
@@ -31,9 +27,25 @@ public class ReservationService {
 
     @Autowired
     private EventRepository eventRepository;
+    @Autowired
+    private EventService eventService;
+    @Autowired
+    private final EquipmentRepository equipmentRepository;
+    @Autowired
+    private EquipmentService equipmentService;
 
-    public ReservationService(ReservationRepository reservationRepository) {
+    @Autowired
+    private final CategoryRepository categoryRepository;
+
+    @Autowired
+    private CategoryService categoryService;
+
+    public ReservationService(ReservationRepository reservationRepository,
+                              EquipmentRepository equipmentRepository,
+                              CategoryRepository categoryRepository) {
         this.reservationRepository = reservationRepository;
+        this.equipmentRepository = equipmentRepository;
+        this.categoryRepository = categoryRepository;
     }
 
     /**
@@ -46,6 +58,10 @@ public class ReservationService {
         return Optional.of(reservationMapper.convertToDto(reservation));
     }
 
+    /**
+     * List of all the reservations by EVENT id
+     * @return the list of the reservationsDto
+     */
     public List<ReservationDto> getReservationsByEventId(int event_id) {
         return (reservationRepository.findReservationByEventId(event_id)).stream()
                 .map(reservation -> reservationMapper.convertToDto(Optional.ofNullable(reservation))).collect(Collectors.toList());
@@ -64,12 +80,8 @@ public class ReservationService {
         if (reservationDto.getReservation_state() == null) {
             reservationDto.setReservation_state(ReservationStateEnum.EN_ATTENTE); //reservation_state : 0=enAttente, 1=validée, 2=enCours, 3=terminée
         }
-        Optional<Event> eventOptional = eventRepository.findById(reservationDto.getEvent_id());
-        Event event = eventOptional.orElse(null);
 
-        //TODO: waiting Equipement and category class creation
-
-        Reservation reservation = reservationMapper.convertToEntity(reservationDto, event);
+        Reservation reservation = reservationMapper.convertToEntity(reservationDto, eventService.getEntityEvent(reservationDto.getEvent_id()), equipmentService.getEntityEquipment(reservationDto.getEquipment_id()), categoryService.getEntityCategory(reservationDto.getCategory_id()));
         reservationRepository.save(reservation);
         return reservationMapper.convertToDto(Optional.of(reservation));
     }
@@ -96,7 +108,6 @@ public class ReservationService {
      * @return reservationDto with modifications
      */
     public ReservationDto updateReservation(int id, ReservationDto updatedReservationDto) {
-
         Reservation reservation = reservationRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Id reservation invalide:" + id));
 
@@ -106,14 +117,10 @@ public class ReservationService {
         if (updatedReservationDto.getReservation_state() != null) {
             reservation.setReservation_state(updatedReservationDto.getReservation_state());
         }
-        //TODO: waiting Equipement class creation
-        if (updatedReservationDto.getEquipment_id() != -1) {
-            Optional<Event> eventOptional = eventRepository.findById(updatedReservationDto.getEquipment_id());
-            Event event = eventOptional.orElse(null);
-            reservation.setEquipment(event);
-        }
-        //can't change category
-        //can't change event
+        reservation.setEquipment(equipmentService.getEntityEquipment(updatedReservationDto.getEquipment_id()));
+        reservation.setCategory(categoryService.getEntityCategory(updatedReservationDto.getCategory_id()));
+        reservation.setEvent(eventService.getEntityEvent(updatedReservationDto.getEvent_id()));
+
         return reservationMapper.convertToDto(Optional.of(reservationRepository.save(reservation)));
     }
 }

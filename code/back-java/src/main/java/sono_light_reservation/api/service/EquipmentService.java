@@ -37,6 +37,12 @@ public class EquipmentService {
         return Optional.ofNullable(equipmentDto);
     }
 
+    public Equipment getEntityEquipment(int id){
+        Optional<Equipment> equipmentOptional = equipmentRepository.findById(id);
+        return equipmentOptional.orElse(null);
+    }
+
+
     /**
      * List of all the equipments
      *

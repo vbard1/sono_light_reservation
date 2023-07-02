@@ -42,7 +42,7 @@ public class EventDto {
     private List<ReservationDto> reservations_list;
 
 
-    public EventDto(int event_id, String title, String description, String location, EventTypeEnum type, String user_comment, String admin_comment, Date date_start, Date date_end, Boolean technician_asked, int user_id, List<ReservationDto> reservations_list) {
+    public EventDto(int event_id, String title, String description, String location, EventTypeEnum type, String user_comment, String admin_comment, Date date_start, Date date_end, Boolean technician_asked, int user_id) {
         this.event_id = event_id;
         this.title = title;
         this.description = description;
