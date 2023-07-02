@@ -1,9 +1,7 @@
-<h2>Informations de l'évènement</h2>
-
 <form class="reservation-form">
     <mat-form-field class="title w-50">
       <mat-label>Titre de l'évènement</mat-label>
-      <input matInput type="text" name="title" [(ngModel)]="eventDetails.title" required>
+      <input matInput type="text" name="title" [(ngModel)]="eventDetails.title">
     </mat-form-field>
 
     <mat-form-field class="place w-50">
@@ -25,6 +23,15 @@
         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-date-range-picker #picker></mat-date-range-picker>
       </mat-form-field>
-      <button (click)="save()">Enregistrer</button>
-      <button (click)="cancel()">Annuler</button>
   </form>
+
+  <h4>Ajouter une réservation</h4>
+  <mat-form-field class="title w-50">
+    <mat-label>Titre de l'évènement</mat-label>
+    <input matInput type="text" name="title" [(ngModel)]="reservation.reservation_label">
+  </mat-form-field>
+
+  <mat-form-field class="place w-50">
+      <mat-label>Equipement</mat-label>
+      <input matInput type="number" name="equipment" [(ngModel)]="reservation.equipment_id">
+    </mat-form-field>
