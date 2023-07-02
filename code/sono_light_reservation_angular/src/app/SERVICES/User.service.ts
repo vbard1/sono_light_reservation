@@ -26,8 +26,6 @@ export class UserService {
 
   updateCompte(formData: any): Observable<any> {
     const url = `${environment.api_url}user/${formData.user_id}`;
-
-    //parse the formData to POST-able object
     const user = {
       user_id: formData.user_id,
       name: formData.name,

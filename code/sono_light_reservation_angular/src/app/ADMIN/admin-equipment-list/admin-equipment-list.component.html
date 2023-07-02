@@ -22,11 +22,11 @@
           <tr *ngFor="let equipment of getAllEquipments()">
             <td>{{equipment.label}}</td>
             <td>{{equipment.owner}}</td>
-            <td>{{equipment.daily_price}}  euros/j</td>
+            <td>{{equipment.dayly_price}}  euros/j</td>
             <td>{{equipment.replacement_price}} euros</td>
             <td>
                 <button type="button" class="btn btn-primary"
-                    (click)="viewEquipment(equipment)">Voir</button>
+                    (click)="viewEquipment(equipment.equipmentId)">Voir le matériel {{equipment.equipmentId}} </button>
                 <button type="button" class="btn btn-danger"
                     (click)="deleteEquipment(equipment)">Supprimer</button>
             </td>          </tr>
@@ -46,11 +46,11 @@
           <tr *ngFor="let equipment of getEquipmentsByCategory(category.categoryId)">
             <td>{{equipment.label}}</td>
             <td>{{equipment.owner}}</td>
-            <td>{{equipment.daily_price}} euros/j</td>
+            <td>{{equipment.dayly_price}} euros/j</td>
             <td>{{equipment.replacement_price}} euros</td>
             <td>
                 <button type="button" class="btn btn-primary"
-                    (click)="viewEquipment(equipment)">Voir</button>
+                    (click)="viewEquipment(equipment.equipmentId)">Voir le matériel {{equipment.equipmentId}}</button>
                 <button type="button" class="btn btn-danger"
                     (click)="deleteEquipment(equipment)">Supprimer</button>
             </td>          </tr>
