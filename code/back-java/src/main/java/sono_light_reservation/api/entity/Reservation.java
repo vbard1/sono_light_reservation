@@ -29,10 +29,10 @@ public class Reservation {
 
     @ManyToOne
     @JoinColumn(name = "equipment_id")
-    private Equipment equipment; //TODO NOT Event : waiting Equipement class creation
+    private Equipment equipment;
     @ManyToOne
     @JoinColumn(name = "category_id")
-    private Category category; //TODO NOT Event : waiting Category class creation
+    private Category category;
     @ManyToOne
     @JoinColumn(name = "event_id")
     private Event event;
