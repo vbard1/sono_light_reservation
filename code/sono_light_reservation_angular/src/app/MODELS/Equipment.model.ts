@@ -1,5 +1,5 @@
 export interface Equipment {
-  equipmentId: number;
+  equipement_id: number;
     label: string;
     model: string;
     reference: string;

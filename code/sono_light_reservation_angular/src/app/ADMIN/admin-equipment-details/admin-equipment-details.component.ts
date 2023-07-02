@@ -20,18 +20,18 @@ export class AdminEquipmentDetailsComponent implements OnInit {
   /**html related attributes (styling classes, enum) */
   saveButtonColor: string = 'btn-save';
   cancelButtonColor: string = 'btn-cancel';
-  currentEquipmentId?: number; 
+  currentEquipmentId?: number;
   equipmentForm!: FormGroup;
-  
+
   constructor(
     private formBuilder: FormBuilder,
     private equipmentService: EquipmentService,
     private route: ActivatedRoute,
-    private router : Router
+    private router: Router
   ) {}
 
   ngOnInit() {
-    this.route.paramMap.subscribe(params => {
+    this.route.paramMap.subscribe((params) => {
       const equipmentId = params.get('equipmentId');
       this.equipmentForm = this.formBuilder.group({
         equipement_id: [''],
@@ -48,7 +48,7 @@ export class AdminEquipmentDetailsComponent implements OnInit {
         category_id: [''],
       });
       if (equipmentId) {
-        this.currentEquipmentId = parseInt(equipmentId);  
+        this.currentEquipmentId = parseInt(equipmentId);
         this.editEquipment(this.currentEquipmentId);
       }
     });
@@ -57,7 +57,7 @@ export class AdminEquipmentDetailsComponent implements OnInit {
   editEquipment(id: number) {
     this.equipmentService.getEquipment(id).subscribe((equipment: Equipment) => {
       this.equipmentForm.patchValue({
-        equipmentId: equipment.equipmentId,
+        equipmentId: equipment.equipement_id,
         label: equipment.label,
         model: equipment.model,
         reference: equipment.reference,
@@ -72,17 +72,25 @@ export class AdminEquipmentDetailsComponent implements OnInit {
       });
     });
   }
-  
-
 
   onSubmitForm() {
     const formValues = this.equipmentForm.value;
-    if(this.currentEquipmentId) {
-      console.log("update");
-      this.equipmentService.updateEquipment(this.currentEquipmentId, formValues);  // <-- Update existing equipment
+    if (this.currentEquipmentId) {
+      console.log('update');
+      this.equipmentService
+        .updateEquipment(this.currentEquipmentId, formValues)
+        .subscribe(
+          (response) => {
+            console.log(response);
+            // Naviguez vers la page de confirmation ou rafraîchissez les données ici
+          },
+          (error) => {
+            console.log(error);
+          }
+        );
     } else {
-      console.log("sauvegarde");
-      this.equipmentService.saveEquipment(formValues).subscribe();  // <-- Add new equipment
+      console.log('sauvegarde');
+      this.equipmentService.saveEquipment(formValues).subscribe();
     }
   }
 

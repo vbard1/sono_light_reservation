@@ -10,11 +10,15 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class EquipmentService {
+  deleteEquipment(equipment: Equipment) {
+    const url = `${environment.api_url}equipment/${equipment.equipement_id}`;
+    return this.http.delete(url);
+  }
   updateEquipment(currentEquipmentId: number, formValues: any) {
     const url = `${environment.api_url}equipment/${currentEquipmentId}`;
     var equipment!: Equipment;
     equipment = {
-      equipmentId: currentEquipmentId,
+      equipement_id: currentEquipmentId,
       label: formValues.label,
       model: formValues.model,
       reference: formValues.reference,
@@ -33,9 +37,8 @@ export class EquipmentService {
   saveEquipment(formData: any): Observable<any> {
     const url = `${environment.api_url}equipment`;
 
-    var equipment!: Equipment;
-    equipment = {
-      equipmentId: formData.equipmentId,
+    const equipment = {
+      equipement_id: null,
       label: formData.label,
       model: formData.model,
       reference: formData.reference,
@@ -48,7 +51,7 @@ export class EquipmentService {
       replacement_price: formData.replacement_price,
       category_id: formData.category_id,
     };
-    console.log('on envoie ' + equipment.equipmentId);
+    console.log('on envoie ' + equipment.equipement_id);
     return this.http.post(url, equipment);
   }
 

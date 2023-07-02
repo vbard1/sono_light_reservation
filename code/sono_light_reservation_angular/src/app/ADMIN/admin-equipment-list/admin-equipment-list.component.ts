@@ -48,14 +48,14 @@ export class AdminEquipmentListComponent implements OnInit {
   viewEquipment(equipmentId: number) {
     this.router.navigate(['/equipment', equipmentId]);
   }
-  deleteEquipment(_t57: Equipment) {
-    throw new Error('Method not implemented.');
+  deleteEquipment(equipment: Equipment) {
+    this.equipmentService.deleteEquipment(equipment).subscribe();
   }
   
   getEquipmentsBySection(sectionId: number): Equipment[] {
     const categoryIds = this.categories
       .filter((category) => category.sectionId == sectionId)
-      .map((category) => category.categoryId);
+      .map((category) => category.category_id);
     return this.equipments.filter((equipment) =>
       categoryIds.includes(equipment.category_id)
     );
