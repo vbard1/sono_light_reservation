@@ -9,7 +9,7 @@ import java.time.LocalDate;
 @Data
 @ToString
 public class EquipmentDto {
-    private int equipmentId;
+    private int equipement_id;
     private String label;
     private String model;
     private String reference;
@@ -20,10 +20,10 @@ public class EquipmentDto {
     private LocalDate date_buy;
     private Long dayly_price;
     private Long replacement_price;
-    private int category;
+    private int category_id;
 
-    public EquipmentDto(int equipmentId, String label, String model, String reference, EquipmentOwnerEnum owner, Long cable_size, String comment, int wear_rate_return, LocalDate date_buy, Long dayly_price, Long replacement_price, int category) {
-        this.equipmentId = equipmentId;
+    public EquipmentDto(int equipement_id, String label, String model, String reference, EquipmentOwnerEnum owner, Long cable_size, String comment, int wear_rate_return, LocalDate date_buy, Long dayly_price, Long replacement_price, int category_id) {
+        this.equipement_id = equipement_id;
         this.label = label;
         this.model = model;
         this.reference = reference;
@@ -34,15 +34,15 @@ public class EquipmentDto {
         this.date_buy = date_buy;
         this.dayly_price = dayly_price;
         this.replacement_price = replacement_price;
-        this.category = category;
+        this.category_id = category_id;
     }
 
     public int getEquipmentId() {
-        return equipmentId;
+        return equipement_id;
     }
 
     public void setEquipementId(int equipementId) {
-        this.equipmentId = equipementId;
+        this.equipement_id = equipementId;
     }
 
     public String getLabel() {
@@ -126,10 +126,10 @@ public class EquipmentDto {
     }
 
     public int getCategory() {
-        return category;
+        return category_id;
     }
 
     public void setCategory(int category) {
-        this.category = category;
+        this.category_id = category;
     }
 }

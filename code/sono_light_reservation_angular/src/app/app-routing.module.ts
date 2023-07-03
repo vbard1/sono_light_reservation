@@ -17,9 +17,10 @@ const routes: Routes = [
   { path: 'ADMIN/comptes', component: AdminUserListComponent },
   {
     path: 'ADMIN/fiche-compte/:user_id',
-    component: AdminUserDetailsComponent
+    component: AdminUserDetailsComponent,
   },
-  { path: 'create-equipment', component: AdminEquipmentDetailsComponent }, 
+  { path: 'equipment/:equipmentId', component: AdminEquipmentDetailsComponent },
+  { path: 'create-equipment', component: AdminEquipmentDetailsComponent },
   { path: 'CLIENT/client-accueil', component: UserHomeComponent },
   { path: 'CLIENT/nouvel-evenement', component: UserEventComponent },
   { path: 'CLIENT/reservation-details/:event_id', component: UserEventDetailsComponent },
@@ -29,6 +30,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
