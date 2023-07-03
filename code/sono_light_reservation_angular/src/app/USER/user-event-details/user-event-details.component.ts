@@ -7,11 +7,11 @@ import { EventService } from 'src/app/SERVICES/event.service';
 import { ReservationService } from 'src/app/SERVICES/reservation.service';
 
 @Component({
-  selector: 'app-user-reservation-details',
-  templateUrl: './user-reservation-details.component.html',
-  styleUrls: ['./user-reservation-details.component.scss']
+  selector: 'app-user-event-details',
+  templateUrl: './user-event-details.component.html',
+  styleUrls: ['./user-event-details.component.scss']
 })
-export class UserReservationDetailsComponent implements OnInit {
+export class UserEventDetailsComponent implements OnInit {
 
   eventId!: number;
   eventDetails: EventDetails = new EventDetails();
@@ -33,7 +33,6 @@ this.route.params.subscribe(params => {
       this.eventId = +params['event_id'];
       this.eventService.getOneEvent(this.eventId).subscribe(
         event => {
-          console.log("eventdetail", event);
           this.eventDetails = event;
         },
         (error) => {

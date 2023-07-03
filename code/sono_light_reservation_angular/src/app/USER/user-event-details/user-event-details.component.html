@@ -1,30 +1,28 @@
-<h2>Informations de l'évènement</h2>
-
 <form class="reservation-form">
+  <h4>Evenement et réservations associées</h4>
     <mat-form-field class="title w-50">
       <mat-label>Titre de l'évènement</mat-label>
-      <input matInput type="text" name="title" [(ngModel)]="eventDetails.title" required>
+      <input matInput type="text" name="title" [(ngModel)]="eventDetails.title" disabled>
     </mat-form-field>
 
     <mat-form-field class="place w-50">
         <mat-label>Lieu</mat-label>
-        <input matInput type="text" name="location" [(ngModel)]="eventDetails.location">
+        <input matInput type="text" name="location" [(ngModel)]="eventDetails.location" disabled>
       </mat-form-field>
   
     <mat-form-field class="description w-50">
       <mat-label>Description</mat-label>
-      <textarea matInput type="text" name="description" [(ngModel)]="eventDetails.description"></textarea>
+      <textarea matInput type="text" name="description" [(ngModel)]="eventDetails.description" disabled></textarea>
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="date-picker">
         <mat-label>Dates de la réservation</mat-label>
-        <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+        <mat-date-range-input [formGroup]="range" [rangePicker]="picker" disabled>
           <input matStartDate formControlName="date_start" placeholder="Début" [(ngModel)]="eventDetails.date_start">
-          <input matEndDate formControlName="date_end" placeholder="Fin" [(ngModel)]="eventDetails.date_end">
+          <input matEndDate formControlName="date_end" placeholder="Fin" [(ngModel)]="eventDetails.date_end" >
         </mat-date-range-input>
         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-date-range-picker #picker></mat-date-range-picker>
       </mat-form-field>
-      <button (click)="save()">Enregistrer</button>
-      <button (click)="cancel()">Annuler</button>
-  </form>
+      <button class="btn btn-info btn-sm" routerLink="/CLIENT/client-accueil">Retour</button>
+    </form>

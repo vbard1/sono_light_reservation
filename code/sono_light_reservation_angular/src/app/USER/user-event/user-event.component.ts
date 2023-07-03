@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Reservation } from 'src/app/MODELS/Reservation.model';
 import { EventDetails } from 'src/app/MODELS/event.model';
 import { EventService } from 'src/app/SERVICES/event.service';
 
 @Component({
-  selector: 'app-user-reservation',
-  templateUrl: './user-reservation.component.html',
-  styleUrls: ['./user-reservation.component.scss']
+  selector: 'app-user-event',
+  templateUrl: './user-event.component.html',
+  styleUrls: ['./user-event.component.scss']
 })
-export class UserReservationComponent implements OnInit {
+export class UserEventComponent implements OnInit {
    eventDetails: EventDetails = new EventDetails();
 
   range = new FormGroup({
@@ -26,19 +25,20 @@ export class UserReservationComponent implements OnInit {
 
    ngOnInit(): void {
     if (this.eventDetails.event_id) {
-      console.log("On récupère le form");
+      // update du formulaire
     } else {
-      console.log("nouveau form");
         this.eventDetails.reservation_list = [];
     }
   }
 
   save(){
+    console.log('date_start',this.eventDetails.date_start);
+    console.log('date_end',this.eventDetails.date_end);
+
     this.eventDetails.user_id = 1;
     this.eventService.createEvent(this.eventDetails).subscribe(
       (res) => {
         const eventId = res.event_id;
-        console.log(eventId);
         this.router.navigate(['/CLIENT/reservation-details', eventId]);
       },
       (error) => {
@@ -48,6 +48,6 @@ export class UserReservationComponent implements OnInit {
   }
 
   cancel(){
-
+    this.router.navigate(['/CLIENT/client-accueil']);
   }
 }

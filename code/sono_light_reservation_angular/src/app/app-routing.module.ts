@@ -8,8 +8,8 @@ import { AppComponent } from './app.component';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './GENERAL/page-not-found/page-not-found.component';
 import { UserHomeComponent } from './USER/user-home/user-home.component';
-import { UserReservationComponent } from './USER/user-reservation/user-reservation.component';
-import { UserReservationDetailsComponent } from './USER/user-reservation-details/user-reservation-details.component';
+import { UserEventDetailsComponent } from './USER/user-event-details/user-event-details.component';
+import { UserEventComponent } from './USER/user-event/user-event.component';
 
 const routes: Routes = [
   { path: 'AppComponent', component: AppComponent },
@@ -21,8 +21,8 @@ const routes: Routes = [
   },
   { path: 'create-equipment', component: AdminEquipmentDetailsComponent }, 
   { path: 'CLIENT/client-accueil', component: UserHomeComponent },
-  { path: 'CLIENT/nouvel-evenement', component: UserReservationComponent },
-  { path: 'CLIENT/reservation-details/:event_id', component: UserReservationDetailsComponent },
+  { path: 'CLIENT/nouvel-evenement', component: UserEventComponent },
+  { path: 'CLIENT/reservation-details/:event_id', component: UserEventDetailsComponent },
   { path: '', redirectTo: '/ADMIN/comptes', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];

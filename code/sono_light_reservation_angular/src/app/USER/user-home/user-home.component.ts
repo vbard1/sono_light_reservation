@@ -10,6 +10,7 @@ import { EventService } from 'src/app/SERVICES/event.service';
 })
 export class UserHomeComponent implements OnInit {
   events: EventDetails[] = [];
+  passedEvents: EventDetails[] = [];
 
   constructor(
     private eventService: EventService,
@@ -17,9 +18,9 @@ export class UserHomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.eventService.getEvents().subscribe(
-      events => {
-        console.log("events", events)
-        this.events = events;
+      res => {
+        this.events = res.filter(event => new Date(event.date_end) > new Date());
+        this.passedEvents = res.filter(event => new Date(event.date_end) < new Date());
       },
       error => {
         console.error('Erreur lors de la récupération des événements:', error);
@@ -27,13 +28,8 @@ export class UserHomeComponent implements OnInit {
     )
   }
 
-
-
-  // public getColor(etat: string): any {
-  //   let styles = [{ etat: this.stateEnum.DENIED, style: "red" }, { etat: this.stateEnum.PENDING, style: "orange" }, 
-  //               { etat: this.stateEnum.VALIDATED, style: "green" }]
-  //               return styles.filter(s => s.etat === etat)[0].style 
-  //             }
-
+  deleteEvent(id:number){
+    this.eventService.deleteEvent(id).subscribe()
+  }
 }
 

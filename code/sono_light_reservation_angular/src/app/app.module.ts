@@ -19,8 +19,8 @@ import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './GENERAL/page-not-found/page-not-found.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserHomeComponent } from './USER/user-home/user-home.component';
-import { UserReservationComponent } from './USER/user-reservation/user-reservation.component';
-import { UserReservationDetailsComponent } from './USER/user-reservation-details/user-reservation-details.component';
+import { UserEventDetailsComponent } from './USER/user-event-details/user-event-details.component';
+import { UserEventComponent } from './USER/user-event/user-event.component';
 
 @NgModule({
   declarations: [
@@ -32,8 +32,8 @@ import { UserReservationDetailsComponent } from './USER/user-reservation-details
     AdminReservationComponent,
     AdminUserDetailsComponent,
     UserHomeComponent,
-    UserReservationComponent,
-    UserReservationDetailsComponent
+    UserEventComponent,
+    UserEventDetailsComponent
   ],
   imports: [
     BrowserModule,
