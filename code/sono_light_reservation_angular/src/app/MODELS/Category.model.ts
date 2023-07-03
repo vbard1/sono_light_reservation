@@ -3,6 +3,6 @@ export interface Category {
     label: string;
     description: string;
     picture_link: string;
-    section_id: number;
+    sectionId: number;
     isCollapsed:boolean; // front purposes only
 }  

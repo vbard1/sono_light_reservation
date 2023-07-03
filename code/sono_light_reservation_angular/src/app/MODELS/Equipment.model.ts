@@ -1,5 +1,5 @@
 export interface Equipment {
-    equipment_id: number;
+  equipement_id: number;
     label: string;
     model: string;
     reference: string;
@@ -8,7 +8,7 @@ export interface Equipment {
     comment: string;
     wear_rate_return: number;
     date_buy: Date;
-    daily_price: number;
+    dayly_price: number;
     replacement_price: number;
     category_id: number;
   }

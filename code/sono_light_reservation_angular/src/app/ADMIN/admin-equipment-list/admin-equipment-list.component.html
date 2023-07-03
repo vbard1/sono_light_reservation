@@ -11,7 +11,6 @@
   <label for="sort">Trier par : </label>
   <select id="sort" [formControl]="sort">
     <option value="Aucun" selected>Aucun</option>
-    <option value="section">Section</option>
     <option value="category">Catégorie</option>
   </select>
   <button type="button" class="btn btn-primary" routerLink="/create-equipment">Ajouter un matériel</button>
@@ -23,42 +22,17 @@
           <tr *ngFor="let equipment of getAllEquipments()">
             <td>{{equipment.label}}</td>
             <td>{{equipment.owner}}</td>
-            <td>{{equipment.daily_price}}  euros/j</td>
+            <td>{{equipment.dayly_price}}  euros/j</td>
             <td>{{equipment.replacement_price}} euros</td>
             <td>
                 <button type="button" class="btn btn-primary"
-                    (click)="viewEquipment(equipment)">Voir</button>
+                    (click)="viewEquipment(equipment.equipement_id)">Voir le matériel {{equipment.equipement_id}} </button>
                 <button type="button" class="btn btn-danger"
                     (click)="deleteEquipment(equipment)">Supprimer</button>
             </td>          </tr>
         </tbody>
       </table>
   
-</div>
-
-<div *ngIf="sort.value === 'section'">
-  <div *ngFor="let section of sections" [ngClass]="{ 'collapsed': isSectionCollapsed(section) }">
-    <h3 (click)="toggleSection(section)">
-      <button type="button" class="collapsible">{{ section.label }}</button>
-    </h3>
-    <div class="section-equipment-content" [hidden]="isSectionCollapsed(section)">
-      <table class="table table-dark table-striped">
-        <tbody>
-          <tr *ngFor="let equipment of getEquipmentsBySection(section.section_id)">
-            <td>{{equipment.label}}</td>
-            <td>{{equipment.owner}}</td>
-            <td>{{equipment.daily_price}} euros/j</td>
-            <td>{{equipment.replacement_price}} euros</td>
-            <td>
-                <button type="button" class="btn btn-primary"
-                    (click)="viewEquipment(equipment)">Voir</button>
-                <button type="button" class="btn btn-danger"
-                    (click)="deleteEquipment(equipment)">Supprimer</button>
-            </td>          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
 </div>
 
 <div *ngIf="sort.value === 'category'">
@@ -72,11 +46,11 @@
           <tr *ngFor="let equipment of getEquipmentsByCategory(category.category_id)">
             <td>{{equipment.label}}</td>
             <td>{{equipment.owner}}</td>
-            <td>{{equipment.daily_price}} euros/j</td>
+            <td>{{equipment.dayly_price}} euros/j</td>
             <td>{{equipment.replacement_price}} euros</td>
             <td>
                 <button type="button" class="btn btn-primary"
-                    (click)="viewEquipment(equipment)">Voir</button>
+                    (click)="viewEquipment(equipment.equipement_id)">Voir le matériel {{equipment.equipement_id}}</button>
                 <button type="button" class="btn btn-danger"
                     (click)="deleteEquipment(equipment)">Supprimer</button>
             </td>          </tr>

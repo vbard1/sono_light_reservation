@@ -4,6 +4,8 @@ import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sono_light_reservation.api.dto.ReservationDto;
+import sono_light_reservation.api.entity.Category;
+import sono_light_reservation.api.entity.Equipment;
 import sono_light_reservation.api.entity.Event;
 import sono_light_reservation.api.entity.Reservation;
 import sono_light_reservation.api.repository.ReservationRepository;
@@ -30,12 +32,12 @@ public class ReservationMapper {
         int reservation_equipment_id = -1;
         int reservation_category_id = -1;
         int reservation_event_id = -1;
-//        if (reservation.get().getCategory() != null) {
-//            reservation_equipment_id = reservation.get().getEquipment().getEvent_id();//TODO NOT Event : waiting Equipement class creation
-//        }
-//        if (reservation.get().getCategory() != null) {
-//            reservation_category_id = reservation.get().getCategory().getEvent_id();//TODO NOT Event : waiting category class creation
-//        }
+        if (reservation.get().getEquipment() != null) {
+            reservation_equipment_id = reservation.get().getEquipment().getEquipment_id();
+        }
+        if (reservation.get().getCategory() != null) {
+            reservation_category_id = reservation.get().getCategory().getCategory_id();
+        }
         if (reservation.get().getEvent() != null) {
             reservation_event_id = reservation.get().getEvent().getEvent_id();
         }
@@ -48,13 +50,13 @@ public class ReservationMapper {
      * @param event
      * @return
      */
-    public Reservation convertToEntity(ReservationDto reservationDto, Event event) {
+    public Reservation convertToEntity(ReservationDto reservationDto, Event event, Equipment equipment, Category category) {
         Reservation reservation = new Reservation();
         reservation.setReservation_label(reservationDto.getReservation_label());
         reservation.setReservation_state(reservationDto.getReservation_state());
         reservation.setEvent(event);
-        reservation.setEquipment(event); //TODO NOT Event : waiting equipment class creation
-        reservation.setCategory(event); //TODO NOT Event : waiting category class creation
+        reservation.setEquipment(equipment);
+        reservation.setCategory(category);
         return reservation;
     }
 }

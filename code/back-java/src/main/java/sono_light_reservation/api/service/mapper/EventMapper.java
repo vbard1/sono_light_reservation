@@ -22,9 +22,6 @@ public class EventMapper {
     @Autowired
     private final EventRepository eventRepository;
 
-    @Autowired
-    private ReservationService reservationService;
-
     public EventMapper(EventRepository eventRepository) {
         this.eventRepository = eventRepository;
     }
@@ -39,11 +36,10 @@ public class EventMapper {
         if (event.get().getUser() != null) {
             event_user_id = event.get().getUser().getUser_id();
         }
-        List<ReservationDto> reservations_list = reservationService.getReservationsByEventId(event.get().getEvent_id());
 
         return new EventDto(event.get().getEvent_id(), event.get().getTitle(), event.get().getDescription(), event.get().getLocation(),
                 event.get().getType(), event.get().getUser_comment(), event.get().getAdmin_comment(), event.get().getDate_start(),
-                event.get().getDate_end(), event.get().getTechnician_asked(), event_user_id, reservations_list);
+                event.get().getDate_end(), event.get().getTechnician_asked(), event_user_id);
     }
 
     /**

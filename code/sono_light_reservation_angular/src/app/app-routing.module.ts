@@ -16,9 +16,10 @@ const routes: Routes = [
   {
     path: 'ADMIN/fiche-compte/:user_id',
 
-    component: AdminUserDetailsComponent
+    component: AdminUserDetailsComponent,
   },
-  { path: 'create-equipment', component: AdminEquipmentDetailsComponent }, 
+  { path: 'equipment/:equipmentId', component: AdminEquipmentDetailsComponent },
+  { path: 'create-equipment', component: AdminEquipmentDetailsComponent },
   { path: 'CLIENT/client-accueil', component: UserHomeComponent },
   { path: '', redirectTo: '/ADMIN/comptes', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
