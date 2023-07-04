@@ -1,0 +1,23 @@
+<body>
+    <div class="container-fluid">
+        <div class="ods-box" >
+            <nav>
+                <button class="tab"  id="firstTab" (click)="onTabClick('firstTab')" >Réservations </button>
+                <button class="tab"  id="secondTab" (click)="onTabClick('secondTab')"> Matériel </button>
+                <button class="tab"  id="thirdTab"  (click)="onTabClick('thirdTab')"> Comptes </button>
+            </nav>
+            <div class="composant">
+                <!--router outlet ici-->
+                <div  *ngIf="tabselector == 'firstTab'">
+                    <app-admin-reservation></app-admin-reservation>
+                </div>
+                <div *ngIf="tabselector == 'secondTab'">
+                    <app-admin-equipment-list ></app-admin-equipment-list>
+                </div>
+                <div *ngIf="tabselector == 'thirdTab'">
+                    <app-admin-comptes></app-admin-comptes>
+                </div>
+            </div>
+        </div>
+      </div>
+</body>

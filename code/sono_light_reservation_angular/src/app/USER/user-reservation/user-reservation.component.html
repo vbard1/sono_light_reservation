@@ -1,0 +1,29 @@
+<h2>Informations de l'évènement</h2>
+
+<form class="reservation-form">
+    <mat-form-field class="title w-50">
+      <mat-label>Titre de l'évènement</mat-label>
+      <input matInput value="">
+    </mat-form-field>
+
+    <mat-form-field class="place w-50">
+        <mat-label>Lieu</mat-label>
+        <input matInput value="">
+      </mat-form-field>
+  
+    <mat-form-field class="description w-50">
+      <mat-label>Description</mat-label>
+      <textarea matInput></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="date-picker">
+        <mat-label>Dates de la réservation</mat-label>
+        <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+          <input matStartDate formControlName="start" placeholder="Début">
+          <input matEndDate formControlName="end" placeholder="Fin">
+        </mat-date-range-input>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+      </mat-form-field>
+      Form à compléter
+  </form>

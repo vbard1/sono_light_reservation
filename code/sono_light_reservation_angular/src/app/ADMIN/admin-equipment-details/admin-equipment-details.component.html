@@ -1,0 +1,48 @@
+<h2>Détails du matériel</h2>
+<form [formGroup]="equipmentForm" class="form-row">
+  <div class="form-row">
+    <label for="label">Libellé</label>
+    <input type="text" id="label" formControlName="label">
+  </div>
+  <div class="form-row">
+    <label for="model">Modèle</label>
+    <input type="text" id="model" formControlName="model">
+    <label for="reference">Référence</label>
+    <input type="text" id="reference" formControlName="reference">
+  </div>
+  <div class="form-row">
+    <label for="owner">Propriétaire</label>
+    <input type="text" id="owner" formControlName="owner">
+    <label for="cable_size">Taille du câble</label>
+    <input type="text" id="cable_size" formControlName="cable_size">
+  </div>
+  <div class="form-row">
+    <label for="comment">Commentaire</label>
+    <input type="text" id="comment" formControlName="comment">
+    <label for="wear_rate_return">Taux d'usure de retour</label>
+    <input type="text" id="wear_rate_return" formControlName="wear_rate_return">
+  </div>
+  <div class="form-row">
+    <label for="date_buy">Date d'achat</label>
+    <input type="date" id="date_buy" formControlName="date_buy">
+    <label for="dayly_price">Prix journalier</label>
+    <input type="text" id="dayly_price" formControlName="dayly_price">
+  </div>
+  <div class="form-row">
+    <label for="replacement_price">Prix de remplacement</label>
+    <input type="number" id="replacement_price" formControlName="replacement_price">
+    <label for="category_id">category</label>
+    <input type="number" id="category_id" formControlName="category_id">
+  </div>
+  <div class="form-row">
+    <div class="col">
+      <button type="submit" (click)="onSubmitForm()"
+        class="btn btn-info btn-sm"
+        [ngClass]="saveButtonColor" [disabled]="equipmentForm.invalid">Enregistrer</button>
+
+  <button type="reset" (click)="doNothing()"
+    class="btn btn-danger btn-sm"
+    [ngClass]="cancelButtonColor">Annuler</button>
+</div>
+  </div>
+</form>

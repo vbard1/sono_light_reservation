@@ -1,0 +1,28 @@
+@import '../../../styles.var.scss';
+
+#numero {
+    width: 50px;
+}
+
+form>* {
+    padding: 15px;
+}
+
+label {
+    width: 100px;
+    text-align: right;
+    margin-right: 20px;
+    margin-bottom: 25px;
+}
+
+button {
+    margin: 10px;
+}
+
+.btn-save {
+    background-color: var(--lowImpact);
+}
+
+.btn-cancel {
+    background-color: var(--danger);
+}

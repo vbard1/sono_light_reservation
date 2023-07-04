@@ -1,0 +1,19 @@
+@import '../../../styles.var.scss';
+
+.btn-info{
+    background-color:var(--lowImpact);
+}
+.btn-danger{
+    background-color:var(--danger);
+}
+.btn{
+    border-radius: var(--rounding);
+}
+.actions{
+    text-align: center;
+    width: 8%;
+}
+td{
+    white-space: nowrap;
+    overflow:hidden;
+}
