@@ -1,0 +1,51 @@
+footer {
+    background-color: #303134 !important;
+    height: 120px;
+  }
+  
+  .bi {
+    font-size: 1.2rem;
+    color: rgba(245, 245, 245, 0.694);
+  }
+  
+  .bi:hover {
+    color: rgb(0, 238, 255);
+  }
+  
+  .copyright {
+    font-size: 1.1rem;
+    font-weight: 100;
+    margin: 0;
+  }
+  
+  a:hover {
+    color: rgb(0, 238, 255);
+  }
+ /// css du nouveau footer
+
+  
+    a{
+      text-decoration: none;
+      // color : white;
+    
+    
+      &:hover{
+        text-decoration: underline;
+        color:rgb(0, 238, 255);
+      }
+    
+
+  }
+  .socialLinks {
+    background: #303134 !important;
+    color:rgba(245, 245, 245, 0.694) !important;
+     
+    width: 100%;
+    padding: 10px;
+    //margin-top: 40px;
+  }
+  img{
+    background-color:transparent !important;
+    color: aliceblue !important;
+  }
+

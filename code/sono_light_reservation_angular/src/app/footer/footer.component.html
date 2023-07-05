@@ -1,0 +1,54 @@
+<footer
+  class="container-fluid d-flex flex-column align-items-center justify-content-center"
+>
+  <div class="row mb-3">
+    <p class="copyright text-center">
+      ©{{ date }} Tous droits réservés - Mentions Légales
+      <!-- <a routerLink="/mentions-legales">Mentions Légales</a>  a faire plus tard -->
+    </p>
+
+    <div class="row mb-12 d-flex justify-content-center">
+      <div class="col-6">
+        <!--
+      <a
+        href="https://github.com/kaslabarak702"
+        target="_blank"
+        rel="noreferrer"
+        ><i class="bi bi-linkedin"></i
+      ></a>
+    </div>
+    <div class="col-3">
+      <a
+        href="https://github.com/kaslabarak702"
+        target="_blank"
+        rel="noreferrer"
+        ><i class="bi bi-github"></i
+      ></a>
+    </div>
+    <div class="col-3">
+      <a
+        href="https://github.com/kaslabarak702"
+        target="_blank"
+        rel="noreferrer"
+        ><i class="bi bi-twitter"></i
+      ></a>
+    </div> -->
+
+        <div class="socialLinks">
+          <ng-container *ngFor="let socialLink of socialLinks">
+            <a
+              href="{{ socialLink.link }}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="assets/icon/{{ socialLink.image }}"
+                alt="{{ socialLink.alt }}"
+                class="mx-2"
+            /></a>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

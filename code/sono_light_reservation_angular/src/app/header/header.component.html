@@ -1,0 +1,60 @@
+<header>
+  <nav class="navbar d-flex justify-content-end align-items-center w-100">
+    <!-- <div class="logo">
+      <a routerLink="/" fragment="home" class="nav-link">
+        <img src="assets/img/logo.png" alt="logo" />
+      </a> -->
+    <ul [ngClass]="{ active: openedMobileMenu === true }" class="nav-menu">
+      <li class="nav-item">
+        <a routerLink="/" (click)="closeMenu()" class="nav-link" fragment="home"
+          >HOME</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          routerLink="/"
+          fragment="about"
+          (click)="closeMenu()"
+          class="nav-link"
+          >SIGN IN</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          routerLink="/"
+          fragment="realisations"
+          (click)="closeMenu()"
+          class="nav-link"
+          >SIGN UP</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          routerLink="/"
+          fragment="contact"
+          (click)="closeMenu()"
+          class="nav-link"
+          >MATERIAL</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          routerLink="/contact"
+          fragment="contact"
+          (click)="closeMenu()"
+          class="nav-link"
+          >CONTACT</a
+        >
+      </li>
+    </ul>
+    <div
+      [ngClass]="{ active: openedMobileMenu === true }"
+      (click)="mobileMenu()"
+      class="hamburger"
+    >
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,33 @@
+.background {
+    background: url("/src/assets/img/header.jpg") no-repeat center;
+    background-size: cover;
+    min-height: 100vh;
+    background-attachment: fixed;
+  }
+  
+.mainTitle {
+    color: #fff;
+    font-size:30px;
+    margin-bottom: 30px;
+  }
+  
+  .customBtn {
+    color: #fff;
+    padding: 5px 15px;
+    text-decoration: none;
+    font-size: 25px;
+    background-color:rgb(0, 238, 255);
+    box-shadow:rgb(0, 238, 255) 0px 20px 30px -10px;
+    transition: all 0.2s ease-in-out;
+    border-radius: 2px;
+  }
+  
+  .customBtn:hover {
+    background-color:rgb(0, 238, 255);
+  }
+  
+  @media screen and (min-width: 768px) {
+    .mainTitle {
+      font-size: 100px;
+    }
+  }

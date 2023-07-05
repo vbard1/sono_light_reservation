@@ -10,15 +10,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatExpansionModule} from '@angular/material/expansion';
-import {MatIconModule} from '@angular/material/icon';
-import {MatInputModule} from '@angular/material/input';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './GENERAL/page-not-found/page-not-found.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserHomeComponent } from './USER/user-home/user-home.component';
+import { CarousselComponent } from './caroussel/caroussel.component';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
+import { LocalisationComponent } from './localisation/localisation.component';
+import { HomeComponent } from './home/home.component';
+
 import { UserEventDetailsComponent } from './USER/user-event-details/user-event-details.component';
 import { UserEventComponent } from './USER/user-event/user-event.component';
 
@@ -32,8 +38,15 @@ import { UserEventComponent } from './USER/user-event/user-event.component';
     AdminReservationComponent,
     AdminUserDetailsComponent,
     UserHomeComponent,
+
+    CarousselComponent,
+    FooterComponent,
+    HeaderComponent,
+    LocalisationComponent,
+    HomeComponent,
+
     UserEventComponent,
-    UserEventDetailsComponent
+    UserEventDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,9 +60,10 @@ import { UserEventComponent } from './USER/user-event/user-event.component';
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    FormsModule, 
+
+    FormsModule,
   ],
-  providers: [{provide: MAT_DATE_LOCALE, useValue: 'fr-FR'},],
-  bootstrap: [AppComponent]
+  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'fr-FR' }],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

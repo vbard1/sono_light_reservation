@@ -1,0 +1,85 @@
+.blackTitle {
+    height: 175px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  
+   
+    h2 {
+      width: 100%;
+      margin: 0 auto 0;
+      padding-bottom: 0.5rem;
+      text-align: center;
+      font-size: 2.25rem;
+      color: white;
+      letter-spacing: 0.1rem;
+    }
+  }
+  hr {
+    border: solid 2px rgb(0, 238, 255);;
+    width: 50%;
+    margin: auto;
+    opacity: 1;
+    background-color: rgb(0, 238, 255);;
+  }
+  .main1 {
+    background-color: black;
+    height: 9rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  mat-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 1.5rem;
+    margin-left: 1rem;
+    animation: pulse 1s linear infinite;
+    color:rgb(0, 238, 255) !important;
+  }
+
+  
+@keyframes pulse {
+  0% {
+    transform: scale(1, 1);
+  }
+
+  50% {
+    transform: scale(1.5, 1.5);
+  }
+
+  100% {
+    transform: scale(1, 1);
+  }
+}
+  @media screen and (min-width: 858px) {
+    .main1 {
+        background-color: black;
+        height: 9rem;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+      }
+  }
+  $carousel-height: 400px;
+  $carousel-width: 100%;
+  $carousel-padding: 0;
+  $carousel-background: #fff;
+  $carousel-border: 1px solid #ccc;
+  $image-height: 400px;
+  .image {
+    width: 100%;
+    height: $image-height;
+    background-size: cover;
+    background-position: center;
+  }
+  .imageContainer {
+    width: 100%;
+    height: $image-height;
+    background-size: cover;
+    background-position: center;
+  }
