@@ -1,3 +1,5 @@
+@import './../../../styles.var.scss';
+
 .reservation-form {
     display: flex;
     flex-direction: column;
@@ -9,4 +11,8 @@
 .date-picker {
     color: black;
     width: 17em;
+}
+
+h4 {
+  color: var(--text)
 }
