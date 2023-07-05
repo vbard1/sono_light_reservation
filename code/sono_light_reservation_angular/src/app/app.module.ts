@@ -21,6 +21,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { UserHomeComponent } from './USER/user-home/user-home.component';
 import { CarousselComponent } from './caroussel/caroussel.component';
 import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
+import { LocalisationComponent } from './localisation/localisation.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +37,9 @@ import { FooterComponent } from './footer/footer.component';
     UserHomeComponent,
     CarousselComponent,
     FooterComponent,
+    HeaderComponent,
+    LocalisationComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
