@@ -1,31 +1,32 @@
-<button (click)="testSuccessSnack()">Success</button>
-<button (click)="testFailSnack()">Fail</button>
+<div>
+  <button class="btn btn-info btn-sm" routerLink="/CLIENT/nouvel-evenement">Créer un nouvel évènement</button>
+</div>
+
 <div class="reservation">
 <h4>Mes réservations en cours</h4>
 <table class="table table-dark table-striped">
     <thead>
         <tr>
             <th>Intitulé de l'évènement</th>
+            <th>Lieu</th>
             <th>Date début</th>
             <th>Date fin</th>
             <th>Type</th>
-            <th>Etat</th>
             <th colspan="2" class="actions">Actions</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let reservation of reservations">
-            <td>{{ reservation.eventDetails.title}}</td>
-            <td>{{ reservation.eventDetails.dateStart | date:'dd-MM-yyyy' }}</td>
-            <td>{{ reservation.eventDetails.dateEnd | date:'dd-MM-yyyy' }}</td>
-            <td>{{ reservation.eventDetails.type}}</td>
-            <td [ngStyle]="{
-                'color': getColor(reservation.reservationState)
-            }">{{reservation.reservationState}}</td>
+        <tr *ngFor="let event of events">
+            <td>{{ event.title}}</td>
+            <td>{{ event.location}}</td>
+            <td>{{ event.date_start | date:'dd-MM-yyyy' }}</td>
+            <td>{{ event.date_end | date:'dd-MM-yyyy' }}</td>
+            <td>{{ event.type}}</td>
             <td class="actions">
-              <button class="btn btn-info btn-sm" routerLink="/reservation">voir la fiche</button>
+              <button class="btn btn-info btn-sm" [routerLink]="'/CLIENT/reservation-details/' + event.event_id">Voir la fiche</button>
             </td>
-            <td class="actions"><button class="btn btn-danger btn-sm">supprimer</button></td>
+            <td class="actions">
+              <button class="btn btn-danger btn-sm" (click)="deleteEvent(event.event_id)">Supprimer</button></td>
     </tr>
   </tbody>
 </table>
@@ -41,22 +42,24 @@
       <table class="table table-dark table-striped">
         <thead>
             <tr>
-              <th>Intitulé de l'évènement</th>
-              <th>Date début</th>
-              <th>Date fin</th>
-              <th>Type</th>
-              <th>Etat</th>
+                <th>Intitulé de l'évènement</th>
+                <th>Lieu</th>
+                <th>Date début</th>
+                <th>Date fin</th>
+                <th>Type</th>
                 <th colspan="2" class="actions">Actions</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let reservation of reservations">
-              <td>{{ reservation.eventDetails.title}}</td>
-              <td>{{ reservation.eventDetails.dateStart | date:'dd-MM-yyyy' }}</td>
-              <td>{{ reservation.eventDetails.dateEnd | date:'dd-MM-yyyy' }}</td>
-              <td>{{ reservation.eventDetails.type}}</td>
-                <td>Terminée</td>
-                <td class="actions"><button class="btn btn-info btn-sm">voir la fiche</button></td>
+            <tr *ngFor="let event of passedEvents">
+                <td>{{ event.title}}</td>
+                <td>{{ event.location}}</td>
+                <td>{{ event.date_start | date:'dd-MM-yyyy' }}</td>
+                <td>{{ event.date_end | date:'dd-MM-yyyy' }}</td>
+                <td>{{ event.type}}</td>
+                <td class="actions">
+                  <button class="btn btn-info btn-sm" [routerLink]="'/CLIENT/reservation-details/' + event.event_id">Voir la fiche</button>
+                </td>
         </tr>
       </tbody>
     </table>

@@ -17,13 +17,16 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './GENERAL/page-not-found/page-not-found.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserHomeComponent } from './USER/user-home/user-home.component';
 import { CarousselComponent } from './caroussel/caroussel.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { LocalisationComponent } from './localisation/localisation.component';
 import { HomeComponent } from './home/home.component';
+
+import { UserEventDetailsComponent } from './USER/user-event-details/user-event-details.component';
+import { UserEventComponent } from './USER/user-event/user-event.component';
 
 @NgModule({
   declarations: [
@@ -35,11 +38,15 @@ import { HomeComponent } from './home/home.component';
     AdminReservationComponent,
     AdminUserDetailsComponent,
     UserHomeComponent,
+
     CarousselComponent,
     FooterComponent,
     HeaderComponent,
     LocalisationComponent,
     HomeComponent,
+
+    UserEventComponent,
+    UserEventDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +60,8 @@ import { HomeComponent } from './home/home.component';
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
+
+    FormsModule,
   ],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'fr-FR' }],
   bootstrap: [AppComponent],
