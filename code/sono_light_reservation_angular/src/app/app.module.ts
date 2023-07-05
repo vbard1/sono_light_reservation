@@ -17,8 +17,10 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './GENERAL/page-not-found/page-not-found.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserHomeComponent } from './USER/user-home/user-home.component';
+import { UserEventDetailsComponent } from './USER/user-event-details/user-event-details.component';
+import { UserEventComponent } from './USER/user-event/user-event.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { UserHomeComponent } from './USER/user-home/user-home.component';
     AdminReservationComponent,
     AdminUserDetailsComponent,
     UserHomeComponent,
+    UserEventComponent,
+    UserEventDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +46,8 @@ import { UserHomeComponent } from './USER/user-home/user-home.component';
     MatExpansionModule,
     MatInputModule,
     MatDatepickerModule,
-    MatNativeDateModule, 
+    MatNativeDateModule,
+    FormsModule, 
   ],
   providers: [{provide: MAT_DATE_LOCALE, useValue: 'fr-FR'},],
   bootstrap: [AppComponent]
