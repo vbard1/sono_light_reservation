@@ -1,0 +1,18 @@
+@import './../../../styles.var.scss';
+
+.reservation-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px; /* ajouter une marge supérieure pour plus d'espace */
+  }
+
+.date-picker {
+    color: black;
+    width: 17em;
+}
+
+h4 {
+  color: var(--text)
+}

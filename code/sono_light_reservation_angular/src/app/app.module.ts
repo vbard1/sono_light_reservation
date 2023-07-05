@@ -17,10 +17,14 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { NgModule } from '@angular/core';
 import { PageNotFoundComponent } from './GENERAL/page-not-found/page-not-found.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserHomeComponent } from './USER/user-home/user-home.component';
 import { CarousselComponent } from './caroussel/caroussel.component';
 import { FooterComponent } from './footer/footer.component';
+
+import { UserEventDetailsComponent } from './USER/user-event-details/user-event-details.component';
+import { UserEventComponent } from './USER/user-event/user-event.component';
+
 
 @NgModule({
   declarations: [
@@ -32,8 +36,12 @@ import { FooterComponent } from './footer/footer.component';
     AdminReservationComponent,
     AdminUserDetailsComponent,
     UserHomeComponent,
+
     CarousselComponent,
     FooterComponent,
+
+    UserEventComponent,
+    UserEventDetlsComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +55,10 @@ import { FooterComponent } from './footer/footer.component';
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
+
+
+    FormsModule, 
+
   ],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'fr-FR' }],
   bootstrap: [AppComponent],
